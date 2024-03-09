@@ -1,0 +1,14 @@
+< envPaths
+errlogInit(20000)
+
+dbLoadDatabase("$(TOP)/dbd/EuresysApp.dbd")
+EuresysApp_registerRecordDeviceDriver(pdbbase) 
+
+# Use this line for a specific board
+epicsEnvSet("BOARD_ID", "0")
+
+epicsEnvSet("GENICAM_DB_FILE", "$(ADGENICAM)/db/Adimec_Q12A180CXP_1_1_5.template")
+
+< st.cmd.base
+
+#
