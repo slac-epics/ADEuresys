@@ -42,12 +42,12 @@ static const char *driverName = "ADEuresys";
 typedef enum {
     TimeStampCamera,
     TimeStampEPICS
-} BFTimeStamp_t;
+} ESTimeStamp_t;
 
 typedef enum {
     UniqueIdCamera,
     UniqueIdDriver
-} BFUniqueId_t;
+} ESUniqueId_t;
 
 /** Configuration function to configure one camera.
  *
@@ -55,17 +55,16 @@ typedef enum {
  * function instantiates one object from the ADEuresys class.
  * \param[in] portName asyn port name to assign to the camera.
  * \param[in] boardNum The board number.  Default is 0.
- * \param[in] numBFBuffers The number of buffers to allocate in BitFlow driver.
+ * \param[in] numEGBuffers The number of buffers to allocate in EGrabber.
  *            If set to 0 or omitted the default of 100 will be used.
- * \param(in) numThreads Number of image processing threads.  If set to 0 or omitted 2 will be used.
  * \param[in] maxMemory Maximum memory (in bytes) that this driver is allowed to allocate. 0=unlimited.
  * \param[in] priority The EPICS thread priority for this driver.  0=use asyn default.
  * \param[in] stackSize The size of the stack for the EPICS port thread. 0=use asyn default.
  */
-extern "C" int ADEuresysConfig(const char *portName, int boardNum, int numBFBuffers, int numThreads,
+extern "C" int ADEuresysConfig(const char *portName, int boardNum, int numEGBuffers,
                                size_t maxMemory, int priority, int stackSize)
 {
-    new ADEuresys(portName, boardNum, numBFBuffers, numThreads, maxMemory, priority, stackSize);
+    new ADEuresys(portName, boardNum, numEGBuffers, maxMemory, priority, stackSize);
     return asynSuccess;
 }
 
@@ -93,15 +92,14 @@ static void c_shutdown(void *arg)
 /** Constructor for the ADEuresys class
  * \param[in] portName asyn port name to assign to the camera.
  * \param[in] boardNum The board number.  Default is 0.
- * \param[in] numBFBuffers The number of buffers to allocate in BitFlow driver.
+ * \param[in] numEGBuffers The number of buffers to allocate in EGrabber.
  *            If set to 0 or omitted the default of 100 will be used.
- * \param(in) numThreads Number of image processing threads.  If set to 0 or omitted 2 will be used.
  * \param[in] maxMemory Maximum memory (in bytes) that this driver is allowed to allocate. 0=unlimited.
  * \param[in] priority The EPICS thread priority for this driver.  0=use asyn default.
  * \param[in] stackSize The size of the stack for the EPICS port thread. 0=use asyn default.
  */
-ADEuresys::ADEuresys(const char *portName, int boardNum, int numEGBuffers, int numThreads,
-                         size_t maxMemory, int priority, int stackSize )
+ADEuresys::ADEuresys(const char *portName, int boardNum, int numEGBuffers,
+                     size_t maxMemory, int priority, int stackSize )
     : ADGenICam(portName, maxMemory, priority, stackSize),
     boardNum_(boardNum), numEGBuffers_(numEGBuffers), exiting_(0), uniqueId_(0)
 {
@@ -111,24 +109,21 @@ ADEuresys::ADEuresys(const char *portName, int boardNum, int numEGBuffers, int n
     
     if (numEGBuffers_ == 0) numEGBuffers_ = 100;
     EGenTL *gentl = new EGenTL;
-printf("ADEuresys::ADEuresys creating myGrabber object gentl=%p\n", gentl);
     mGrabber_ = new myGrabber(gentl, this);
-printf("ADEuresys::ADEuresys calling reallocBuffers %d\n", numEGBuffers);
     mGrabber_->reallocBuffers(numEGBuffers);
-printf("ADEuresys::ADEuresys creating parameters\n");
  
-    createParam(BFTimeStampModeString,              asynParamInt32,   &BFTimeStampMode);
-    createParam(BFUniqueIdModeString,               asynParamInt32,   &BFUniqueIdMode);
-    createParam(BFBufferSizeString,                 asynParamInt32,   &BFBufferSize);
-    createParam(BFBufferQueueSizeString,            asynParamInt32,   &BFBufferQueueSize);
-    createParam(BFMessageQueueSizeString,           asynParamInt32,   &BFMessageQueueSize);
-    createParam(BFMessageQueueFreeString,           asynParamInt32,   &BFMessageQueueFree);
-    createParam(BFProcessTotalTimeString,         asynParamFloat64,   &BFProcessTotalTime);
-    createParam(BFProcessCopyTimeString,          asynParamFloat64,   &BFProcessCopyTime);
+    createParam(ESTimeStampModeString,              asynParamInt32,   &ESTimeStampMode);
+    createParam(ESUniqueIdModeString,               asynParamInt32,   &ESUniqueIdMode);
+    createParam(ESBufferSizeString,                 asynParamInt32,   &ESBufferSize);
+    createParam(ESBufferQueueSizeString,            asynParamInt32,   &ESBufferQueueSize);
+    createParam(ESMessageQueueSizeString,           asynParamInt32,   &ESMessageQueueSize);
+    createParam(ESMessageQueueFreeString,           asynParamInt32,   &ESMessageQueueFree);
+    createParam(ESProcessTotalTimeString,         asynParamFloat64,   &ESProcessTotalTime);
+    createParam(ESProcessCopyTimeString,          asynParamFloat64,   &ESProcessCopyTime);
 
     /* Set initial values of some parameters */
-    setIntegerParam(BFBufferSize, numEGBuffers);
-    setIntegerParam(BFBufferQueueSize, 0);
+    setIntegerParam(ESBufferSize, numEGBuffers);
+    setIntegerParam(ESBufferQueueSize, 0);
     setIntegerParam(NDDataType, NDUInt8);
     setIntegerParam(NDColorMode, NDColorModeMono);
     setIntegerParam(NDArraySizeZ, 0);
@@ -140,14 +135,10 @@ printf("ADEuresys::ADEuresys creating parameters\n");
     epicsSnprintf(driverVersionString, sizeof(driverVersionString), "%d.%d.%d", 
                   DRIVER_VERSION, DRIVER_REVISION, DRIVER_MODIFICATION);
     setStringParam(NDDriverVersion,driverVersionString);
- 
-printf("ADEuresys::ADEuresys setting SDK version\n");
     setStringParam(ADSDKVersion, Euresys::Internal::EGrabberClientVersion);
     
     // shutdown on exit
-    epicsAtExit(c_shutdown, this);
-printf("ADEuresys::ADEuresys exit\n");
-
+    //epicsAtExit(c_shutdown, this);
     return;
 }
 
@@ -157,8 +148,7 @@ EGRABBER_CALLBACK* ADEuresys::getGrabber() {
 
 void ADEuresys::shutdown(void)
 {
-    //static const char *functionName = "shutdown";
-    
+    static const char *functionName = "shutdown";
     lock();
     exiting_ = 1;
     stopCapture();
@@ -277,14 +267,14 @@ void ADEuresys::processFrame(ScopedBuffer &buf)
         getIntegerParam(NDArrayCallbacks, &arrayCallbacks);
 
         // Put the frame number into the buffer
-        getIntegerParam(BFUniqueIdMode, &uniqueIdMode);
+        getIntegerParam(ESUniqueIdMode, &uniqueIdMode);
         if (uniqueIdMode == UniqueIdCamera) {
         } else {
             pRaw->uniqueId = numImagesCounter;
         }
             
         updateTimeStamp(&pRaw->epicsTS);
-        getIntegerParam(BFTimeStampMode, &timeStampMode);
+        getIntegerParam(ESTimeStampMode, &timeStampMode);
         // Set the timestamps in the buffer
         if (timeStampMode == TimeStampCamera) {
         } else {
@@ -323,8 +313,8 @@ void ADEuresys::processFrame(ScopedBuffer &buf)
         stopCapture();
     }
     t4 = epicsTime::getCurrent();
-    setDoubleParam(BFProcessTotalTime, (t4-t1)*1000.);
-    setDoubleParam(BFProcessCopyTime, (t3-t2)*1000.);
+    setDoubleParam(ESProcessTotalTime, (t4-t1)*1000.);
+    setDoubleParam(ESProcessCopyTime, (t3-t2)*1000.);
     
     done:
     callParamCallbacks();
@@ -415,23 +405,21 @@ void ADEuresys::report(FILE *fp, int details)
 
 static const iocshArg configArg0 = {"Port name", iocshArgString};
 static const iocshArg configArg1 = {"boardNum", iocshArgInt};
-static const iocshArg configArg2 = {"# BitFlow buffers", iocshArgInt};
-static const iocshArg configArg3 = {"# processing threads", iocshArgInt};
-static const iocshArg configArg4 = {"maxMemory", iocshArgInt};
-static const iocshArg configArg5 = {"priority", iocshArgInt};
-static const iocshArg configArg6 = {"stackSize", iocshArgInt};
+static const iocshArg configArg2 = {"# EGrabber buffers", iocshArgInt};
+static const iocshArg configArg3 = {"maxMemory", iocshArgInt};
+static const iocshArg configArg4 = {"priority", iocshArgInt};
+static const iocshArg configArg5 = {"stackSize", iocshArgInt};
 static const iocshArg * const configArgs[] = {&configArg0,
                                               &configArg1,
                                               &configArg2,
                                               &configArg3,
                                               &configArg4,
-                                              &configArg5,
-                                              &configArg6};
-static const iocshFuncDef configADEuresys = {"ADEuresysConfig", 7, configArgs};
+                                              &configArg5};
+static const iocshFuncDef configADEuresys = {"ADEuresysConfig", 6, configArgs};
 static void configCallFunc(const iocshArgBuf *args)
 {
     ADEuresysConfig(args[0].sval, args[1].ival, args[2].ival, args[3].ival, 
-                    args[4].ival, args[5].ival, args[6].ival);
+                    args[4].ival, args[5].ival);
 }
 
 
