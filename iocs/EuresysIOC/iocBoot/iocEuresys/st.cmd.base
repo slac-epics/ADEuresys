@@ -22,9 +22,9 @@ epicsEnvSet("EPICS_DB_INCLUDE_PATH", "$(ADCORE)/db;$(ADGENICAM)/db;$(ADEURESYS)/
 # Define NELEMENTS to be enough for a 1920x1080 (mono) image
 epicsEnvSet("NELEMENTS", "2073600")
 
-# ADEuresysConfig(const char *portName, const char *boardId, int numESBuffers, int numThreads,
+# ADEuresysConfig(const char *portName, const char *boardId, int numESBuffers,
 #                 size_t maxMemory, int priority, int stackSize)
-ADEuresysConfig("$(PORT)", $(BOARD_ID), 100, 3)
+ADEuresysConfig("$(PORT)", $(BOARD_ID), 100)
 asynSetTraceIOMask($(PORT), 0, ESCAPE)
 # Set ASYN_TRACE_WARNING and ASYN_TRACE_ERROR
 #asynSetTraceMask($(PORT), 0, ERROR|WARNING|FLOW|DRIVER)
