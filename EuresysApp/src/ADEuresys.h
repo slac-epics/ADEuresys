@@ -10,14 +10,14 @@ using namespace Euresys;
 
 typedef EGrabber<CallbackSingleThread> EGRABBER_CALLBACK;
 
-#define BFTimeStampModeString               "BF_TIME_STAMP_MODE"                // asynParamInt32, R/O
-#define BFUniqueIdModeString                "BF_UNIQUE_ID_MODE"                 // asynParamInt32, R/O
-#define BFBufferSizeString                  "BF_BUFFER_SIZE"                    // asynParamInt32, R/O
-#define BFBufferQueueSizeString             "BF_BUFFER_QUEUE_SIZE"              // asynParamInt32, R/O
-#define BFMessageQueueSizeString            "BF_MESSAGE_QUEUE_SIZE"             // asynParamInt32, R/O
-#define BFMessageQueueFreeString            "BF_MESSAGE_QUEUE_FREE"             // asynParamInt32, R/O
-#define BFProcessTotalTimeString            "BF_PROCESS_TOTAL_TIME"             // asynParamFloat64, R/O
-#define BFProcessCopyTimeString             "BF_PROCESS_COPY_TIME"              // asynParamFloat64, R/O
+#define ESTimeStampModeString               "ES_TIME_STAMP_MODE"                // asynParamInt32, R/O
+#define ESUniqueIdModeString                "ES_UNIQUE_ID_MODE"                 // asynParamInt32, R/O
+#define ESBufferSizeString                  "ES_BUFFER_SIZE"                    // asynParamInt32, R/O
+#define ESBufferQueueSizeString             "ES_BUFFER_QUEUE_SIZE"              // asynParamInt32, R/O
+#define ESMessageQueueSizeString            "ES_MESSAGE_QUEUE_SIZE"             // asynParamInt32, R/O
+#define ESMessageQueueFreeString            "ES_MESSAGE_QUEUE_FREE"             // asynParamInt32, R/O
+#define ESProcessTotalTimeString            "ES_PROCESS_TOTAL_TIME"             // asynParamFloat64, R/O
+#define ESProcessCopyTimeString             "ES_PROCESS_COPY_TIME"              // asynParamFloat64, R/O
 
 
 /** Main driver class inherited from areaDetectors ADDriver class.
@@ -26,7 +26,7 @@ typedef EGrabber<CallbackSingleThread> EGRABBER_CALLBACK;
 class ADEuresys : public ADGenICam
 {
 public:
-    ADEuresys(const char *portName, int cameraId, int numSPBuffers, int numThreads,
+    ADEuresys(const char *portName, int cameraId, int numSPBuffers,
               size_t maxMemory, int priority, int stackSize);
 
     // virtual methods to override from ADGenICam
@@ -42,15 +42,15 @@ public:
     void shutdown();
 
 private:
-    int BFTimeStampMode;
-#define FIRST_BF_PARAM BFTimeStampMode
-    int BFUniqueIdMode;
-    int BFBufferSize;
-    int BFBufferQueueSize;
-    int BFMessageQueueSize;
-    int BFMessageQueueFree;
-    int BFProcessTotalTime;
-    int BFProcessCopyTime;
+    int ESTimeStampMode;
+#define FIRST_ES_PARAM ESTimeStampMode
+    int ESUniqueIdMode;
+    int ESBufferSize;
+    int ESBufferQueueSize;
+    int ESMessageQueueSize;
+    int ESMessageQueueFree;
+    int ESProcessTotalTime;
+    int ESProcessCopyTime;
 
     /* Local methods to this class */
     asynStatus startCapture();
