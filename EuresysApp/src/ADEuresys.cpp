@@ -138,7 +138,7 @@ ADEuresys::ADEuresys(const char *portName, int boardNum, int numEGBuffers,
     setStringParam(ADSDKVersion, Euresys::Internal::EGrabberClientVersion);
     
     // shutdown on exit
-    //epicsAtExit(c_shutdown, this);
+    epicsAtExit(c_shutdown, this);
     return;
 }
 
@@ -148,7 +148,7 @@ EGRABBER_CALLBACK* ADEuresys::getGrabber() {
 
 void ADEuresys::shutdown(void)
 {
-    static const char *functionName = "shutdown";
+    //static const char *functionName = "shutdown";
     lock();
     exiting_ = 1;
     stopCapture();
