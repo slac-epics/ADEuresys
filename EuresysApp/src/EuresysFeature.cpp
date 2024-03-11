@@ -283,7 +283,7 @@ void EuresysFeature::readEnumChoices(std::vector<std::string>& enumStrings, std:
         reportError(functionName, "error calling getStrings", e.what());
     }
     enumStrings = strs;
-    epicsInt64 ival;
+    epicsInt64 ival=0;
     for (size_t i=0; i<strs.size(); i++) {
         try {
             ival = mGrabber->getInteger<RemoteModule>(mFeatureName+".Entry."+enumStrings[i]);
