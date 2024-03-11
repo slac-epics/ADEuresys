@@ -28,6 +28,10 @@ EuresysFeature::EuresysFeature(GenICamFeatureSet *set,
     }
  }
 
+void EuresysFeature::reportError(const char *functionName, const char *errorSource, const char *errorWhat) {
+    asynPrint(mAsynUser, ASYN_TRACE_ERROR, "%s::%s feature=%s %s=%s\n",
+              driverName, functionName, mFeatureName.c_str(), errorSource, errorWhat);
+}
 bool EuresysFeature::isImplemented() { 
     return mIsImplemented; 
 }
@@ -40,8 +44,7 @@ bool EuresysFeature::isAvailable() {
         value = mGrabber->getInteger<RemoteModule>(query::available(mFeatureName)) ? true : false;
     }
     catch (std::exception &e) {
-        asynPrint(mAsynUser, ASYN_TRACE_ERROR, "%s::%s query error for available=%s\n",
-                  driverName, functionName, e.what());
+        reportError(functionName, "query error for available", e.what());
     }
     return value;
  }
@@ -54,8 +57,7 @@ bool EuresysFeature::isReadable() {
         value = mGrabber->getInteger<RemoteModule>(query::readable(mFeatureName)) ? true : false;
     }
     catch (std::exception &e) {
-        asynPrint(mAsynUser, ASYN_TRACE_ERROR, "%s::%s query error for readable=%s\n",
-                  driverName, functionName, e.what());
+        reportError(functionName, "query error for readable", e.what());
     }
     return value;
 }
@@ -68,8 +70,7 @@ bool EuresysFeature::isWritable() {
         value = mGrabber->getInteger<RemoteModule>(query::writeable(mFeatureName)) ? true : false;
     }
     catch (std::exception &e) {
-        asynPrint(mAsynUser, ASYN_TRACE_ERROR, "%s::%s query error for writeable=%s\n",
-                  driverName, functionName, e.what());
+        reportError(functionName, "query error for writeable", e.what());
     }
     return value;
 }
@@ -81,8 +82,7 @@ epicsInt64 EuresysFeature::readInteger() {
         value = mGrabber->getInteger<RemoteModule>(mFeatureName);
     }
     catch (std::exception &e) {
-        asynPrint(mAsynUser, ASYN_TRACE_ERROR, "%s::%s error calling getInteger=%s\n",
-                  driverName, functionName, e.what());
+        reportError(functionName, "error calling getInteger", e.what());
     }
     return value;
 }
@@ -94,8 +94,7 @@ epicsInt64 EuresysFeature::readIntegerMin() {
         value = mGrabber->getInteger<RemoteModule>(mFeatureName+".Min");
     }
     catch (std::exception &e) {
-        asynPrint(mAsynUser, ASYN_TRACE_ERROR, "%s::%s error calling getInteger=%s\n",
-                  driverName, functionName, e.what());
+        reportError(functionName, "error calling getInteger", e.what());
     }
     return value;
 }
@@ -107,8 +106,7 @@ epicsInt64 EuresysFeature::readIntegerMax() {
         value = mGrabber->getInteger<RemoteModule>(mFeatureName+".Max");
     }
     catch (std::exception &e) {
-        asynPrint(mAsynUser, ASYN_TRACE_ERROR, "%s::%s error calling getInteger=%s\n",
-                  driverName, functionName, e.what());
+        reportError(functionName, "error calling getInteger", e.what());
     }
     return value;
 }
@@ -120,8 +118,7 @@ epicsInt64 EuresysFeature::readIncrement() {
         value = mGrabber->getInteger<RemoteModule>(mFeatureName+".Inc");
     }
     catch (std::exception &e) {
-        asynPrint(mAsynUser, ASYN_TRACE_ERROR, "%s::%s error calling getInteger=%s\n",
-                  driverName, functionName, e.what());
+        reportError(functionName, "error calling getInteger", e.what());
     }
     return value;
 }
@@ -132,8 +129,7 @@ void EuresysFeature::writeInteger(epicsInt64 value) {
         mGrabber->setInteger<RemoteModule>(mFeatureName, value);
     }
     catch (std::exception &e) {
-        asynPrint(mAsynUser, ASYN_TRACE_ERROR, "%s::%s error calling setInteger=%s\n",
-                  driverName, functionName, e.what());
+        reportError(functionName, "error calling setInteger", e.what());
     }
 }
 
@@ -144,8 +140,7 @@ bool EuresysFeature::readBoolean() {
         value = mGrabber->getInteger<RemoteModule>(mFeatureName);
     }
     catch (std::exception &e) {
-        asynPrint(mAsynUser, ASYN_TRACE_ERROR, "%s::%s error calling getInteger=%s\n",
-                  driverName, functionName, e.what());
+        reportError(functionName, "error calling getInteger", e.what());
     }
     return value ? true : false;
 }
@@ -157,8 +152,7 @@ void EuresysFeature::writeBoolean(bool bval) {
         mGrabber->setInteger<RemoteModule>(mFeatureName, value);
     }
     catch (std::exception &e) {
-        asynPrint(mAsynUser, ASYN_TRACE_ERROR, "%s::%s error calling setInteger=%s\n",
-                  driverName, functionName, e.what());
+        reportError(functionName, "error calling setInteger", e.what());
     }
 }
 
@@ -171,8 +165,7 @@ double EuresysFeature::readDouble() {
         value = mGrabber->getFloat<RemoteModule>(mFeatureName);
     }
     catch (std::exception &e) {
-        asynPrint(mAsynUser, ASYN_TRACE_ERROR, "%s::%s error calling getFloat=%s\n",
-                  driverName, functionName, e.what());
+        reportError(functionName, "error calling getFloat", e.what());
     }
     return value;
 }
@@ -183,8 +176,7 @@ void EuresysFeature::writeDouble(double value) {
         mGrabber->setFloat<RemoteModule>(mFeatureName, value);
     }
     catch (std::exception &e) {
-        asynPrint(mAsynUser, ASYN_TRACE_ERROR, "%s::%s error calling setFloat=%s\n",
-                  driverName, functionName, e.what());
+        reportError(functionName, "error calling setFloat", e.what());
     }
 }
 
@@ -195,8 +187,7 @@ double EuresysFeature::readDoubleMin() {
         value = mGrabber->getFloat<RemoteModule>(mFeatureName+".Min");
     }
     catch (std::exception &e) {
-        asynPrint(mAsynUser, ASYN_TRACE_ERROR, "%s::%s error calling getFloat=%s\n",
-                  driverName, functionName, e.what());
+        reportError(functionName, "error calling getFloat", e.what());
     }
     return value;
 }
@@ -208,8 +199,7 @@ double EuresysFeature::readDoubleMax() {
         value = mGrabber->getFloat<RemoteModule>(mFeatureName+".Max");
     }
     catch (std::exception &e) {
-        asynPrint(mAsynUser, ASYN_TRACE_ERROR, "%s::%s error calling getFloat=%s\n",
-                  driverName, functionName, e.what());
+        reportError(functionName, "error calling getFloat", e.what());
     }
     return value;
 }
@@ -221,8 +211,7 @@ int EuresysFeature::readEnumIndex() {
         value = mGrabber->getInteger<RemoteModule>(mFeatureName);
     }
     catch (std::exception &e) {
-        asynPrint(mAsynUser, ASYN_TRACE_ERROR, "%s::%s error calling getInteger=%s\n",
-                  driverName, functionName, e.what());
+        reportError(functionName, "error calling getInteger", e.what());
     }
     return (int) value;
 }
@@ -233,8 +222,7 @@ void EuresysFeature::writeEnumIndex(int value) {
         mGrabber->setInteger<RemoteModule>(mFeatureName, (epicsInt64)value);
     }
     catch (std::exception &e) {
-        asynPrint(mAsynUser, ASYN_TRACE_ERROR, "%s::%s error calling setInteger=%s\n",
-                  driverName, functionName, e.what());
+        reportError(functionName, "error calling setInteger", e.what());
     }
 }
 
@@ -245,8 +233,7 @@ std::string EuresysFeature::readEnumString() {
         value = mGrabber->getString<RemoteModule>(mFeatureName);
     }
     catch (std::exception &e) {
-        asynPrint(mAsynUser, ASYN_TRACE_ERROR, "%s::%s error calling getString=%s\n",
-                  driverName, functionName, e.what());
+        reportError(functionName, "error calling getString", e.what());
     }
     return value;
 }
@@ -261,8 +248,7 @@ std::string EuresysFeature::readString() {
         value = mGrabber->getString<RemoteModule>(mFeatureName);
     }
     catch (std::exception &e) {
-        asynPrint(mAsynUser, ASYN_TRACE_ERROR, "%s::%s error calling getString=%s\n",
-                  driverName, functionName, e.what());
+        reportError(functionName, "error calling getString", e.what());
     }
     return value;
 }
@@ -273,8 +259,7 @@ void EuresysFeature::writeString(std::string const & value) {
         mGrabber->setString<RemoteModule>(mFeatureName, value);
     }
     catch (std::exception &e) {
-        asynPrint(mAsynUser, ASYN_TRACE_ERROR, "%s::%s error calling setString=%s\n",
-                  driverName, functionName, e.what());
+        reportError(functionName, "error calling setString", e.what());
     }
 }
 
@@ -284,8 +269,7 @@ void EuresysFeature::writeCommand() {
         mGrabber->execute<RemoteModule>(mFeatureName);
     }
     catch (std::exception &e) {
-        asynPrint(mAsynUser, ASYN_TRACE_ERROR, "%s::%s error calling execute=%s\n",
-                  driverName, functionName, e.what());
+        reportError(functionName, "error calling execute", e.what());
     }
 }
 
@@ -296,12 +280,17 @@ void EuresysFeature::readEnumChoices(std::vector<std::string>& enumStrings, std:
         strs = mGrabber->getStringList<RemoteModule>(query::enumEntries(mFeatureName));
     }
     catch (std::exception &e) {
-        asynPrint(mAsynUser, ASYN_TRACE_ERROR, "%s::%s error calling getStrings=%s\n",
-                  driverName, functionName, e.what());
+        reportError(functionName, "error calling getStrings", e.what());
     }
     enumStrings = strs;
-    // Need to figure out how to read the enum values
+    epicsInt64 ival;
     for (size_t i=0; i<strs.size(); i++) {
-        enumValues.push_back(i);
+        try {
+            ival = mGrabber->getInteger<RemoteModule>(mFeatureName+".Entry."+enumStrings[i]);
+        }
+        catch (std::exception &e) {
+            reportError(functionName, "error calling getInteger", e.what());
+        }
+        enumValues.push_back(ival);
     }
 }
