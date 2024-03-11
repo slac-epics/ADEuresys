@@ -37,6 +37,7 @@ public:
     virtual void writeCommand(void);
 
 private:
+    void reportError(const char *functionName, const char *errorSource, const char *errorWhat);
     asynUser *mAsynUser;
     EGRABBER_CALLBACK *mGrabber;
     std::string mFeatureName;
