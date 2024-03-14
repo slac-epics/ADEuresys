@@ -13,9 +13,10 @@ typedef EGrabber<CallbackSingleThread> EGRABBER_CALLBACK;
 #define ESTimeStampModeString               "ES_TIME_STAMP_MODE"                // asynParamInt32, R/O
 #define ESUniqueIdModeString                "ES_UNIQUE_ID_MODE"                 // asynParamInt32, R/O
 #define ESBufferSizeString                  "ES_BUFFER_SIZE"                    // asynParamInt32, R/O
-#define ESBufferQueueSizeString             "ES_BUFFER_QUEUE_SIZE"              // asynParamInt32, R/O
-#define ESMessageQueueSizeString            "ES_MESSAGE_QUEUE_SIZE"             // asynParamInt32, R/O
-#define ESMessageQueueFreeString            "ES_MESSAGE_QUEUE_FREE"             // asynParamInt32, R/O
+#define ESOutputQueueString                 "ES_OUTPUT_QUEUE"                   // asynParamInt32, R/O
+#define ESRejectedFramesString              "ES_REJECTED_FRAMES"                // asynParamInt32, R/O
+#define ESCRCErrorCountString               "ES_CRC_ERROR_COUNT"                // asynParamInt32, R/O
+#define ESResetErrorCountsString            "ES_RESET_ERROR_COUNTS"             // asynParamInt32, R/O
 #define ESProcessTotalTimeString            "ES_PROCESS_TOTAL_TIME"             // asynParamFloat64, R/O
 #define ESProcessCopyTimeString             "ES_PROCESS_COPY_TIME"              // asynParamFloat64, R/O
 
@@ -30,9 +31,8 @@ public:
               size_t maxMemory, int priority, int stackSize);
 
     // virtual methods to override from ADGenICam
-    virtual asynStatus writeInt32( asynUser *pasynUser, epicsInt32 value);
-    //virtual asynStatus writeFloat64( asynUser *pasynUser, epicsFloat64 value);
     void report(FILE *fp, int details);
+    virtual asynStatus writeInt32(asynUser *pasynUser, epicsInt32 value);
     virtual GenICamFeature *createFeature(GenICamFeatureSet *set, 
                                           std::string const & asynName, asynParamType asynType, int asynIndex,
                                           std::string const & featureName, GCFeatureType_t featureType);
@@ -46,9 +46,10 @@ private:
 #define FIRST_ES_PARAM ESTimeStampMode
     int ESUniqueIdMode;
     int ESBufferSize;
-    int ESBufferQueueSize;
-    int ESMessageQueueSize;
-    int ESMessageQueueFree;
+    int ESOutputQueue;
+    int ESRejectedFrames;
+    int ESCRCErrorCount;
+    int ESResetErrorCounts;
     int ESProcessTotalTime;
     int ESProcessCopyTime;
 
@@ -57,7 +58,8 @@ private:
     asynStatus stopCapture();
     asynStatus connectCamera();
     asynStatus disconnectCamera();
-    asynStatus setROI();
+    asynStatus readStatus();
+    void resetErrorCounts();
     void reportNode(FILE *fp, const char *nodeName, int level);
 
     /* Data */
