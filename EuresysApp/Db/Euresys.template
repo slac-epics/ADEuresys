@@ -41,17 +41,39 @@ record(bi, "$(P)$(R)UniqueIdMode_RBV")
    field(SCAN, "I/O Intr")
 }
 
-record(longin, "$(P)$(R)BufferSize")
+record(longin, "$(P)$(R)ESBufferSize")
 {
    field(DTYP, "asynInt32")
    field(INP,  "@asyn($(PORT) 0)ES_BUFFER_SIZE")
    field(SCAN, "I/O Intr")
 }
 
-record(longin, "$(P)$(R)BufferQueueSize")
+record(longin, "$(P)$(R)OutputQueue")
 {
    field(DTYP, "asynInt32")
-   field(INP,  "@asyn($(PORT) 0)ES_BUFFER_QUEUE_SIZE")
+   field(INP,  "@asyn($(PORT) 0)ES_OUTPUT_QUEUE")
+   field(SCAN, "I/O Intr")
+}
+
+record(longin, "$(P)$(R)RejectedFrames")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT) 0)ES_REJECTED_FRAMES")
+   field(SCAN, "I/O Intr")
+}
+
+record(bo, "$(P)$(R)ResetErrorCounts")
+{
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT) 0)ES_RESET_ERROR_COUNTS")
+   field(ZNAM, "Done")
+   field(ONAM, "Reset")
+}
+
+record(longin, "$(P)$(R)CRCErrors")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT) 0)ES_CRC_ERRORS")
    field(SCAN, "I/O Intr")
 }
 
