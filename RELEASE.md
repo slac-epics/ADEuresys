@@ -20,12 +20,11 @@ R1-0 (March XXX, 2024)
 -------------------
 * Initial release.
   The following things need to be fixed before the first release:
-  - Change Integer features to obey Increment.  This is in ADGenICam
-  - Get Mono10 and Mono12 working
   - Build trigger cable, test trigger modes
   - Get Linux build working
+  - Test HDF speed with NDPluginScatter and 2 HDF5 plugins.
   - Ask Euresy
-    - What statistics are available (frame loss, etc.)
-    - How to read integer Value of each Enum feature entry
-    - How to determine the type of each Feature (integer, float, enum, command, etc.)
-    - Is unique frame number available?
+    - Why can't EGrabber Studio display the ViewWorks camera?
+      - They have asked for trace output.
+    - When using Single or Multiple mode is there a way to know when acquisition is complete? 
+      - They answered this, need to implement.
