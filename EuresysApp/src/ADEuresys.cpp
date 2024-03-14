@@ -14,7 +14,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include <set>
 #include <string>
 
 #include <epicsEvent.h>
@@ -115,15 +114,16 @@ ADEuresys::ADEuresys(const char *portName, int boardNum, int numEGBuffers,
     createParam(ESTimeStampModeString,              asynParamInt32,   &ESTimeStampMode);
     createParam(ESUniqueIdModeString,               asynParamInt32,   &ESUniqueIdMode);
     createParam(ESBufferSizeString,                 asynParamInt32,   &ESBufferSize);
-    createParam(ESBufferQueueSizeString,            asynParamInt32,   &ESBufferQueueSize);
-    createParam(ESMessageQueueSizeString,           asynParamInt32,   &ESMessageQueueSize);
-    createParam(ESMessageQueueFreeString,           asynParamInt32,   &ESMessageQueueFree);
+    createParam(ESOutputQueueString,                asynParamInt32,   &ESOutputQueue);
+    createParam(ESRejectedFramesString,             asynParamInt32,   &ESRejectedFrames);
+    createParam(ESCRCErrorCountString,             asynParamInt32,    &ESCRCErrorCount);
+    createParam(ESResetErrorCountsString,           asynParamInt32,   &ESResetErrorCounts);
     createParam(ESProcessTotalTimeString,         asynParamFloat64,   &ESProcessTotalTime);
     createParam(ESProcessCopyTimeString,          asynParamFloat64,   &ESProcessCopyTime);
 
     /* Set initial values of some parameters */
     setIntegerParam(ESBufferSize, numEGBuffers);
-    setIntegerParam(ESBufferQueueSize, 0);
+    setIntegerParam(ESOutputQueue, 0);
     setIntegerParam(NDDataType, NDUInt8);
     setIntegerParam(NDColorMode, NDColorModeMono);
     setIntegerParam(NDArraySizeZ, 0);
@@ -136,6 +136,7 @@ ADEuresys::ADEuresys(const char *portName, int boardNum, int numEGBuffers,
                   DRIVER_VERSION, DRIVER_REVISION, DRIVER_MODIFICATION);
     setStringParam(NDDriverVersion,driverVersionString);
     setStringParam(ADSDKVersion, Euresys::Internal::EGrabberClientVersion);
+    resetErrorCounts();
     
     // shutdown on exit
     epicsAtExit(c_shutdown, this);
@@ -163,6 +164,7 @@ GenICamFeature *ADEuresys::createFeature(GenICamFeatureSet *set,
 }
 
 
+// This function is called from the EGrabber NewBufferData callback thread
 void ADEuresys::processFrame(ScopedBuffer &buf)
 {
     NDArray *pRaw = 0;
@@ -184,6 +186,8 @@ void ADEuresys::processFrame(ScopedBuffer &buf)
     int numImagesCounter;
     int imageMode;
     int arrayCallbacks;
+    epicsUInt64 timeStamp;
+    epicsUInt64 frameId;
     BufferInfo bufferInfo;
     epicsTime t1, t2, t3, t4;
     static const char *functionName = "processFrame";
@@ -202,9 +206,26 @@ void ADEuresys::processFrame(ScopedBuffer &buf)
     nRows = bufferInfo.deliveredHeight;
     pixelSize = ((bufferInfo.bitsPerPixel - 1) / 8) + 1;
     frameSize = bufferInfo.size;
+    timeStamp = buf.getInfo<uint64_t>(gc::BUFFER_INFO_TIMESTAMP);
+    frameId = buf.getInfo<uint64_t>(gc::BUFFER_INFO_FRAMEID);
     asynPrint(pasynUserSelf, ASYN_TRACE_WARNING, 
-              "%s::%s nCols=%d, nRows=%d, pixelSize=%d, frameSize=%d\n",
-              driverName, functionName, (int)nCols, (int)nRows, pixelSize, (int)frameSize);
+              "%s::%s nCols=%d, nRows=%d, pixelSize=%d, frameSize=%d, pixelFormat=%s, frameId=%llu, timeStamp=%llu\n",
+              driverName, functionName, (int)nCols, (int)nRows, pixelSize, (int)frameSize, bufferInfo.pixelFormat.c_str(), frameId, timeStamp);
+    switch (pixelSize) {
+        case 1:
+            dataType = NDUInt8;
+            break;
+        case 2:
+            dataType = NDUInt16;
+            break;
+        case 4:
+            dataType = NDUInt32;
+            break;
+        default:
+            asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
+                      "%s::%s error unexpected pixelSize=%d\n",
+                      driverName, functionName, pixelSize);
+    }
 
     if (numColors == 1) {
         nDims = 2;
@@ -247,7 +268,6 @@ void ADEuresys::processFrame(ScopedBuffer &buf)
             goto done;
         }
         if (pData) {
-            asynPrint(pasynUserSelf, ASYN_TRACE_WARNING, "%s::%s copying data\n", driverName, functionName);
             unlock();
             t2 = epicsTime::getCurrent();
             memcpy(pRaw->pData, pData, dataSize);
@@ -269,6 +289,7 @@ void ADEuresys::processFrame(ScopedBuffer &buf)
         // Put the frame number into the buffer
         getIntegerParam(ESUniqueIdMode, &uniqueIdMode);
         if (uniqueIdMode == UniqueIdCamera) {
+            pRaw->uniqueId = (int)frameId;
         } else {
             pRaw->uniqueId = numImagesCounter;
         }
@@ -277,6 +298,7 @@ void ADEuresys::processFrame(ScopedBuffer &buf)
         getIntegerParam(ESTimeStampMode, &timeStampMode);
         // Set the timestamps in the buffer
         if (timeStampMode == TimeStampCamera) {
+            pRaw->timeStamp = (double)timeStamp;
         } else {
             pRaw->timeStamp = pRaw->epicsTS.secPastEpoch + pRaw->epicsTS.nsec/1e9;
         }
@@ -297,10 +319,8 @@ void ADEuresys::processFrame(ScopedBuffer &buf)
 
     if (arrayCallbacks) {
         // Call the NDArray callback
-        asynPrint(pasynUserSelf, ASYN_TRACE_WARNING, "%s::%s calling doCallbacksGenericPointer\n", driverName, functionName);
         doCallbacksGenericPointer(pRaw, NDArrayData, 0);
         // Release the NDArray buffer now that we are done with it.
-        // After the callback just above we don't need it anymore
         if (pRaw) pRaw->release();
         pRaw = NULL;
     }
@@ -309,7 +329,7 @@ void ADEuresys::processFrame(ScopedBuffer &buf)
     if ((imageMode == ADImageSingle) ||
         ((imageMode == ADImageMultiple) && (numImagesCounter >= numImages))) {
         setIntegerParam(ADStatus, ADStatusIdle);
-        asynPrint(pasynUserSelf, ASYN_TRACE_WARNING, "%s::%s calling stopCapture\n", driverName, functionName);
+        asynPrint(pasynUserSelf, ASYN_TRACE_FLOW, "%s::%s calling stopCapture\n", driverName, functionName);
         stopCapture();
     }
     t4 = epicsTime::getCurrent();
@@ -321,60 +341,51 @@ void ADEuresys::processFrame(ScopedBuffer &buf)
     unlock();
 }
 
+asynStatus ADEuresys::readStatus()
+{
+    mGrabber_->setString<StreamModule>("EventSelector", "RejectedFrame");
+    epicsUInt64 rejectedFrames = mGrabber_->getInteger<StreamModule>("EventCount");
+    setIntegerParam(ESRejectedFrames, (int)rejectedFrames);
+    epicsUInt64 CRCErrors = mGrabber_->getInteger<InterfaceModule>("CxpStreamDataPacketCrcErrorCount");
+    setIntegerParam(ESCRCErrorCount, (int)CRCErrors);
+    epicsUInt64 outputQueue = mGrabber_->getInfo<StreamModule, uint64_t>(GenTL::STREAM_INFO_NUM_AWAIT_DELIVERY);
+    setIntegerParam(ESOutputQueue, (int)outputQueue);
+   
+    return ADGenICam::readStatus();
+}
+
 asynStatus ADEuresys::writeInt32(asynUser *pasynUser, epicsInt32 value)
 {
     int function = pasynUser->reason;
-    int addr;
     //static const char *functionName = "writeInt32";
-  
-    this->getAddress(pasynUser, &addr);
-    if ((function == ADSizeX) ||
-        (function == ADSizeY) ||
-        (function == ADMinX)  ||
-        (function == ADMinY)) {
 
-        setIntegerParam(addr, function, value);
-        return this->setROI();
+    if (function == ESResetErrorCounts) {
+        resetErrorCounts();
     }
     return ADGenICam::writeInt32(pasynUser, value);
 }
 
-asynStatus ADEuresys::setROI() 
+void ADEuresys::resetErrorCounts()
 {
-    int minX, minY, sizeX, sizeY;
-    //static const char *functionName = "setROI";
+    //static const char *functionName = "resetErrorCounts";
 
-    stopCapture();
-
-    getIntegerParam(ADMinX, &minX);
-    getIntegerParam(ADMinY, &minY);
-    getIntegerParam(ADSizeX, &sizeX);
-    getIntegerParam(ADSizeY, &sizeY);
-
-    GenICamFeature *TLParamsLocked = mGCFeatureSet.getByName("TLParamsLocked");
-    GenICamFeature *Height         = mGCFeatureSet.getByName("Height");
-    GenICamFeature *Width          = mGCFeatureSet.getByName("Width");
-    GenICamFeature *OffsetX        = mGCFeatureSet.getByName("OffsetX");
-    GenICamFeature *OffsetY        = mGCFeatureSet.getByName("OffsetY");
-    if (TLParamsLocked) TLParamsLocked->writeInteger(0);
-    Width->writeInteger(sizeX);
-    Height->writeInteger(sizeY);
-    OffsetX->writeInteger(minX);
-    OffsetY->writeInteger(minY);
-    if (TLParamsLocked) TLParamsLocked->writeInteger(1);
-    mGCFeatureSet.readAll();
-    callParamCallbacks();
-
-    mGrabber_->reallocBuffers(numEGBuffers_);
-
-    return asynSuccess;
+    mGrabber_->setString<StreamModule>("EventSelector", "RejectedFrame");
+    mGrabber_->execute<StreamModule>("EventCountReset");
+    mGrabber_->execute<InterfaceModule>("CxpStreamDataPacketCrcErrorCountReset");
 }
 
 asynStatus ADEuresys::startCapture()
 {
     //static const char *functionName = "startCapture";
     
-    mGrabber_->start();
+    int imageMode, numImages;
+    getIntegerParam(ADImageMode, &imageMode);
+    getIntegerParam(ADNumImages, &numImages);
+    if (imageMode == ADImageSingle) numImages = 1;
+    if (imageMode == ADImageContinuous) numImages = -1;
+    setIntegerParam(ADNumImagesCounter, 0);
+    mGrabber_->reallocBuffers(numEGBuffers_);
+    mGrabber_->start(numImages);
     return asynSuccess;
 }
 
@@ -384,6 +395,8 @@ asynStatus ADEuresys::stopCapture()
 
     mGrabber_->stop();
     setShutter(0);
+    setIntegerParam(ADAcquire, 0);
+    callParamCallbacks();
     return asynSuccess;
 }
 
