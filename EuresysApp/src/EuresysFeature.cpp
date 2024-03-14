@@ -291,6 +291,6 @@ void EuresysFeature::readEnumChoices(std::vector<std::string>& enumStrings, std:
         catch (std::exception &e) {
             reportError(functionName, "error calling getInteger", e.what());
         }
-        enumValues.push_back(ival);
+        enumValues.push_back((int)ival);
     }
 }
