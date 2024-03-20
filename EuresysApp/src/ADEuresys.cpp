@@ -121,6 +121,7 @@ ADEuresys::ADEuresys(const char *portName, int boardNum, int numEGBuffers,
     createParam(ESProcessTotalTimeString,         asynParamFloat64,   &ESProcessTotalTime);
     createParam(ESProcessCopyTimeString,          asynParamFloat64,   &ESProcessCopyTime);
     createParam(ESConvertPixelFormatString,         asynParamInt32,   &ESConvertPixelFormat);
+    createParam(ESUnpackingModeString,              asynParamInt32,   &ESUnpackingMode);
 
     /* Set initial values of some parameters */
     setIntegerParam(ESBufferSize, numEGBuffers);
@@ -362,6 +363,9 @@ asynStatus ADEuresys::writeInt32(asynUser *pasynUser, epicsInt32 value)
 
     if (function == ESResetErrorCounts) {
         resetErrorCounts();
+    } 
+    else if (function == ESUnpackingMode) {
+        mGrabber_->setInteger<StreamModule>("UnpackingMode", value);
     }
     return ADGenICam::writeInt32(pasynUser, value);
 }

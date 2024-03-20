@@ -78,6 +78,31 @@ record(mbbi, "$(P)$(R)ConvertPixelFormat_RBV") {
   field(INP,  "@asyn($(PORT) 0)ES_CONVERT_PIXEL_FORMAT")
 }
 
+## Convert pixel format
+record(mbbo, "$(P)$(R)UnpackingMode") {
+  field(PINI, "YES")
+  field(DTYP, "asynInt32")
+  field(ZRVL, "0")
+  field(ZRST, "LSB")
+  field(ONVL, "1")
+  field(ONST, "MSB")
+  field(TWVL, "2")
+  field(TWST, "Off")
+  field(OUT,  "@asyn($(PORT) 0)ES_UNPACKING_MODE")
+}
+
+record(mbbi, "$(P)$(R)UnpackingMode_RBV") {
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(ZRVL, "0")
+  field(ZRST, "LSB")
+  field(ONVL, "1")
+  field(ONST, "MSB")
+  field(TWVL, "2")
+  field(TWST, "Off")
+  field(INP,  "@asyn($(PORT) 0)ES_UNPACKING_MODE")
+}
+
 record(longin, "$(P)$(R)ESBufferSize")
 {
    field(DTYP, "asynInt32")
