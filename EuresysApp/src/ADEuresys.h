@@ -19,6 +19,7 @@ typedef EGrabber<CallbackSingleThread> EGRABBER_CALLBACK;
 #define ESResetErrorCountsString            "ES_RESET_ERROR_COUNTS"             // asynParamInt32, R/O
 #define ESProcessTotalTimeString            "ES_PROCESS_TOTAL_TIME"             // asynParamFloat64, R/O
 #define ESProcessCopyTimeString             "ES_PROCESS_COPY_TIME"              // asynParamFloat64, R/O
+#define ESConvertPixelFormatString          "ES_CONVERT_PIXEL_FORMAT"           // asynParamInt32, R/W
 
 
 /** Main driver class inherited from areaDetectors ADDriver class.
@@ -52,6 +53,7 @@ private:
     int ESResetErrorCounts;
     int ESProcessTotalTime;
     int ESProcessCopyTime;
+    int ESConvertPixelFormat;
 
     /* Local methods to this class */
     asynStatus startCapture();

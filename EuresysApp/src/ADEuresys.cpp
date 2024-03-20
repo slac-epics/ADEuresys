@@ -120,6 +120,7 @@ ADEuresys::ADEuresys(const char *portName, int boardNum, int numEGBuffers,
     createParam(ESResetErrorCountsString,           asynParamInt32,   &ESResetErrorCounts);
     createParam(ESProcessTotalTimeString,         asynParamFloat64,   &ESProcessTotalTime);
     createParam(ESProcessCopyTimeString,          asynParamFloat64,   &ESProcessCopyTime);
+    createParam(ESConvertPixelFormatString,         asynParamInt32,   &ESConvertPixelFormat);
 
     /* Set initial values of some parameters */
     setIntegerParam(ESBufferSize, numEGBuffers);
