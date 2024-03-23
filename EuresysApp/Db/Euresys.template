@@ -78,7 +78,7 @@ record(mbbi, "$(P)$(R)ConvertPixelFormat_RBV") {
   field(INP,  "@asyn($(PORT) 0)ES_CONVERT_PIXEL_FORMAT")
 }
 
-## Convert pixel format
+## Unpacking mode
 record(mbbo, "$(P)$(R)UnpackingMode") {
   field(PINI, "YES")
   field(DTYP, "asynInt32")
@@ -124,19 +124,19 @@ record(longin, "$(P)$(R)RejectedFrames")
    field(SCAN, "I/O Intr")
 }
 
+record(longin, "$(P)$(R)CRCErrors")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT) 0)ES_CRC_ERROR_COUNT")
+   field(SCAN, "I/O Intr")
+}
+
 record(bo, "$(P)$(R)ResetErrorCounts")
 {
    field(DTYP, "asynInt32")
    field(OUT,  "@asyn($(PORT) 0)ES_RESET_ERROR_COUNTS")
    field(ZNAM, "Done")
    field(ONAM, "Reset")
-}
-
-record(longin, "$(P)$(R)CRCErrors")
-{
-   field(DTYP, "asynInt32")
-   field(INP,  "@asyn($(PORT) 0)ES_CRC_ERROR_COUNT")
-   field(SCAN, "I/O Intr")
 }
 
 record(ai, "$(P)$(R)ProcessTotalTime")
