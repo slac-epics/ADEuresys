@@ -29,7 +29,7 @@ typedef EGrabber<CallbackSingleThread> EGRABBER_CALLBACK;
 class ADEuresys : public ADGenICam
 {
 public:
-    ADEuresys(const char *portName, int cameraId, int numSPBuffers,
+    ADEuresys(const char *portName, const char* cameraId, int numESBuffers,
               size_t maxMemory, int priority, int stackSize);
 
     // virtual methods to override from ADGenICam
@@ -68,7 +68,6 @@ private:
 
     /* Data */
     EGRABBER_CALLBACK *mGrabber_;
-    int boardNum_;
     int numEGBuffers_;
     int bitsPerPixel_;
     int exiting_;
