@@ -1,0 +1,15 @@
+Benchmark with Euresys CoaxLink CXP-12 card.
+
+Microtron MC2066 camera.  1920x1080 pixels
+HDF5 test: 100,000 frames, 2000 frame queue, no lost frames
+Mono8 mode, Linux
+Max frame rate: 2247 frames/s
+Max HDF5 rate: 1400 frames/s
+
+Mono10 mode, Linux
+Max frame rate: 1667 (1798)
+Max HDF5 rate: 650
+Max Capture rate: 1667
+
+
+
