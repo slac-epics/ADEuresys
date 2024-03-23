@@ -8,8 +8,10 @@ include $(TOP)/configure/CONFIG
 DBD += ADEuresysSupport.dbd
 
 USR_INCLUDES += -I$(EURESYS_EGRABBER_INCLUDE)
-#USR_INCLUDES_Linux += -I$(BITFLOW_UTILS_INCLUDE)/BFGTLUtil
-#USR_LDFLAGS_WIN32 += /LIBPATH:$(BITFLOW_SDK_LIB)
+
+# This flag significantly speeds up the compiling.
+# Comment out for debugging.
+USR_CXXFLAGS_Linux += -g0
 
 LIBRARY_IOC_Linux += ADEuresys
 LIBRARY_IOC_WIN32 += ADEuresys
