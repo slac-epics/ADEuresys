@@ -53,17 +53,17 @@ typedef enum {
  * This function need to be called once for each camera to be used by the IOC. A call to this
  * function instantiates one object from the ADEuresys class.
  * \param[in] portName asyn port name to assign to the camera.
- * \param[in] boardNum The board number.  Default is 0.
+ * \param[in] cameraId  A string identifying the camera to control.
  * \param[in] numEGBuffers The number of buffers to allocate in EGrabber.
  *            If set to 0 or omitted the default of 100 will be used.
  * \param[in] maxMemory Maximum memory (in bytes) that this driver is allowed to allocate. 0=unlimited.
  * \param[in] priority The EPICS thread priority for this driver.  0=use asyn default.
  * \param[in] stackSize The size of the stack for the EPICS port thread. 0=use asyn default.
  */
-extern "C" int ADEuresysConfig(const char *portName, int boardNum, int numEGBuffers,
+extern "C" int ADEuresysConfig(const char *portName, const char* cameraId, int numEGBuffers,
                                size_t maxMemory, int priority, int stackSize)
 {
-    new ADEuresys(portName, boardNum, numEGBuffers, maxMemory, priority, stackSize);
+    new ADEuresys(portName, cameraId, numEGBuffers, maxMemory, priority, stackSize);
     return asynSuccess;
 }
 
@@ -90,17 +90,17 @@ static void c_shutdown(void *arg)
 
 /** Constructor for the ADEuresys class
  * \param[in] portName asyn port name to assign to the camera.
- * \param[in] boardNum The board number.  Default is 0.
+ * \param[in] cameraId  A string identifying the camera to control.
  * \param[in] numEGBuffers The number of buffers to allocate in EGrabber.
  *            If set to 0 or omitted the default of 100 will be used.
  * \param[in] maxMemory Maximum memory (in bytes) that this driver is allowed to allocate. 0=unlimited.
  * \param[in] priority The EPICS thread priority for this driver.  0=use asyn default.
  * \param[in] stackSize The size of the stack for the EPICS port thread. 0=use asyn default.
  */
-ADEuresys::ADEuresys(const char *portName, int boardNum, int numEGBuffers,
+ADEuresys::ADEuresys(const char *portName, const char* cameraId, int numEGBuffers,
                      size_t maxMemory, int priority, int stackSize )
     : ADGenICam(portName, maxMemory, priority, stackSize),
-    boardNum_(boardNum), numEGBuffers_(numEGBuffers), exiting_(0), uniqueId_(0)
+    numEGBuffers_(numEGBuffers), exiting_(0), uniqueId_(0)
 {
     //static const char *functionName = "ADEuresys";
     
@@ -422,7 +422,7 @@ void ADEuresys::report(FILE *fp, int details)
 }
 
 static const iocshArg configArg0 = {"Port name", iocshArgString};
-static const iocshArg configArg1 = {"boardNum", iocshArgInt};
+static const iocshArg configArg1 = {"Camera ID", iocshArgString};
 static const iocshArg configArg2 = {"# EGrabber buffers", iocshArgInt};
 static const iocshArg configArg3 = {"maxMemory", iocshArgInt};
 static const iocshArg configArg4 = {"priority", iocshArgInt};
@@ -436,7 +436,7 @@ static const iocshArg * const configArgs[] = {&configArg0,
 static const iocshFuncDef configADEuresys = {"ADEuresysConfig", 6, configArgs};
 static void configCallFunc(const iocshArgBuf *args)
 {
-    ADEuresysConfig(args[0].sval, args[1].ival, args[2].ival, args[3].ival, 
+    ADEuresysConfig(args[0].sval, args[1].sval, args[2].ival, args[3].ival, 
                     args[4].ival, args[5].ival);
 }
 
