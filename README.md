@@ -8,8 +8,9 @@ These can control CoaXPress cameras from many vendors.
 This driver derives from the [ADGenICam](https://github.com/areaDetector/ADGenICam) base class.
 
 ADEuresys runs on both Windows and Linux.
-The user must install the EGrabber package locally on both Windows and Linux.
-configure/CONFIG_SITE or CONFIG_SITE.$(EPICS_HOST_ARCH).Common must be edited to point to the local install.
+
+ - The user must install the EGrabber package locally on both Windows and Linux.
+ - configure/CONFIG_SITE or CONFIG_SITE.$(EPICS_HOST_ARCH).Common must be edited to point to the local install.
 
 Additional information:
 * [Documentation](https://areadetector.github.io/areaDetector/ADEuresys/ADEuresys.html)
