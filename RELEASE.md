@@ -16,15 +16,15 @@ files respectively, in the configure/ directory of the appropriate release of th
 Release Notes
 =============
 
-R1-0 (March XXX, 2024)
+R1-0 (April XXX, 2024)
 -------------------
 * Initial release.
   The following things need to be fixed before the first release:
   - Build trigger cable, test trigger modes
-  - Get Linux build working
-  - Test HDF speed with NDPluginScatter and 2 HDF5 plugins.
   - Ask Euresy
     - Why can't EGrabber Studio display the ViewWorks camera?
       - They have asked for trace output.
     - When using Single or Multiple mode is there a way to know when acquisition is complete? 
       - They answered this, need to implement.
+    - Why can't it reach the maximum frame rate of 1798 frames/s on Mikrotron in Mono10 mode?
+      On Linux it does 1668 and on Windows 1703.
