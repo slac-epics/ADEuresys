@@ -452,7 +452,7 @@ This allows calculating the file saving frame rate and data rate.
      - 3.7
      - 1.11
 
-I tried two schemes to see if I could increase the file saving rate to keep up with the Mikrotron camera.
+I tried three schemes to see if I could increase the file saving rate to keep up with the Mikrotron camera.
 
 The first was to load 2 NDFileHDF5 plugins, and use NDPluginScatter to send every other frame to each
 plugin.  If file rate was limited by CPU load on the HDF5 plugin this should improve performance.
@@ -466,6 +466,14 @@ pvaDriver IOCs.  NDPluginScatter on the ADEuresys IOC sends every other frame to
 This did not work because the PVA links could not keep up.  I also found that the PVA links dropped
 frames even at 100 frames/s.  This needs to be investigated, because PVA should not be dropping frames
 under low loads.
+
+The third scheme was to write a new file plugin called NDFileJRaw.  This plugin uses a simple raw format,
+using the low-level OS-specific calls to write the NDArrays.  The "J" in JRaw indicates a future plan
+to put JSON metadata in the file to indicate the data format and size, and possibly to store NDAttributes.
+I found that writing files with JRaw, both in Stream mode and Capture mode, did not result in a
+statistically significant improvement over HDF5.  In some cases it was faster, but in some it was
+slower.  The results are in the benchmarks.txt file in the docs/ADEuresys directory.  For brevity
+I have not included them in the table above.
 
 MEDM screens
 ------------
