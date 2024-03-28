@@ -323,7 +323,10 @@ void ADEuresys::processFrame(ScopedBuffer &buf)
         // Call the NDArray callback
         doCallbacksGenericPointer(pRaw, NDArrayData, 0);
         // Release the NDArray buffer now that we are done with it.
-        if (pRaw) pRaw->release();
+        if (this->pArrays[0]) {
+            this->pArrays[0]->release();
+        }
+        this->pArrays[0] = pRaw;
         pRaw = NULL;
     }
 
