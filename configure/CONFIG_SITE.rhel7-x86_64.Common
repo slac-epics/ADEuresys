@@ -1,0 +1,2 @@
+EURESYS_EGRABBER_TOP = /cds/group/pcds/package/euresys/egrabber-linux-x86_64-25.02.0.39
+EURESYS_EGRABBER_INCLUDE = $(EURESYS_EGRABBER_TOP)/include
