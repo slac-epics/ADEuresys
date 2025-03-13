@@ -5,6 +5,19 @@
 
 include "ADGenICam.template"
 
+
+record( stringin, "$(P)$(R)CamType" )
+{
+	field( VAL,   "Euresys FrameGrabber" )
+	field( PINI,  "YES" )
+}
+
+record( stringin, "$(P)$(R)CamTypeScreen" )
+{
+	field( VAL,   "ADEuresysScreens/EuresysCamType.edl" )
+	field( PINI,  "YES" )
+}
+
 record(bo, "$(P)$(R)TimeStampMode")
 {
    field(PINI, "YES")
