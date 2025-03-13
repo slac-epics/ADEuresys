@@ -10,15 +10,15 @@ h 825
 font "helvetica-medium-r-18.0"
 ctlFont "helvetica-bold-r-10.0"
 btnFont "helvetica-medium-r-18.0"
-fgColor rgb 0 0 0
-bgColor rgb 47872 47872 47872
-textColor rgb 0 0 0
-ctlFgColor1 rgb 64256 62208 18944
-ctlFgColor2 rgb 60928 46592 11008
-ctlBgColor1 rgb 52480 24832 0
-ctlBgColor2 rgb 65280 45056 65280
-topShadowColor rgb 44544 19968 48128
-botShadowColor rgb 13312 13056 34304
+fgColor index 14
+bgColor index 4
+textColor index 14
+ctlFgColor1 index 25
+ctlFgColor2 index 15
+ctlBgColor1 index 5
+ctlBgColor2 index 12
+topShadowColor index 1
+botShadowColor index 13
 showGrid
 snapToGrid
 gridSize 4
@@ -34,9 +34,9 @@ x 0
 y 4
 w 1069
 h 24
-lineColor rgb 55808 55808 55808
+lineColor index 2
 fill
-fillColor rgb 55808 55808 55808
+fillColor index 2
 lineWidth 0
 endObjectProperties
 
@@ -52,7 +52,7 @@ w 1070
 h 25
 font "helvetica-medium-r-18.0"
 fontAlign "center"
-fgColor rgb 2560 0 47104
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -83,10 +83,10 @@ x 5
 y 380
 w 350
 h 80
-fgColor rgb 0 0 0
-bgColor rgb 65280 65280 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
 displaySource "file"
 file "ADPlugins.edl"
 sizeOfs 5
@@ -126,10 +126,10 @@ x 360
 y 35
 w 350
 h 165
-fgColor rgb 0 0 0
-bgColor rgb 65280 65280 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
 displaySource "file"
 file "ADShutter.edl"
 sizeOfs 5
@@ -169,10 +169,10 @@ x 360
 y 710
 w 350
 h 110
-fgColor rgb 0 0 0
-bgColor rgb 65280 65280 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
 displaySource "file"
 file "ADAttrFile.edl"
 sizeOfs 5
@@ -212,10 +212,10 @@ x 5
 y 625
 w 350
 h 160
-fgColor rgb 0 0 0
-bgColor rgb 65280 65280 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
 displaySource "file"
 file "ADBuffers.edl"
 sizeOfs 5
@@ -255,10 +255,10 @@ x 6
 y 35
 w 350
 h 340
-fgColor rgb 0 0 0
-bgColor rgb 65280 65280 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
 displaySource "file"
 file "ADSetup.edl"
 sizeOfs 5
@@ -300,7 +300,7 @@ w 240
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
-fgColor rgb 0 0 0
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -323,9 +323,9 @@ x 837
 y 37
 w 106
 h 20
-lineColor rgb 55808 55808 55808
+lineColor index 2
 fill
-fillColor rgb 55808 55808 55808
+fillColor index 2
 lineWidth 0
 endObjectProperties
 
@@ -341,7 +341,7 @@ w 60
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "center"
-fgColor rgb 2560 0 47104
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -359,8 +359,8 @@ x 715
 y 35
 w 350
 h 255
-lineColor rgb 0 0 0
-fillColor rgb 0 0 0
+lineColor index 14
+fillColor index 14
 lineWidth 0
 endObjectProperties
 
@@ -387,10 +387,10 @@ x 360
 y 205
 w 350
 h 500
-fgColor rgb 0 0 0
-bgColor rgb 65280 65280 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
 displaySource "file"
 file "ADGenICamCollect.edl"
 sizeOfs 5
@@ -430,10 +430,10 @@ x 5
 y 465
 w 350
 h 155
-fgColor rgb 0 0 0
-bgColor rgb 65280 65280 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
 displaySource "file"
 file "ADGenICamTrigger.edl"
 sizeOfs 5
@@ -464,10 +464,10 @@ controlPv "$(P)$(R)OutputQueue"
 format "decimal"
 font "helvetica-medium-r-14.0"
 fontAlign "left"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor index 15
+bgColor index 12
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -488,10 +488,10 @@ controlPv "$(P)$(R)ESBufferSize"
 format "decimal"
 font "helvetica-medium-r-14.0"
 fontAlign "left"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor index 15
+bgColor index 12
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -510,7 +510,7 @@ w 120
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
-fgColor rgb 0 0 0
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -530,7 +530,7 @@ w 110
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
-fgColor rgb 0 0 0
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -565,10 +565,10 @@ controlPv "$(P)$(R)ProcessTotalTime"
 format "decimal"
 font "helvetica-medium-r-14.0"
 fontAlign "left"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor index 15
+bgColor index 12
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -589,10 +589,10 @@ controlPv "$(P)$(R)ProcessCopyTime"
 format "decimal"
 font "helvetica-medium-r-14.0"
 fontAlign "left"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor index 15
+bgColor index 12
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -611,7 +611,7 @@ w 150
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
-fgColor rgb 0 0 0
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -631,7 +631,7 @@ w 140
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
-fgColor rgb 0 0 0
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -671,10 +671,10 @@ controlPv "$(P)$(R)RejectedFrames"
 format "decimal"
 font "helvetica-medium-r-14.0"
 fontAlign "left"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor index 15
+bgColor index 12
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -695,10 +695,10 @@ controlPv "$(P)$(R)CRCErrors"
 format "decimal"
 font "helvetica-medium-r-14.0"
 fontAlign "left"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor index 15
+bgColor index 12
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -717,7 +717,7 @@ w 150
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
-fgColor rgb 0 0 0
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -737,7 +737,7 @@ w 100
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
-fgColor rgb 0 0 0
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -775,7 +775,7 @@ w 130
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
-fgColor rgb 0 0 0
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -800,7 +800,7 @@ w 110
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
-fgColor rgb 0 0 0
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -822,10 +822,10 @@ controlPv "$(P)$(R)TemperatureActual"
 format "decimal"
 font "helvetica-medium-r-14.0"
 fontAlign "left"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor index 15
+bgColor index 12
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -844,7 +844,7 @@ w 180
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
-fgColor rgb 0 0 0
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -875,9 +875,9 @@ x 837
 y 297
 w 106
 h 20
-lineColor rgb 55808 55808 55808
+lineColor index 2
 fill
-fillColor rgb 55808 55808 55808
+fillColor index 2
 lineWidth 0
 endObjectProperties
 
@@ -891,8 +891,8 @@ x 715
 y 295
 w 350
 h 500
-lineColor rgb 0 0 0
-fillColor rgb 0 0 0
+lineColor index 14
+fillColor index 14
 lineWidth 0
 endObjectProperties
 
@@ -908,7 +908,7 @@ w 70
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "center"
-fgColor rgb 2560 0 47104
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -928,7 +928,7 @@ w 90
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
-fgColor rgb 0 0 0
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -950,10 +950,10 @@ controlPv "$(P)$(R)DataType_RBV"
 format "string"
 font "helvetica-medium-r-14.0"
 fontAlign "left"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor index 15
+bgColor index 12
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -972,7 +972,7 @@ w 110
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
-fgColor rgb 0 0 0
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -992,7 +992,7 @@ w 120
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
-fgColor rgb 0 0 0
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -1012,7 +1012,7 @@ w 110
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
-fgColor rgb 0 0 0
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -1032,7 +1032,7 @@ w 70
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
-fgColor rgb 0 0 0
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -1052,7 +1052,7 @@ w 24
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
-fgColor rgb 0 0 0
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -1074,10 +1074,10 @@ controlPv "$(P)$(R)MaxSizeX_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
 fontAlign "center"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor index 15
+bgColor index 12
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -1098,10 +1098,10 @@ controlPv "$(P)$(R)MinX_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
 fontAlign "center"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor index 15
+bgColor index 12
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -1122,12 +1122,12 @@ controlPv "$(P)$(R)MinX"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
+fgColor index 25
+bgColor index 5
 editable
 motifWidget
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -1148,12 +1148,12 @@ controlPv "$(P)$(R)SizeX"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
+fgColor index 25
+bgColor index 5
 editable
 motifWidget
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -1174,10 +1174,10 @@ controlPv "$(P)$(R)SizeX_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
 fontAlign "center"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor index 15
+bgColor index 12
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -1198,12 +1198,12 @@ controlPv "$(P)$(R)BinX"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
+fgColor index 25
+bgColor index 5
 editable
 motifWidget
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -1224,10 +1224,10 @@ controlPv "$(P)$(R)BinX_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
 fontAlign "center"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor index 15
+bgColor index 12
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -1246,7 +1246,7 @@ w 23
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
-fgColor rgb 0 0 0
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -1268,10 +1268,10 @@ controlPv "$(P)$(R)MaxSizeY_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
 fontAlign "center"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor index 15
+bgColor index 12
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -1292,12 +1292,12 @@ controlPv "$(P)$(R)MinY"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
+fgColor index 25
+bgColor index 5
 editable
 motifWidget
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -1318,10 +1318,10 @@ controlPv "$(P)$(R)MinY_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
 fontAlign "center"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor index 15
+bgColor index 12
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -1342,12 +1342,12 @@ controlPv "$(P)$(R)SizeY"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
+fgColor index 25
+bgColor index 5
 editable
 motifWidget
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -1368,10 +1368,10 @@ controlPv "$(P)$(R)SizeY_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
 fontAlign "center"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor index 15
+bgColor index 12
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -1392,12 +1392,12 @@ controlPv "$(P)$(R)BinY"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
+fgColor index 25
+bgColor index 5
 editable
 motifWidget
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -1418,10 +1418,10 @@ controlPv "$(P)$(R)BinY_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
 fontAlign "center"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor index 15
+bgColor index 12
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -1440,7 +1440,7 @@ w 100
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
-fgColor rgb 0 0 0
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -1460,7 +1460,7 @@ w 180
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
-fgColor rgb 0 0 0
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -1482,10 +1482,10 @@ controlPv "$(P)$(R)ArraySize_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
 fontAlign "center"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor index 15
+bgColor index 12
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -1506,10 +1506,10 @@ controlPv "$(P)$(R)ArraySizeX_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
 fontAlign "center"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor index 15
+bgColor index 12
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -1530,10 +1530,10 @@ controlPv "$(P)$(R)ArraySizeY_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
 fontAlign "center"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor index 15
+bgColor index 12
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -1552,7 +1552,7 @@ w 44
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
-fgColor rgb 0 0 0
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -1574,10 +1574,10 @@ controlPv "$(P)$(R)Gain_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
 fontAlign "center"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor index 15
+bgColor index 12
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -1598,12 +1598,12 @@ controlPv "$(P)$(R)Gain"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
+fgColor index 25
+bgColor index 5
 editable
 motifWidget
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -1622,7 +1622,7 @@ w 90
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
-fgColor rgb 0 0 0
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -1644,10 +1644,10 @@ controlPv "$(P)$(R)GainAuto_RBV"
 format "string"
 font "helvetica-medium-r-14.0"
 fontAlign "left"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor index 15
+bgColor index 12
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -1666,7 +1666,7 @@ w 100
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
-fgColor rgb 0 0 0
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -1688,10 +1688,10 @@ controlPv "$(P)$(R)ColorMode_RBV"
 format "string"
 font "helvetica-medium-r-14.0"
 fontAlign "left"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor index 15
+bgColor index 12
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -1710,7 +1710,7 @@ w 140
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
-fgColor rgb 0 0 0
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -1732,10 +1732,10 @@ controlPv "$(P)$(R)ConvertPixelFormat_RBV"
 format "string"
 font "helvetica-medium-r-14.0"
 fontAlign "left"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor index 15
+bgColor index 12
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -1754,7 +1754,7 @@ w 140
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
-fgColor rgb 0 0 0
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -1776,10 +1776,10 @@ controlPv "$(P)$(R)TimeStampMode_RBV"
 format "string"
 font "helvetica-medium-r-14.0"
 fontAlign "left"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor index 15
+bgColor index 12
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -1798,7 +1798,7 @@ w 130
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
-fgColor rgb 0 0 0
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -1820,10 +1820,10 @@ controlPv "$(P)$(R)UniqueIdMode_RBV"
 format "string"
 font "helvetica-medium-r-14.0"
 fontAlign "left"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor index 15
+bgColor index 12
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -1842,7 +1842,7 @@ w 120
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
-fgColor rgb 0 0 0
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -1864,10 +1864,10 @@ controlPv "$(P)$(R)PixelFormat_RBV"
 format "string"
 font "helvetica-medium-r-14.0"
 fontAlign "left"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor index 15
+bgColor index 12
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -1886,7 +1886,7 @@ w 140
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
-fgColor rgb 0 0 0
+fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
@@ -1908,10 +1908,10 @@ controlPv "$(P)$(R)UnpackingMode_RBV"
 format "string"
 font "helvetica-medium-r-14.0"
 fontAlign "left"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor index 15
+bgColor index 12
 limitsFromDb
-nullColor rgb 60928 46592 11008
+nullColor index 32
 smartRefresh
 fastUpdate
 newPos
@@ -1945,10 +1945,10 @@ x 250
 y 790
 w 100
 h 20
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
+fgColor index 14
+bgColor index 51
+topShadowColor index 2
+botShadowColor index 12
 font "helvetica-medium-r-8.0"
 icon
 numPvs 18
@@ -2060,11 +2060,11 @@ x 920
 y 265
 w 80
 h 20
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-inconsistentColor rgb 17920 17920 17920
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
+fgColor index 14
+bgColor index 51
+inconsistentColor index 12
+topShadowColor index 2
+botShadowColor index 12
 controlPv "$(P)$(R)ReadStatus.SCAN"
 indicatorPv "$(P)$(R)ReadStatus.SCAN"
 font "helvetica-medium-r-12.0"
@@ -2085,11 +2085,11 @@ x 920
 y 215
 w 80
 h 20
-fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
+fgColor index 14
+onColor index 51
+offColor index 51
+topShadowColor index 0
+botShadowColor index 14
 controlPv "$(P)$(R)ResetErrorCounts.PROC"
 pressValue "1"
 releaseValue 
@@ -2122,11 +2122,11 @@ x 855
 y 590
 w 100
 h 20
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-inconsistentColor rgb 17920 17920 17920
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
+fgColor index 14
+bgColor index 51
+inconsistentColor index 12
+topShadowColor index 2
+botShadowColor index 12
 controlPv "$(P)$(R)GainAuto"
 indicatorPv "$(P)$(R)GainAuto"
 font "helvetica-medium-r-12.0"
@@ -2142,11 +2142,11 @@ x 866
 y 716
 w 100
 h 20
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-inconsistentColor rgb 17920 17920 17920
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
+fgColor index 14
+bgColor index 51
+inconsistentColor index 12
+topShadowColor index 2
+botShadowColor index 12
 controlPv "$(P)$(R)ConvertPixelFormat"
 indicatorPv "$(P)$(R)ConvertPixelFormat"
 font "helvetica-medium-r-12.0"
@@ -2162,11 +2162,11 @@ x 866
 y 741
 w 100
 h 20
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-inconsistentColor rgb 17920 17920 17920
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
+fgColor index 14
+bgColor index 51
+inconsistentColor index 12
+topShadowColor index 2
+botShadowColor index 12
 controlPv "$(P)$(R)TimeStampMode"
 indicatorPv "$(P)$(R)TimeStampMode"
 font "helvetica-medium-r-12.0"
@@ -2182,11 +2182,11 @@ x 866
 y 766
 w 100
 h 20
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-inconsistentColor rgb 17920 17920 17920
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
+fgColor index 14
+bgColor index 51
+inconsistentColor index 12
+topShadowColor index 2
+botShadowColor index 12
 controlPv "$(P)$(R)UniqueIdMode"
 indicatorPv "$(P)$(R)UniqueIdMode"
 font "helvetica-medium-r-12.0"
@@ -2202,11 +2202,11 @@ x 866
 y 666
 w 100
 h 20
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-inconsistentColor rgb 17920 17920 17920
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
+fgColor index 14
+bgColor index 51
+inconsistentColor index 12
+topShadowColor index 2
+botShadowColor index 12
 controlPv "$(P)$(R)PixelFormat"
 indicatorPv "$(P)$(R)PixelFormat"
 font "helvetica-medium-r-12.0"
@@ -2222,11 +2222,11 @@ x 866
 y 691
 w 100
 h 20
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-inconsistentColor rgb 17920 17920 17920
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
+fgColor index 14
+bgColor index 51
+inconsistentColor index 12
+topShadowColor index 2
+botShadowColor index 12
 controlPv "$(P)$(R)UnpackingMode"
 indicatorPv "$(P)$(R)UnpackingMode"
 font "helvetica-medium-r-12.0"
