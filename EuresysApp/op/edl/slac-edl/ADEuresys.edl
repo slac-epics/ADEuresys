@@ -92,7 +92,7 @@ file "ADPlugins.edl"
 sizeOfs 5
 numDsps 1
 displayFileName {
-  0 "ADPlugins.edl"
+  0 "areaDetectorScreens/ADPlugins.edl"
 }
 noScroll
 endObjectProperties
@@ -135,7 +135,7 @@ file "ADShutter.edl"
 sizeOfs 5
 numDsps 1
 displayFileName {
-  0 "ADShutter.edl"
+  0 "areaDetectorScreens/ADShutter.edl"
 }
 noScroll
 endObjectProperties
@@ -178,7 +178,7 @@ file "ADAttrFile.edl"
 sizeOfs 5
 numDsps 1
 displayFileName {
-  0 "ADAttrFile.edl"
+  0 "areaDetectorScreens/ADAttrFile.edl"
 }
 noScroll
 endObjectProperties
@@ -221,7 +221,7 @@ file "ADBuffers.edl"
 sizeOfs 5
 numDsps 1
 displayFileName {
-  0 "ADBuffers.edl"
+  0 "areaDetectorScreens/ADBuffers.edl"
 }
 noScroll
 endObjectProperties
@@ -264,7 +264,7 @@ file "ADSetup.edl"
 sizeOfs 5
 numDsps 1
 displayFileName {
-  0 "ADSetup.edl"
+  0 "areaDetectorScreens/ADSetup.edl"
 }
 noScroll
 endObjectProperties
@@ -396,7 +396,7 @@ file "ADGenICamCollect.edl"
 sizeOfs 5
 numDsps 1
 displayFileName {
-  0 "ADGenICamCollect.edl"
+  0 "ADGenICamScreens/ADGenICamCollect.edl"
 }
 noScroll
 endObjectProperties
@@ -439,7 +439,7 @@ file "ADGenICamTrigger.edl"
 sizeOfs 5
 numDsps 1
 displayFileName {
-  0 "ADGenICamTrigger.edl"
+  0 "ADGenICamScreens/ADGenICamTrigger.edl"
 }
 noScroll
 endObjectProperties
@@ -1954,15 +1954,15 @@ icon
 numPvs 18
 numDsps 9
 displayFileName {
-  0 "$(C)-features.edl"
-  1 "$(C)-features_1.edl"
-  2 "$(C)-features_2.edl"
-  3 "$(C)-features_3.edl"
-  4 "$(C)-features_4.edl"
-  5 "$(C)-features_5.edl"
-  6 "$(C)-features_6.edl"
-  7 "$(C)-features_7.edl"
-  8 "$(C)-features_8.edl"
+  0 "ADEuresysScreens/$(C)-features.edl"
+  1 "ADEuresysScreens/$(C)-features_1.edl"
+  2 "ADEuresysScreens/$(C)-features_2.edl"
+  3 "ADEuresysScreens/$(C)-features_3.edl"
+  4 "ADEuresysScreens/$(C)-features_4.edl"
+  5 "ADEuresysScreens/$(C)-features_5.edl"
+  6 "ADEuresysScreens/$(C)-features_6.edl"
+  7 "ADEuresysScreens/$(C)-features_7.edl"
+  8 "ADEuresysScreens/$(C)-features_8.edl"
 }
 menuLabel {
   0 "Features (custom)"
