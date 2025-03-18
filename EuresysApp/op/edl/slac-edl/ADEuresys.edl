@@ -88,7 +88,7 @@ bgColor index 0
 topShadowColor index 0
 botShadowColor index 14
 displaySource "file"
-file "ADPlugins.edl"
+file "areaDetectorScreens/ADPlugins.edl"
 sizeOfs 5
 numDsps 1
 displayFileName {
@@ -131,7 +131,7 @@ bgColor index 0
 topShadowColor index 0
 botShadowColor index 14
 displaySource "file"
-file "ADShutter.edl"
+file "areaDetectorScreens/ADShutter.edl"
 sizeOfs 5
 numDsps 1
 displayFileName {
@@ -174,7 +174,7 @@ bgColor index 0
 topShadowColor index 0
 botShadowColor index 14
 displaySource "file"
-file "ADAttrFile.edl"
+file "areaDetectorScreens/ADAttrFile.edl"
 sizeOfs 5
 numDsps 1
 displayFileName {
@@ -217,7 +217,7 @@ bgColor index 0
 topShadowColor index 0
 botShadowColor index 14
 displaySource "file"
-file "ADBuffers.edl"
+file "areaDetectorScreens/ADBuffers.edl"
 sizeOfs 5
 numDsps 1
 displayFileName {
@@ -260,7 +260,7 @@ bgColor index 0
 topShadowColor index 0
 botShadowColor index 14
 displaySource "file"
-file "ADSetup.edl"
+file "areaDetectorScreens/ADSetup.edl"
 sizeOfs 5
 numDsps 1
 displayFileName {
@@ -392,7 +392,7 @@ bgColor index 0
 topShadowColor index 0
 botShadowColor index 14
 displaySource "file"
-file "ADGenICamCollect.edl"
+file "ADGenICamScreens/ADGenICamCollect.edl"
 sizeOfs 5
 numDsps 1
 displayFileName {
@@ -435,7 +435,7 @@ bgColor index 0
 topShadowColor index 0
 botShadowColor index 14
 displaySource "file"
-file "ADGenICamTrigger.edl"
+file "ADGenICamScreens/ADGenICamTrigger.edl"
 sizeOfs 5
 numDsps 1
 displayFileName {
