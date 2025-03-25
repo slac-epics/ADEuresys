@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1907
-y 1878
+x 512
+y 396
 w 400
 h 340
 font "helvetica-medium-r-12.0"
@@ -33,7 +33,7 @@ major 4
 minor 0
 release 0
 x 0
-y 256
+y 60
 w 176
 h 24
 
@@ -46,7 +46,7 @@ major 4
 minor 4
 release 0
 x 0
-y 256
+y 60
 w 176
 h 24
 fgColor index 14
@@ -82,7 +82,7 @@ major 4
 minor 7
 release 0
 x 22
-y 260
+y 64
 w 152
 h 16
 controlPv "$(P)$(R)CamModel"
@@ -147,7 +147,7 @@ major 4
 minor 4
 release 0
 x 196
-y 32
+y 60
 w 176
 h 24
 fgColor index 14
@@ -183,7 +183,7 @@ major 4
 minor 4
 release 0
 x 196
-y 60
+y 88
 w 176
 h 24
 fgColor index 14
@@ -219,7 +219,7 @@ major 4
 minor 4
 release 0
 x 196
-y 88
+y 116
 w 176
 h 24
 fgColor index 14
@@ -255,7 +255,7 @@ major 4
 minor 4
 release 0
 x 196
-y 116
+y 144
 w 176
 h 24
 fgColor index 14
@@ -291,7 +291,7 @@ major 4
 minor 4
 release 0
 x 196
-y 144
+y 172
 w 176
 h 24
 fgColor index 14
@@ -327,7 +327,7 @@ major 4
 minor 4
 release 0
 x 196
-y 200
+y 228
 w 176
 h 24
 fgColor index 14
@@ -363,7 +363,7 @@ major 4
 minor 4
 release 0
 x 196
-y 172
+y 200
 w 176
 h 24
 fgColor index 14
@@ -390,5 +390,43 @@ propagateMacros {
   0 0
 }
 icon
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 0
+y 32
+w 170
+h 24
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+value {
+  "Camera Type"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 200
+y 32
+w 170
+h 24
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+value {
+  "Frame Grabber"
+}
 endObjectProperties
 
