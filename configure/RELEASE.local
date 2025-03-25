@@ -19,8 +19,8 @@
 # Don't set your version to anything such as "test" that
 # could match a directory name.
 # ==========================================================
-ADCORE_MODULE_VERSION        = R3.10-1.1.1
-ASYN_MODULE_VERSION          = R4.39-1.0.2
+ADCORE_MODULE_VERSION        = R3.10-1.1.0
+ASYN_MODULE_VERSION          = R4.39-1.0.1
 ADGENICAM_MODULE_VERSION     = R1.8.37-0.1.1
 
 # ==========================================================
@@ -32,11 +32,17 @@ ADGENICAM_MODULE_VERSION     = R1.8.37-0.1.1
 
 ADCORE       = $(EPICS_MODULES)/ADCore/$(ADCORE_MODULE_VERSION)
 ASYN         = $(EPICS_MODULES)/asyn/$(ASYN_MODULE_VERSION)
-ADGENICAM    = $(EPICS_MODULES)/ADGenICam/$(ADGENICAM_MODULE_VERSION)
+#ADGENICAM    = $(EPICS_MODULES)/ADGenICam/$(ADGENICAM_MODULE_VERSION)
 
 
 # Set EPICS_BASE last so it appears last in the DB, DBD, INCLUDE, and LIB search paths
 EPICS_BASE      = $(EPICS_SITE_TOP)/base/$(BASE_MODULE_VERSION)
+
+#MY_MODULES = /cds/group/pcds/epics-dev/bhill/modules/
+MY_MODULES = /cds/home/k/ktkim/sandbox/areaDetector
+
+ADGENICAM    = $(MY_MODULES)/ADGenICam-git
+
 
 # Check for undefined EPICS_BASE
 -include $(TOP)/../../EPICS_BASE.check
