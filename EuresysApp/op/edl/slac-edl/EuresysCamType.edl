@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 512
-y 396
+x 930
+y 909
 w 400
 h 340
 font "helvetica-medium-r-12.0"
@@ -20,10 +20,10 @@ ctlBgColor2 index 12
 topShadowColor index 1
 botShadowColor index 13
 title "CamType Euresys Framegrabber"
-disableScroll
 showGrid
 snapToGrid
 gridSize 4
+disableScroll
 endScreenProperties
 
 # (Group)
@@ -427,6 +427,49 @@ fgColor index 14
 bgColor index 3
 value {
   "Frame Grabber"
+}
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 152
+y 96
+w 20
+h 20
+lineColor index 14
+fill
+fillColor index 77
+visPv "$(P)$(R)GC_SensorTemperature_RBV"
+visInvert
+visMin "-30"
+visMax "70"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 4
+y 96
+w 140
+h 20
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+visPv "$(P)$(R)GC_SensorTemperature_RBV"
+visInvert
+visMin "-30"
+visMax "70"
+value {
+  "Check SensorTemp!"
 }
 endObjectProperties
 
