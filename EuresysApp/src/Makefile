@@ -15,7 +15,6 @@ USR_CXXFLAGS_Linux += -g0
 
 LIBRARY_IOC_Linux += ADEuresys
 LIBRARY_IOC_WIN32 += ADEuresys
-ADEuresys_SRCS += EuresysFeature.cpp
 ADEuresys_SRCS += ADEuresys.cpp
 
 LIB_LIBS += ADGenICam
