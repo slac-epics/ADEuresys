@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 930
-y 909
+x 1572
+y 1126
 w 400
 h 340
 font "helvetica-medium-r-12.0"
@@ -140,14 +140,76 @@ value {
 }
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 0
+y 32
+w 170
+h 24
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+value {
+  "Camera Type"
+}
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 152
+y 88
+w 20
+h 20
+lineColor index 14
+fill
+fillColor index 77
+visPv "$(P)$(R)GC_SensorTemperature_RBV"
+visInvert
+visMin "-30"
+visMax "70"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 0
+y 88
+w 140
+h 20
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+visPv "$(P)$(R)GC_SensorTemperature_RBV"
+visInvert
+visMin "-30"
+visMax "70"
+value {
+  "Check SensorTemp!"
+}
+endObjectProperties
+
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
 major 4
 minor 4
 release 0
-x 196
-y 60
+x 216
+y 88
 w 176
 h 24
 fgColor index 14
@@ -182,8 +244,8 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 196
-y 88
+x 216
+y 116
 w 176
 h 24
 fgColor index 14
@@ -218,8 +280,8 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 196
-y 116
+x 216
+y 144
 w 176
 h 24
 fgColor index 14
@@ -254,8 +316,8 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 196
-y 144
+x 216
+y 172
 w 176
 h 24
 fgColor index 14
@@ -290,8 +352,8 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 196
-y 172
+x 216
+y 200
 w 176
 h 24
 fgColor index 14
@@ -326,8 +388,8 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 196
-y 228
+x 216
+y 256
 w 176
 h 24
 fgColor index 14
@@ -362,8 +424,8 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 196
-y 200
+x 216
+y 228
 w 176
 h 24
 fgColor index 14
@@ -398,26 +460,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 0
-y 32
-w 170
-h 24
-font "helvetica-bold-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 3
-value {
-  "Camera Type"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 200
+x 216
 y 32
 w 170
 h 24
@@ -430,23 +473,245 @@ value {
 }
 endObjectProperties
 
-# (Circle)
-object activeCircleClass
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 216
+y 60
+w 176
+h 24
+fgColor index 14
+bgColor index 3
+topShadowColor index 0
+botShadowColor index 14
+font "helvetica-medium-r-12.0"
+buttonLabel "Euresys FrameGrabber"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "ADEuresysScreens/ADEuresys.edl"
+}
+setPosition {
+  0 "button"
+}
+symbols {
+  0 "P=$(P),R=$(R),IOC=$(IOC),CAM=$(CAM)"
+}
+replaceSymbols {
+  0 1
+}
+propagateMacros {
+  0 0
+}
+icon
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 124
+y 136
+w 84
+h 20
+controlPv "$(P)$(R)OutputQueue"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fgColor index 15
+bgColor index 12
+limitsFromDb
+nullColor index 32
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 124
+y 112
+w 84
+h 20
+controlPv "$(P)$(R)ESBufferSize"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fgColor index 15
+bgColor index 12
+limitsFromDb
+nullColor index 32
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 124
+y 280
+w 84
+h 20
+controlPv "$(P)$(R)TemperatureActual"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fgColor index 15
+bgColor index 12
+limitsFromDb
+nullColor index 32
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 124
+y 256
+w 84
+h 20
+fgColor index 14
+onColor index 51
+offColor index 51
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(P)$(R)ResetErrorCounts.PROC"
+pressValue "1"
+onLabel "Reset"
+offLabel "Reset"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
 beginObjectProperties
 major 4
 minor 0
 release 0
-x 152
-y 96
-w 20
+x 124
+y 304
+w 84
 h 20
-lineColor index 14
-fill
-fillColor index 77
-visPv "$(P)$(R)GC_SensorTemperature_RBV"
-visInvert
-visMin "-30"
-visMax "70"
+fgColor index 14
+bgColor index 51
+inconsistentColor index 12
+topShadowColor index 2
+botShadowColor index 12
+controlPv "$(P)$(R)ReadStatus.SCAN"
+indicatorPv "$(P)$(R)ReadStatus.SCAN"
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 124
+y 160
+w 84
+h 20
+controlPv "$(P)$(R)ProcessTotalTime"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fgColor index 15
+bgColor index 12
+limitsFromDb
+nullColor index 32
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 124
+y 184
+w 84
+h 20
+controlPv "$(P)$(R)ProcessCopyTime"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fgColor index 15
+bgColor index 12
+limitsFromDb
+nullColor index 32
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 124
+y 208
+w 84
+h 20
+controlPv "$(P)$(R)RejectedFrames"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fgColor index 15
+bgColor index 12
+limitsFromDb
+nullColor index 32
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 124
+y 232
+w 84
+h 20
+controlPv "$(P)$(R)CRCErrors"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fgColor index 15
+bgColor index 12
+limitsFromDb
+nullColor index 32
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
 endObjectProperties
 
 # (Static Text)
@@ -455,21 +720,177 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 4
-y 96
-w 140
+x 0
+y 136
+w 120
 h 20
-font "helvetica-bold-r-12.0"
-fontAlign "center"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
 fgColor index 14
 bgColor index 3
 useDisplayBg
-visPv "$(P)$(R)GC_SensorTemperature_RBV"
-visInvert
-visMin "-30"
-visMax "70"
 value {
-  "Check SensorTemp!"
+  "Output queue"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 0
+y 112
+w 120
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Buffer size"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 0
+y 280
+w 120
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Temperature"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 0
+y 256
+w 120
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Reset error counts"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 0
+y 304
+w 120
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Poll features"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 0
+y 160
+w 120
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Total time (ms)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 0
+y 184
+w 120
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Copy time (ms)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 0
+y 208
+w 120
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Rejected frames"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 0
+y 232
+w 120
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "CRC errors"
 }
 endObjectProperties
 
