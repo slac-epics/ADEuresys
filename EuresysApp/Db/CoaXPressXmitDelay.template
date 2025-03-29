@@ -1,0 +1,78 @@
+# Database to estimate transmission delay over CoaXPress interface
+#
+# Macros
+#	P and R			- Standard AreaDetector P and R macros.  Set unique to each camera via dbLoadRecords
+#	CXL_DATARATE	- CoaXPress data rate.  CXP-12 is 12.5Gbps and is the default.
+#	CXL_NCHAN		- Number of CoaXPress channels in the framegrabber.  Defaults to 4.
+#
+
+record( ao, "$(P)$(R)CoaXPressDataRate" )
+{
+	field( DOL,  "$(CXL_DATARATE=12.5e9)" )
+	field( EGU,  "bits/sec" )
+	field( PREC, "5" )
+	field( PINI, "YES" )
+	info( autosaveFields, "VAL" )
+}
+
+record( longout, "$(P)$(R)CoaXPressNumChannels" )
+{
+	field( DOL,  "$(CXL_NCHAN=4)" )
+	field( EGU,  "channels" )
+	field( PINI, "YES" )
+	info( autosaveFields, "VAL" )
+}
+
+# Estimated XmitDelay for CoaXPress FrameGrabber
+# ProcDelayPerPixel accounts for additional processing delay for each additional pixel.
+# TODO: ProcDelayPerPixel may not be needed
+# DataType_RBV UInt8=0, UInt16=1
+record( calc, "$(P)$(R)XmitDelay" )
+{
+	field( INPA, "$(P)$(R)ArraySize_RBV CPP MS" )
+#	field( INPB, "$(P)$(R)DataType_RBV CPP MS" )
+	field( INPB, "$(P)$(R)BitPerPixel_RBV CPP MS" )
+	field( INPC, "$(P)$(R)ProcDelayPerPixel CPP MS" )
+	field( INPD, "$(P)$(R)CoaXPressDataRate CP MS" )
+	field( INPE, "$(P)$(R)CoaXPressNumChannels CP MS" )
+	field( CALC, "A*C+(A*B/D/E)")
+	field( EGU,  "Sec" )
+	field( PREC, "5" )
+}
+
+# 2.0 ns is just a guess
+# TODO: Run tests with ROI and timeStampFifo diagnostics
+# to determine optimum value
+record( ao, "$(P)$(R)ProcDelayPerPixel" )
+{
+	field( DOL,  "2.0e-09" )
+	field( EGU,  "Sec/px" )
+	field( PREC, "5" )
+	field( PINI, "YES" )
+	info( autosaveFields, "VAL" )
+}
+
+record( ao, "$(P)$(R)DriverProcDelay" )
+{
+	field( DOL,  "2.0e-5" )
+	field( EGU,  "Sec" )
+	field( PREC, "3" )
+	field( PINI, "YES" )
+	info( autosaveFields, "VAL" )
+}
+
+#
+# TrigToTS_Calc: Calculates expected delay from trigger to timeStamp update 
+# Inputs: All units in seconds
+#   A   - Camera acquire time (exposure length)
+#   B   - Camera image transmission time
+#   C   - Estimated driver processing delay before requesting timestamp
+record( calc, "$(P)$(R)TrigToTS_Calc" )
+{
+	field( INPA, "$(P)$(R)AcquireTime_RBV CP MS" )
+	field( INPB, "$(P)$(R)XmitDelay CP MS" )
+	field( INPC, "$(P)$(R)DriverProcDelay CP MS" )
+	field( CALC, "A+B+C" )
+	field( EGU,  "sec" )
+	field( PREC, "5" )
+}
