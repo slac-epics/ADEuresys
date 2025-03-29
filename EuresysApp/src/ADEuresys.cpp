@@ -160,9 +160,24 @@ void ADEuresys::shutdown(void)
 }
 
 GenICamFeature *ADEuresys::createFeature(GenICamFeatureSet *set, 
-                                           std::string const & asynName, asynParamType asynType, int asynIndex,
-                                           std::string const & featureName, GCFeatureType_t featureType) {
-    return new EuresysFeature(set, asynName, asynType, asynIndex, featureName, featureType);
+                                         std::string const & asynName, asynParamType asynType, int asynIndex,
+                                         std::string const & featureName, GCFeatureType_t featureType) {
+    // See if the feature name begins with strings that specify a module
+    if (asynName.find("DS_") == 0) {
+        return new EuresysFeature<StreamModule>(set, asynName, asynType, asynIndex, featureName, featureType);
+    }
+    else if (asynName.find("DV_") == 0) {
+        return new EuresysFeature<DeviceModule>(set, asynName, asynType, asynIndex, featureName, featureType);
+    }
+    else if (asynName.find("IF_") == 0) {
+        return new EuresysFeature<InterfaceModule>(set, asynName, asynType, asynIndex, featureName, featureType);
+    }
+    else if (asynName.find("SY_") == 0) {
+        return new EuresysFeature<SystemModule>(set, asynName, asynType, asynIndex, featureName, featureType);
+    } 
+    else {
+        return new EuresysFeature<RemoteModule>(set, asynName, asynType, asynIndex, featureName, featureType);
+    }                      
 }
 
 
