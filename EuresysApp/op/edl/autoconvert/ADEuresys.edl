@@ -275,44 +275,6 @@ visMin "A"
 visMax "1"
 endObjectProperties
 
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 5
-y 790
-w 345
-h 20
-
-beginGroup
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 5
-y 790
-w 240
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "Camera-specific features"
-}
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
-
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -1922,6 +1884,7 @@ endGroup
 
 endObjectProperties
 
+
 # (Group)
 object activeGroupClass
 beginObjectProperties
@@ -1935,67 +1898,23 @@ h 20
 
 beginGroup
 
-# (Related Display)
-object relatedDisplayClass
+# (Static Text)
+object activeXTextClass
 beginObjectProperties
 major 4
-minor 0
-release 0
-x 250
+minor 1
+release 1
+x 5
 y 790
-w 100
+w 240
 h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
 fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-font "helvetica-medium-r-8.0"
-icon
-numPvs 18
-numDsps 9
-displayFileName {
-  0 "$(C)-features.edl"
-  1 "$(C)-features_1.edl"
-  2 "$(C)-features_2.edl"
-  3 "$(C)-features_3.edl"
-  4 "$(C)-features_4.edl"
-  5 "$(C)-features_5.edl"
-  6 "$(C)-features_6.edl"
-  7 "$(C)-features_7.edl"
-  8 "$(C)-features_8.edl"
-}
-menuLabel {
-  0 "Features (custom)"
-  1 "Features #1"
-  2 "Features #2"
-  3 "Features #3"
-  4 "Features #4"
-  5 "Features #5"
-  6 "Features #6"
-  7 "Features #7"
-  8 "Features #8"
-}
-symbols {
-  0 "P=$(P),R=$(R)"
-  1 "P=$(P),R=$(R)"
-  2 "P=$(P),R=$(R)"
-  3 "P=$(P),R=$(R)"
-  4 "P=$(P),R=$(R)"
-  5 "P=$(P),R=$(R)"
-  6 "P=$(P),R=$(R)"
-  7 "P=$(P),R=$(R)"
-  8 "P=$(P),R=$(R)"
-}
-replaceSymbols {
-  0 1
-  1 1
-  2 1
-  3 1
-  4 1
-  5 1
-  6 1
-  7 1
-  8 1
+bgColor index 3
+useDisplayBg
+value {
+  "Camera-specific features"
 }
 endObjectProperties
 
@@ -2003,6 +1922,26 @@ endGroup
 
 endObjectProperties
 
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 715
+y 800
+w 240
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Transport layer features"
+}
+endObjectProperties
 # (Group)
 object activeGroupClass
 beginObjectProperties
@@ -2236,4 +2175,145 @@ endGroup
 
 endObjectProperties
 
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 5
+y 790
+w 345
+h 20
+
+beginGroup
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 250
+y 790
+w 100
+h 20
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+font "helvetica-medium-r-8.0"
+icon
+numPvs 18
+numDsps 9
+displayFileName {
+  0 "$(C)-features.edl"
+  1 "$(C)-features_1.edl"
+  2 "$(C)-features_2.edl"
+  3 "$(C)-features_3.edl"
+  4 "$(C)-features_4.edl"
+  5 "$(C)-features_5.edl"
+  6 "$(C)-features_6.edl"
+  7 "$(C)-features_7.edl"
+  8 "$(C)-features_8.edl"
+}
+menuLabel {
+  0 "Features (custom)"
+  1 "Features #1"
+  2 "Features #2"
+  3 "Features #3"
+  4 "Features #4"
+  5 "Features #5"
+  6 "Features #6"
+  7 "Features #7"
+  8 "Features #8"
+}
+symbols {
+  0 "P=$(P),R=$(R)"
+  1 "P=$(P),R=$(R)"
+  2 "P=$(P),R=$(R)"
+  3 "P=$(P),R=$(R)"
+  4 "P=$(P),R=$(R)"
+  5 "P=$(P),R=$(R)"
+  6 "P=$(P),R=$(R)"
+  7 "P=$(P),R=$(R)"
+  8 "P=$(P),R=$(R)"
+}
+replaceSymbols {
+  0 1
+  1 1
+  2 1
+  3 1
+  4 1
+  5 1
+  6 1
+  7 1
+  8 1
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 960
+y 800
+w 100
+h 20
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+font "helvetica-medium-r-8.0"
+icon
+numPvs 16
+numDsps 8
+displayFileName {
+  0 "Euresys_Coaxlink_TLDataStream-features_1.edl"
+  1 "Euresys_Coaxlink_TLDataStream-features_2.edl"
+  2 "Euresys_Coaxlink_TLDevice-features_1.edl"
+  3 "Euresys_Coaxlink_TLInterface-features_1.edl"
+  4 "Euresys_Coaxlink_TLInterface-features_2.edl"
+  5 "Euresys_Coaxlink_TLInterface-features_3.edl"
+  6 "Euresys_Coaxlink_TLInterface-features_4.edl"
+  7 "Euresys_Coaxlink_TLSystem-features_1.edl"
+}
+menuLabel {
+  0 "TLDataStream #1"
+  1 "TLDataStream #2"
+  2 "TLDevice #1"
+  3 "TLInterface #1"
+  4 "TLInterface #2"
+  5 "TLInterface #3"
+  6 "TLInterface #4"
+  7 "TLSystem #1"
+}
+symbols {
+  0 "P=$(P),R=$(R)"
+  1 "P=$(P),R=$(R)"
+  2 "P=$(P),R=$(R)"
+  3 "P=$(P),R=$(R)"
+  4 "P=$(P),R=$(R)"
+  5 "P=$(P),R=$(R)"
+  6 "P=$(P),R=$(R)"
+  7 "P=$(P),R=$(R)"
+}
+replaceSymbols {
+  0 1
+  1 1
+  2 1
+  3 1
+  4 1
+  5 1
+  6 1
+  7 1
+}
+endObjectProperties
 

@@ -1,6 +1,6 @@
 
 file {
-	name="/home/epics/devel/areaDetector-3-13/ADEuresys/EuresysApp/op/adl/ADEuresys.adl"
+	name="/home/epics/devel/areaDetector-3-14/ADEuresys/EuresysApp/op/adl/ADEuresys.adl"
 	version=030117
 }
 display {
@@ -160,85 +160,6 @@ composite {
 	}
 	"composite name"=""
 	"composite file"="ADSetup.adl"
-}
-composite {
-	object {
-		x=5
-		y=790
-		width=345
-		height=20
-	}
-	"composite name"=""
-	children {
-		text {
-			object {
-				x=5
-				y=790
-				width=240
-				height=20
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="Camera-specific features"
-			align="horiz. right"
-		}
-		"related display" {
-			object {
-				x=250
-				y=790
-				width=100
-				height=20
-			}
-			display[0] {
-				label="Features (custom)"
-				name="$(C)-features.adl"
-				args="P=$(P),R=$(R)"
-			}
-			display[1] {
-				label="Features #1"
-				name="$(C)-features_1.adl"
-				args="P=$(P),R=$(R)"
-			}
-			display[2] {
-				label="Features #2"
-				name="$(C)-features_2.adl"
-				args="P=$(P),R=$(R)"
-			}
-			display[3] {
-				label="Features #3"
-				name="$(C)-features_3.adl"
-				args="P=$(P),R=$(R)"
-			}
-			display[4] {
-				label="Features #4"
-				name="$(C)-features_4.adl"
-				args="P=$(P),R=$(R)"
-			}
-			display[5] {
-				label="Features #5"
-				name="$(C)-features_5.adl"
-				args="P=$(P),R=$(R)"
-			}
-			display[6] {
-				label="Features #6"
-				name="$(C)-features_6.adl"
-				args="P=$(P),R=$(R)"
-			}
-			display[7] {
-				label="Features #7"
-				name="$(C)-features_7.adl"
-				args="P=$(P),R=$(R)"
-			}
-			display[8] {
-				label="Features #8"
-				name="$(C)-features_8.adl"
-				args="P=$(P),R=$(R)"
-			}
-			clr=14
-			bclr=51
-		}
-	}
 }
 rectangle {
 	object {
@@ -1349,4 +1270,146 @@ composite {
 			}
 		}
 	}
+}
+composite {
+	object {
+		x=5
+		y=790
+		width=345
+		height=20
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=5
+				y=790
+				width=240
+				height=20
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="Camera-specific features"
+			align="horiz. right"
+		}
+		"related display" {
+			object {
+				x=250
+				y=790
+				width=100
+				height=20
+			}
+			display[0] {
+				label="Features (custom)"
+				name="$(C)-features.adl"
+				args="P=$(P),R=$(R)"
+			}
+			display[1] {
+				label="Features #1"
+				name="$(C)-features_1.adl"
+				args="P=$(P),R=$(R)"
+			}
+			display[2] {
+				label="Features #2"
+				name="$(C)-features_2.adl"
+				args="P=$(P),R=$(R)"
+			}
+			display[3] {
+				label="Features #3"
+				name="$(C)-features_3.adl"
+				args="P=$(P),R=$(R)"
+			}
+			display[4] {
+				label="Features #4"
+				name="$(C)-features_4.adl"
+				args="P=$(P),R=$(R)"
+			}
+			display[5] {
+				label="Features #5"
+				name="$(C)-features_5.adl"
+				args="P=$(P),R=$(R)"
+			}
+			display[6] {
+				label="Features #6"
+				name="$(C)-features_6.adl"
+				args="P=$(P),R=$(R)"
+			}
+			display[7] {
+				label="Features #7"
+				name="$(C)-features_7.adl"
+				args="P=$(P),R=$(R)"
+			}
+			display[8] {
+				label="Features #8"
+				name="$(C)-features_8.adl"
+				args="P=$(P),R=$(R)"
+			}
+			clr=14
+			bclr=51
+		}
+	}
+}
+text {
+	object {
+		x=715
+		y=800
+		width=240
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Transport layer features"
+	align="horiz. right"
+}
+"related display" {
+	object {
+		x=960
+		y=800
+		width=100
+		height=20
+	}
+	display[0] {
+		label="TLDataStream #1"
+		name="Euresys_Coaxlink_TLDataStream-features_1.adl"
+		args="P=$(P),R=$(R)"
+	}
+	display[1] {
+		label="TLDataStream #2"
+		name="Euresys_Coaxlink_TLDataStream-features_2.adl"
+		args="P=$(P),R=$(R)"
+	}
+	display[2] {
+		label="TLDevice #1"
+		name="Euresys_Coaxlink_TLDevice-features_1.adl"
+		args="P=$(P),R=$(R)"
+	}
+	display[3] {
+		label="TLInterface #1"
+		name="Euresys_Coaxlink_TLInterface-features_1.adl"
+		args="P=$(P),R=$(R)"
+	}
+	display[4] {
+		label="TLInterface #2"
+		name="Euresys_Coaxlink_TLInterface-features_2.adl"
+		args="P=$(P),R=$(R)"
+	}
+	display[5] {
+		label="TLInterface #3"
+		name="Euresys_Coaxlink_TLInterface-features_3.adl"
+		args="P=$(P),R=$(R)"
+	}
+	display[6] {
+		label="TLInterface #4"
+		name="Euresys_Coaxlink_TLInterface-features_4.adl"
+		args="P=$(P),R=$(R)"
+	}
+	display[7] {
+		label="TLSystem #1"
+		name="Euresys_Coaxlink_TLSystem-features_1.adl"
+		args="P=$(P),R=$(R)"
+	}
+	clr=14
+	bclr=51
 }
