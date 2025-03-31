@@ -265,6 +265,9 @@ void ADEuresys::processFrame(ScopedBuffer &buf)
     setIntegerParam(NDArraySizeY, (int)nRows);
     setIntegerParam(NDArraySize, (int)dataSize);
     setIntegerParam(NDDataType, dataType);
+#ifdef NDBitsPerPixelString
+	setIntegerParam(NDBitsPerPixel, bufferInfo.bitsPerPixel);
+#endif
     if (nDims == 3) {
         colorMode = NDColorModeRGB1;
     } 
@@ -310,7 +313,10 @@ void ADEuresys::processFrame(ScopedBuffer &buf)
         } else {
             pRaw->uniqueId = numImagesCounter;
         }
-            
+ 
+#ifdef NDBitsPerPixelString
+		pRaw->bitsPerElement = bufferInfo.bitsPerPixel;
+#endif
         updateTimeStamp(&pRaw->epicsTS);
         getIntegerParam(ESTimeStampMode, &timeStampMode);
         // Set the timestamps in the buffer
