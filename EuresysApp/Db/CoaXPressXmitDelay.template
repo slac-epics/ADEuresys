@@ -31,7 +31,7 @@ record( calc, "$(P)$(R)XmitDelay" )
 {
 	field( INPA, "$(P)$(R)ArraySize_RBV CPP MS" )
 #	field( INPB, "$(P)$(R)DataType_RBV CPP MS" )
-	field( INPB, "$(P)$(R)BitPerPixel_RBV CPP MS" )
+	field( INPB, "$(P)$(R)BitsPerPixel_RBV CPP MS" )
 	field( INPC, "$(P)$(R)ProcDelayPerPixel CPP MS" )
 	field( INPD, "$(P)$(R)CoaXPressDataRate CP MS" )
 	field( INPE, "$(P)$(R)CoaXPressNumChannels CP MS" )
