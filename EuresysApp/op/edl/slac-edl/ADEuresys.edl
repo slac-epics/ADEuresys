@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 386
-y 78
+x 3775
+y 333
 w 1070
 h 825
 font "helvetica-medium-r-18.0"
@@ -312,7 +312,6 @@ endGroup
 
 endObjectProperties
 
-
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -463,7 +462,6 @@ h 18
 controlPv "$(P)$(R)OutputQueue"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -487,7 +485,6 @@ h 18
 controlPv "$(P)$(R)ESBufferSize"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -564,7 +561,6 @@ h 18
 controlPv "$(P)$(R)ProcessTotalTime"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -588,7 +584,6 @@ h 18
 controlPv "$(P)$(R)ProcessCopyTime"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -643,7 +638,6 @@ endGroup
 
 endObjectProperties
 
-
 # (Group)
 object activeGroupClass
 beginObjectProperties
@@ -670,7 +664,6 @@ h 18
 controlPv "$(P)$(R)RejectedFrames"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -694,7 +687,6 @@ h 18
 controlPv "$(P)$(R)CRCErrors"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -749,7 +741,6 @@ endGroup
 
 endObjectProperties
 
-
 # (Group)
 object activeGroupClass
 beginObjectProperties
@@ -787,7 +778,6 @@ endGroup
 
 endObjectProperties
 
-
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
@@ -821,7 +811,6 @@ h 18
 controlPv "$(P)$(R)TemperatureActual"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -949,7 +938,6 @@ h 18
 controlPv "$(P)$(R)DataType_RBV"
 format "string"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1121,7 +1109,6 @@ h 20
 controlPv "$(P)$(R)MinX"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -1147,7 +1134,6 @@ h 20
 controlPv "$(P)$(R)SizeX"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -1197,7 +1183,6 @@ h 20
 controlPv "$(P)$(R)BinX"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -1291,7 +1276,6 @@ h 20
 controlPv "$(P)$(R)MinY"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -1341,7 +1325,6 @@ h 20
 controlPv "$(P)$(R)SizeY"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -1391,7 +1374,6 @@ h 20
 controlPv "$(P)$(R)BinY"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -1597,7 +1579,6 @@ h 20
 controlPv "$(P)$(R)Gain"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -1643,7 +1624,6 @@ h 18
 controlPv "$(P)$(R)GainAuto_RBV"
 format "string"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1687,7 +1667,6 @@ h 18
 controlPv "$(P)$(R)ColorMode_RBV"
 format "string"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1731,7 +1710,6 @@ h 18
 controlPv "$(P)$(R)ConvertPixelFormat_RBV"
 format "string"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1775,7 +1753,6 @@ h 18
 controlPv "$(P)$(R)TimeStampMode_RBV"
 format "string"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1819,7 +1796,6 @@ h 18
 controlPv "$(P)$(R)UniqueIdMode_RBV"
 format "string"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1863,7 +1839,6 @@ h 18
 controlPv "$(P)$(R)PixelFormat_RBV"
 format "string"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1907,7 +1882,6 @@ h 18
 controlPv "$(P)$(R)UnpackingMode_RBV"
 format "string"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1939,7 +1913,7 @@ beginGroup
 object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 0
+minor 4
 release 0
 x 250
 y 790
@@ -1950,8 +1924,7 @@ bgColor index 51
 topShadowColor index 2
 botShadowColor index 12
 font "helvetica-medium-r-8.0"
-icon
-numPvs 18
+numPvs 4
 numDsps 9
 displayFileName {
   0 "ADEuresysScreens/$(C)-features.edl"
@@ -1997,41 +1970,8 @@ replaceSymbols {
   7 1
   8 1
 }
+icon
 endObjectProperties
-
-endGroup
-
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 765
-y 115
-w 275
-h 45
-
-beginGroup
-
-endGroup
-
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 765
-y 165
-w 275
-h 45
-
-beginGroup
 
 endGroup
 
@@ -2074,12 +2014,11 @@ endGroup
 
 endObjectProperties
 
-
 # (Message Button)
 object activeMessageButtonClass
 beginObjectProperties
 major 4
-minor 0
+minor 1
 release 0
 x 920
 y 215
@@ -2092,13 +2031,13 @@ topShadowColor index 0
 botShadowColor index 14
 controlPv "$(P)$(R)ResetErrorCounts.PROC"
 pressValue "1"
-releaseValue 
 onLabel "Reset"
 offLabel "Reset"
 3d
 useEnumNumeric
 font "helvetica-medium-r-12.0"
 endObjectProperties
+
 # (Group)
 object activeGroupClass
 beginObjectProperties
@@ -2236,4 +2175,83 @@ endGroup
 
 endObjectProperties
 
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 964
+y 800
+w 100
+h 20
+fgColor index 14
+bgColor index 51
+topShadowColor index 2
+botShadowColor index 12
+font "helvetica-medium-r-8.0"
+numPvs 4
+numDsps 8
+displayFileName {
+  0 "Euresys_Coaxlink_TLDataStream-features_1.edl"
+  1 "Euresys_Coaxlink_TLDataStream-features_2.edl"
+  2 "Euresys_Coaxlink_TLDevice-features_1.edl"
+  3 "Euresys_Coaxlink_TLInterface-features_1.edl"
+  4 "Euresys_Coaxlink_TLInterface-features_2.edl"
+  5 "Euresys_Coaxlink_TLInterface-features_3.edl"
+  6 "Euresys_Coaxlink_TLInterface-features_4.edl"
+  7 "Euresys_Coaxlink_TLSystem-features_1.edl"
+}
+menuLabel {
+  0 "TLDataStream #1"
+  1 "TLDataStream #2"
+  2 "TLDevice #1"
+  3 "TLInterface #1"
+  4 "TLInterface #2"
+  5 "TLInterface #3"
+  6 "TLInterface #4"
+  7 "TLSystem #1"
+}
+symbols {
+  0 "P=$(P),R=$(R)"
+  1 "P=$(P),R=$(R)"
+  2 "P=$(P),R=$(R)"
+  3 "P=$(P),R=$(R)"
+  4 "P=$(P),R=$(R)"
+  5 "P=$(P),R=$(R)"
+  6 "P=$(P),R=$(R)"
+  7 "P=$(P),R=$(R)"
+}
+replaceSymbols {
+  0 1
+  1 1
+  2 1
+  3 1
+  4 1
+  5 1
+  6 1
+  7 1
+}
+icon
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 720
+y 800
+w 240
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Transport layer features"
+}
+endObjectProperties
 
