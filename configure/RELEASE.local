@@ -23,7 +23,6 @@ ADCORE_MODULE_VERSION        = R3.10-1.1.2
 ASYN_MODULE_VERSION          = R4.42-1.0.0
 ADGENICAM_MODULE_VERSION     = R1.10-2.0.0
 
-# ==========================================================
 # Define module paths using pattern
 # FOO = $(EPICS_MODULES)/foo/$(FOO_MODULE_VERSION)
 #  or
@@ -38,8 +37,9 @@ ADGENICAM    = $(EPICS_MODULES)/ADGenICam/$(ADGENICAM_MODULE_VERSION)
 # Set EPICS_BASE last so it appears last in the DB, DBD, INCLUDE, and LIB search paths
 EPICS_BASE      = $(EPICS_SITE_TOP)/base/$(BASE_MODULE_VERSION)
 
-MY_MODULES = /cds/group/pcds/epics-dev/bhill/modules/
+#MY_MODULES = /cds/group/pcds/epics-dev/bhill/modules/
 #MY_MODULES = /cds/home/k/ktkim/sandbox/areaDetector
+MY_MODULES = /cds/group/pcds/epics-dev/ktkim/sandbox/areaDetector/test
 
 #ADGENICAM    = $(MY_MODULES)/ADGenICam-git
 

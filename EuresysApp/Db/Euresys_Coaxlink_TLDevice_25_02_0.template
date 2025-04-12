@@ -5,9 +5,30 @@
 #% macro, TIMEOUT, Timeout, default=1
 #% macro, ADDR, Asyn Port address, default=0
 
-record(mbbi, "$(P)$(R)GC_DevAccessStatus_RBV") {
+record(stringin, "$(P)$(R)DV_DeviceID_RBV") {
+  field(DTYP, "asynOctetRead")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_S_DeviceID")
+  field(SCAN, "I/O Intr")
+  field(DISA, "0")
+}
+
+record(stringin, "$(P)$(R)DV_DeviceVendorName_RBV") {
+  field(DTYP, "asynOctetRead")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_S_DeviceVendorName")
+  field(SCAN, "I/O Intr")
+  field(DISA, "0")
+}
+
+record(stringin, "$(P)$(R)DV_DeviceModelName_RBV") {
+  field(DTYP, "asynOctetRead")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_S_DeviceModelName")
+  field(SCAN, "I/O Intr")
+  field(DISA, "0")
+}
+
+record(mbbi, "$(P)$(R)DV_DevAccessStatus_RBV") {
   field(DTYP, "asynInt32")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_DeviceAccessStatus")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_DeviceAccessStatus")
   field(ZRST, "Unknown")
   field(ZRVL, "0")
   field(ONST, "ReadWrite")
@@ -26,30 +47,9 @@ record(mbbi, "$(P)$(R)GC_DevAccessStatus_RBV") {
   field(DISA, "0")
 }
 
-record(mbbo, "$(P)$(R)GC_DevAccessStatus") {
+record(mbbi, "$(P)$(R)DV_DevLicenseStatus_RBV") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_DeviceAccessStatus")
-  field(DOL,  "0")
-  field(ZRST, "Unknown")
-  field(ZRVL, "0")
-  field(ONST, "ReadWrite")
-  field(ONVL, "1")
-  field(TWST, "ReadOnly")
-  field(TWVL, "2")
-  field(THST, "NoAccess")
-  field(THVL, "3")
-  field(FRST, "Busy")
-  field(FRVL, "4")
-  field(FVST, "OpenReadWrite")
-  field(FVVL, "5")
-  field(SXST, "OpenReadOnly")
-  field(SXVL, "6")
-  field(DISA, "0")
-}
-
-record(mbbi, "$(P)$(R)GC_DevLicenseStatus_RBV") {
-  field(DTYP, "asynInt32")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_DeviceLicenseStatus")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_DeviceLicenseStatus")
   field(ZRST, "OK")
   field(ZRVL, "0")
   field(ONST, "NotOK")
@@ -60,59 +60,51 @@ record(mbbi, "$(P)$(R)GC_DevLicenseStatus_RBV") {
   field(DISA, "0")
 }
 
-record(mbbo, "$(P)$(R)GC_DevLicenseStatus") {
+record(mbbi, "$(P)$(R)DV_DeviceType_RBV") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_DeviceLicenseStatus")
-  field(DOL,  "0")
-  field(ZRST, "OK")
-  field(ZRVL, "0")
-  field(ONST, "NotOK")
-  field(ONVL, "1")
-  field(TWST, "Unknown")
-  field(TWVL, "2")
-  field(DISA, "0")
-}
-
-record(mbbi, "$(P)$(R)GC_DeviceType_RBV") {
-  field(DTYP, "asynInt32")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_DeviceType")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_DeviceType")
   field(ZRST, "CXP")
   field(ZRVL, "0")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
 }
 
-record(mbbo, "$(P)$(R)GC_DeviceType") {
-  field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_DeviceType")
-  field(DOL,  "0")
-  field(ZRST, "CXP")
-  field(ZRVL, "0")
-  field(DISA, "0")
-}
-
-record(ai, "$(P)$(R)GC_StreamSelector_RBV") {
-  field(DTYP, "asynInt64")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_I_StreamSelector")
+record(stringin, "$(P)$(R)DV_DeviceDescription_RBV") {
+  field(DTYP, "asynOctetRead")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_S_DeviceDescription")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
 }
 
-record(ao, "$(P)$(R)GC_StreamSelector") {
+record(ai, "$(P)$(R)DV_StreamSelector_RBV") {
   field(DTYP, "asynInt64")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_I_StreamSelector")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_I_StreamSelector")
+  field(SCAN, "I/O Intr")
   field(DISA, "0")
 }
 
-record(longout, "$(P)$(R)GC_DeviceReset") {
-  field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_C_DeviceReset")
+record(ao, "$(P)$(R)DV_StreamSelector") {
+  field(DTYP, "asynInt64")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_I_StreamSelector")
   field(DISA, "0")
 }
 
-record(mbbi, "$(P)$(R)GC_CamAndIllConStr_RBV") {
+record(stringin, "$(P)$(R)DV_StreamID_RBV") {
+  field(DTYP, "asynOctetRead")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_S_StreamID")
+  field(SCAN, "I/O Intr")
+  field(DISA, "0")
+}
+
+record(longout, "$(P)$(R)DV_DeviceReset") {
   field(DTYP, "asynInt32")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_CameraAndIlluminationControllerStream")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_C_DeviceReset")
+  field(DISA, "0")
+}
+
+record(mbbi, "$(P)$(R)DV_CamAndIllConStr_RBV") {
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_CameraAndIlluminationControllerStream")
   field(ZRST, "Stream0")
   field(ZRVL, "256")
   field(ONST, "Stream1")
@@ -125,9 +117,9 @@ record(mbbi, "$(P)$(R)GC_CamAndIllConStr_RBV") {
   field(DISA, "0")
 }
 
-record(mbbo, "$(P)$(R)GC_CamAndIllConStr") {
+record(mbbo, "$(P)$(R)DV_CamAndIllConStr") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_CameraAndIlluminationControllerStream")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_CameraAndIlluminationControllerStream")
   field(DOL,  "256")
   field(ZRST, "Stream0")
   field(ZRVL, "256")
@@ -140,9 +132,9 @@ record(mbbo, "$(P)$(R)GC_CamAndIllConStr") {
   field(DISA, "0")
 }
 
-record(mbbi, "$(P)$(R)GC_CamControlMethod_RBV") {
+record(mbbi, "$(P)$(R)DV_CamControlMethod_RBV") {
   field(DTYP, "asynInt32")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_CameraControlMethod")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_CameraControlMethod")
   field(ZRST, "NC")
   field(ZRVL, "0")
   field(ONST, "RC")
@@ -157,9 +149,9 @@ record(mbbi, "$(P)$(R)GC_CamControlMethod_RBV") {
   field(DISA, "0")
 }
 
-record(mbbo, "$(P)$(R)GC_CamControlMethod") {
+record(mbbo, "$(P)$(R)DV_CamControlMethod") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_CameraControlMethod")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_CameraControlMethod")
   field(DOL,  "0")
   field(ZRST, "NC")
   field(ZRVL, "0")
@@ -174,9 +166,9 @@ record(mbbo, "$(P)$(R)GC_CamControlMethod") {
   field(DISA, "0")
 }
 
-record(mbbi, "$(P)$(R)GC_C2CLinCon_RBV") {
+record(mbbi, "$(P)$(R)DV_C2CLinCon_RBV") {
   field(DTYP, "asynInt32")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_C2CLinkConfiguration")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_C2CLinkConfiguration")
   field(ZRST, "Disconnected")
   field(ZRVL, "3")
   field(ONST, "Master")
@@ -187,9 +179,9 @@ record(mbbi, "$(P)$(R)GC_C2CLinCon_RBV") {
   field(DISA, "0")
 }
 
-record(mbbo, "$(P)$(R)GC_C2CLinCon") {
+record(mbbo, "$(P)$(R)DV_C2CLinCon") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_C2CLinkConfiguration")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_C2CLinkConfiguration")
   field(DOL,  "3")
   field(ZRST, "Disconnected")
   field(ZRVL, "3")
@@ -200,157 +192,157 @@ record(mbbo, "$(P)$(R)GC_C2CLinCon") {
   field(DISA, "0")
 }
 
-record(bi, "$(P)$(R)GC_ExpReadoutOverlap_RBV") {
+record(bi, "$(P)$(R)DV_ExpReadoutOverlap_RBV") {
   field(DTYP, "asynInt32")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_B_ExposureReadoutOverlap")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_B_ExposureReadoutOverlap")
   field(SCAN, "I/O Intr")
   field(ZNAM, "No")
   field(ONAM, "Yes")
   field(DISA, "0")
 }
 
-record(bo, "$(P)$(R)GC_ExpReadoutOverlap") {
+record(bo, "$(P)$(R)DV_ExpReadoutOverlap") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_B_ExposureReadoutOverlap")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_B_ExposureReadoutOverlap")
   field(ZNAM, "No")
   field(ONAM, "Yes")
   field(DISA, "0")
 }
 
-record(ai, "$(P)$(R)GC_ExpRecoveryTime_RBV") {
+record(ai, "$(P)$(R)DV_ExpRecoveryTime_RBV") {
   field(DTYP, "asynFloat64")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_D_ExposureRecoveryTime")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_D_ExposureRecoveryTime")
   field(PREC, "3")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
 }
 
-record(ao, "$(P)$(R)GC_ExpRecoveryTime") {
+record(ao, "$(P)$(R)DV_ExpRecoveryTime") {
   field(DTYP, "asynFloat64")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_D_ExposureRecoveryTime")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_D_ExposureRecoveryTime")
   field(PREC, "3")
   field(DISA, "0")
 }
 
-record(ai, "$(P)$(R)GC_ExposureTimeMin_RBV") {
+record(ai, "$(P)$(R)DV_ExposureTimeMin_RBV") {
   field(DTYP, "asynFloat64")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_D_ExposureTimeMin")
-  field(PREC, "3")
-  field(SCAN, "I/O Intr")
-  field(DISA, "0")
-}
-
-record(ao, "$(P)$(R)GC_ExposureTimeMin") {
-  field(DTYP, "asynFloat64")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_D_ExposureTimeMin")
-  field(PREC, "3")
-  field(DISA, "0")
-}
-
-record(ai, "$(P)$(R)GC_ExposureTimeMax_RBV") {
-  field(DTYP, "asynFloat64")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_D_ExposureTimeMax")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_D_ExposureTimeMin")
   field(PREC, "3")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
 }
 
-record(ao, "$(P)$(R)GC_ExposureTimeMax") {
+record(ao, "$(P)$(R)DV_ExposureTimeMin") {
   field(DTYP, "asynFloat64")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_D_ExposureTimeMax")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_D_ExposureTimeMin")
   field(PREC, "3")
   field(DISA, "0")
 }
 
-record(ai, "$(P)$(R)GC_CycMinimumPeriod_RBV") {
+record(ai, "$(P)$(R)DV_ExposureTimeMax_RBV") {
   field(DTYP, "asynFloat64")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_D_CycleMinimumPeriod")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_D_ExposureTimeMax")
   field(PREC, "3")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
 }
 
-record(ao, "$(P)$(R)GC_CycMinimumPeriod") {
+record(ao, "$(P)$(R)DV_ExposureTimeMax") {
   field(DTYP, "asynFloat64")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_D_CycleMinimumPeriod")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_D_ExposureTimeMax")
   field(PREC, "3")
   field(DISA, "0")
 }
 
-record(ai, "$(P)$(R)GC_CycTimingSelector_RBV") {
+record(ai, "$(P)$(R)DV_CycMinimumPeriod_RBV") {
+  field(DTYP, "asynFloat64")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_D_CycleMinimumPeriod")
+  field(PREC, "3")
+  field(SCAN, "I/O Intr")
+  field(DISA, "0")
+}
+
+record(ao, "$(P)$(R)DV_CycMinimumPeriod") {
+  field(DTYP, "asynFloat64")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_D_CycleMinimumPeriod")
+  field(PREC, "3")
+  field(DISA, "0")
+}
+
+record(ai, "$(P)$(R)DV_CycTimingSelector_RBV") {
   field(DTYP, "asynInt64")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_I_CycleTimingSelector")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_I_CycleTimingSelector")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
 }
 
-record(ao, "$(P)$(R)GC_CycTimingSelector") {
+record(ao, "$(P)$(R)DV_CycTimingSelector") {
   field(DTYP, "asynInt64")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_I_CycleTimingSelector")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_I_CycleTimingSelector")
   field(DISA, "0")
 }
 
-record(ai, "$(P)$(R)GC_CycleTimingCount_RBV") {
+record(ai, "$(P)$(R)DV_CycleTimingCount_RBV") {
   field(DTYP, "asynInt64")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_I_CycleTimingCount")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_I_CycleTimingCount")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
 }
 
-record(ao, "$(P)$(R)GC_CycleTimingCount") {
+record(ao, "$(P)$(R)DV_CycleTimingCount") {
   field(DTYP, "asynInt64")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_I_CycleTimingCount")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_I_CycleTimingCount")
   field(DISA, "0")
 }
 
-record(ai, "$(P)$(R)GC_ExposureTime_RBV") {
+record(ai, "$(P)$(R)DV_ExposureTime_RBV") {
   field(DTYP, "asynFloat64")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_D_ExposureTime")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_D_ExposureTime")
   field(PREC, "3")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
 }
 
-record(ao, "$(P)$(R)GC_ExposureTime") {
+record(ao, "$(P)$(R)DV_ExposureTime") {
   field(DTYP, "asynFloat64")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_D_ExposureTime")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_D_ExposureTime")
   field(PREC, "3")
   field(DISA, "0")
 }
 
-record(ai, "$(P)$(R)GC_StrobeDelay_RBV") {
+record(ai, "$(P)$(R)DV_StrobeDelay_RBV") {
   field(DTYP, "asynFloat64")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_D_StrobeDelay")
-  field(PREC, "3")
-  field(SCAN, "I/O Intr")
-  field(DISA, "0")
-}
-
-record(ao, "$(P)$(R)GC_StrobeDelay") {
-  field(DTYP, "asynFloat64")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_D_StrobeDelay")
-  field(PREC, "3")
-  field(DISA, "0")
-}
-
-record(ai, "$(P)$(R)GC_StrobeDuration_RBV") {
-  field(DTYP, "asynFloat64")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_D_StrobeDuration")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_D_StrobeDelay")
   field(PREC, "3")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
 }
 
-record(ao, "$(P)$(R)GC_StrobeDuration") {
+record(ao, "$(P)$(R)DV_StrobeDelay") {
   field(DTYP, "asynFloat64")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_D_StrobeDuration")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_D_StrobeDelay")
   field(PREC, "3")
   field(DISA, "0")
 }
 
-record(mbbi, "$(P)$(R)GC_CycTriggerSource_RBV") {
+record(ai, "$(P)$(R)DV_StrobeDuration_RBV") {
+  field(DTYP, "asynFloat64")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_D_StrobeDuration")
+  field(PREC, "3")
+  field(SCAN, "I/O Intr")
+  field(DISA, "0")
+}
+
+record(ao, "$(P)$(R)DV_StrobeDuration") {
+  field(DTYP, "asynFloat64")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_D_StrobeDuration")
+  field(PREC, "3")
+  field(DISA, "0")
+}
+
+record(mbbi, "$(P)$(R)DV_CycTriggerSource_RBV") {
   field(DTYP, "asynInt32")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_CycleTriggerSource")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_CycleTriggerSource")
   field(ZRST, "Immediate")
   field(ZRVL, "254")
   field(ONST, "StartCycle")
@@ -387,9 +379,9 @@ record(mbbi, "$(P)$(R)GC_CycTriggerSource_RBV") {
   field(DISA, "0")
 }
 
-record(mbbo, "$(P)$(R)GC_CycTriggerSource") {
+record(mbbo, "$(P)$(R)DV_CycTriggerSource") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_CycleTriggerSource")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_CycleTriggerSource")
   field(DOL,  "254")
   field(ZRST, "Immediate")
   field(ZRVL, "254")
@@ -426,34 +418,48 @@ record(mbbo, "$(P)$(R)GC_CycTriggerSource") {
   field(DISA, "0")
 }
 
-record(longout, "$(P)$(R)GC_StartCycle") {
+record(longout, "$(P)$(R)DV_StartCycle") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_C_StartCycle")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_C_StartCycle")
   field(DISA, "0")
 }
 
-record(ai, "$(P)$(R)GC_CycMaxPenTriCount_RBV") {
+record(ai, "$(P)$(R)DV_CycMaxPenTriCount_RBV") {
   field(DTYP, "asynInt64")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_I_CycleMaxPendingTriggerCount")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_I_CycleMaxPendingTriggerCount")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
 }
 
-record(ao, "$(P)$(R)GC_CycMaxPenTriCount") {
+record(ao, "$(P)$(R)DV_CycMaxPenTriCount") {
   field(DTYP, "asynInt64")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_I_CycleMaxPendingTriggerCount")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_I_CycleMaxPendingTriggerCount")
   field(DISA, "0")
 }
 
-record(longout, "$(P)$(R)GC_CycLosTriCouReset") {
-  field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_C_CycleLostTriggerCountReset")
+record(ai, "$(P)$(R)DV_CycPenTriCount_RBV") {
+  field(DTYP, "asynInt64")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_I_CyclePendingTriggerCount")
+  field(SCAN, "I/O Intr")
   field(DISA, "0")
 }
 
-record(mbbi, "$(P)$(R)GC_StaOfSeqTriSource_RBV") {
+record(ai, "$(P)$(R)DV_CycLosTriCount_RBV") {
+  field(DTYP, "asynInt64")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_I_CycleLostTriggerCount")
+  field(SCAN, "I/O Intr")
+  field(DISA, "0")
+}
+
+record(longout, "$(P)$(R)DV_CycLosTriCouReset") {
   field(DTYP, "asynInt32")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_StartOfSequenceTriggerSource")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_C_CycleLostTriggerCountReset")
+  field(DISA, "0")
+}
+
+record(mbbi, "$(P)$(R)DV_StaOfSeqTriSource_RBV") {
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_StartOfSequenceTriggerSource")
   field(ZRST, "Immediate")
   field(ZRVL, "254")
   field(ONST, "StartSequence")
@@ -490,9 +496,9 @@ record(mbbi, "$(P)$(R)GC_StaOfSeqTriSource_RBV") {
   field(DISA, "0")
 }
 
-record(mbbo, "$(P)$(R)GC_StaOfSeqTriSource") {
+record(mbbo, "$(P)$(R)DV_StaOfSeqTriSource") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_StartOfSequenceTriggerSource")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_StartOfSequenceTriggerSource")
   field(DOL,  "254")
   field(ZRST, "Immediate")
   field(ZRVL, "254")
@@ -529,9 +535,9 @@ record(mbbo, "$(P)$(R)GC_StaOfSeqTriSource") {
   field(DISA, "0")
 }
 
-record(mbbi, "$(P)$(R)GC_EndOfSeqTriSource_RBV") {
+record(mbbi, "$(P)$(R)DV_EndOfSeqTriSource_RBV") {
   field(DTYP, "asynInt32")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_EndOfSequenceTriggerSource")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_EndOfSequenceTriggerSource")
   field(ZRST, "SequenceLength")
   field(ZRVL, "254")
   field(ONST, "StopSequence")
@@ -568,9 +574,9 @@ record(mbbi, "$(P)$(R)GC_EndOfSeqTriSource_RBV") {
   field(DISA, "0")
 }
 
-record(mbbo, "$(P)$(R)GC_EndOfSeqTriSource") {
+record(mbbo, "$(P)$(R)DV_EndOfSeqTriSource") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_EndOfSequenceTriggerSource")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_EndOfSequenceTriggerSource")
   field(DOL,  "254")
   field(ZRST, "SequenceLength")
   field(ZRVL, "254")
@@ -607,40 +613,40 @@ record(mbbo, "$(P)$(R)GC_EndOfSeqTriSource") {
   field(DISA, "0")
 }
 
-record(ai, "$(P)$(R)GC_SequenceLength_RBV") {
+record(ai, "$(P)$(R)DV_SequenceLength_RBV") {
   field(DTYP, "asynInt64")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_I_SequenceLength")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_I_SequenceLength")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
 }
 
-record(ao, "$(P)$(R)GC_SequenceLength") {
+record(ao, "$(P)$(R)DV_SequenceLength") {
   field(DTYP, "asynInt64")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_I_SequenceLength")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_I_SequenceLength")
   field(DISA, "0")
 }
 
-record(longout, "$(P)$(R)GC_StartSequence") {
+record(longout, "$(P)$(R)DV_StartSequence") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_C_StartSequence")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_C_StartSequence")
   field(DISA, "0")
 }
 
-record(longout, "$(P)$(R)GC_StopSequence") {
+record(longout, "$(P)$(R)DV_StopSequence") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_C_StopSequence")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_C_StopSequence")
   field(DISA, "0")
 }
 
-record(longout, "$(P)$(R)GC_AbortSequence") {
+record(longout, "$(P)$(R)DV_AbortSequence") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_C_AbortSequence")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_C_AbortSequence")
   field(DISA, "0")
 }
 
-record(mbbi, "$(P)$(R)GC_CxpLinCon_RBV") {
+record(mbbi, "$(P)$(R)DV_CxpLinCon_RBV") {
   field(DTYP, "asynInt32")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_CxpLinkConfiguration")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_CxpLinkConfiguration")
   field(ZRST, "CXP1_X1")
   field(ZRVL, "65576")
   field(ONST, "CXP2_X1")
@@ -677,9 +683,9 @@ record(mbbi, "$(P)$(R)GC_CxpLinCon_RBV") {
   field(DISA, "0")
 }
 
-record(mbbo, "$(P)$(R)GC_CxpLinCon") {
+record(mbbo, "$(P)$(R)DV_CxpLinCon") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_CxpLinkConfiguration")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_CxpLinkConfiguration")
   field(DOL,  "65576")
   field(ZRST, "CXP1_X1")
   field(ZRVL, "65576")
@@ -716,9 +722,9 @@ record(mbbo, "$(P)$(R)GC_CxpLinCon") {
   field(DISA, "0")
 }
 
-record(mbbi, "$(P)$(R)GC_CxpLinConOption_RBV") {
+record(mbbi, "$(P)$(R)DV_CxpLinConOption_RBV") {
   field(DTYP, "asynInt32")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_CxpLinkConfigurationOption")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_CxpLinkConfigurationOption")
   field(ZRST, "AlwaysWrite")
   field(ZRVL, "0")
   field(ONST, "WriteIfDifferent")
@@ -729,9 +735,9 @@ record(mbbi, "$(P)$(R)GC_CxpLinConOption_RBV") {
   field(DISA, "0")
 }
 
-record(mbbo, "$(P)$(R)GC_CxpLinConOption") {
+record(mbbo, "$(P)$(R)DV_CxpLinConOption") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_CxpLinkConfigurationOption")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_CxpLinkConfigurationOption")
   field(DOL,  "0")
   field(ZRST, "AlwaysWrite")
   field(ZRVL, "0")
@@ -742,9 +748,9 @@ record(mbbo, "$(P)$(R)GC_CxpLinConOption") {
   field(DISA, "0")
 }
 
-record(mbbi, "$(P)$(R)GC_CxpHosConBase_RBV") {
+record(mbbi, "$(P)$(R)DV_CxpHosConBase_RBV") {
   field(DTYP, "asynInt32")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_CxpHostConnectionBase")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_CxpHostConnectionBase")
   field(ZRST, "A")
   field(ZRVL, "0")
   field(ONST, "B")
@@ -765,32 +771,16 @@ record(mbbi, "$(P)$(R)GC_CxpHosConBase_RBV") {
   field(DISA, "0")
 }
 
-record(mbbo, "$(P)$(R)GC_CxpHosConBase") {
-  field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_CxpHostConnectionBase")
-  field(DOL,  "0")
-  field(ZRST, "A")
-  field(ZRVL, "0")
-  field(ONST, "B")
-  field(ONVL, "1")
-  field(TWST, "C")
-  field(TWVL, "2")
-  field(THST, "D")
-  field(THVL, "3")
-  field(FRST, "E")
-  field(FRVL, "4")
-  field(FVST, "F")
-  field(FVVL, "5")
-  field(SXST, "G")
-  field(SXVL, "6")
-  field(SVST, "H")
-  field(SVVL, "7")
+record(ai, "$(P)$(R)DV_CxpHosConCount_RBV") {
+  field(DTYP, "asynInt64")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_I_CxpHostConnectionCount")
+  field(SCAN, "I/O Intr")
   field(DISA, "0")
 }
 
-record(mbbi, "$(P)$(R)GC_CxpTriMesFormat_RBV") {
+record(mbbi, "$(P)$(R)DV_CxpTriMesFormat_RBV") {
   field(DTYP, "asynInt32")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_CxpTriggerMessageFormat")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_CxpTriggerMessageFormat")
   field(ZRST, "Pulse")
   field(ZRVL, "9")
   field(ONST, "RisingEdge")
@@ -801,9 +791,9 @@ record(mbbi, "$(P)$(R)GC_CxpTriMesFormat_RBV") {
   field(DISA, "0")
 }
 
-record(mbbo, "$(P)$(R)GC_CxpTriMesFormat") {
+record(mbbo, "$(P)$(R)DV_CxpTriMesFormat") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_CxpTriggerMessageFormat")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_CxpTriggerMessageFormat")
   field(DOL,  "9")
   field(ZRST, "Pulse")
   field(ZRVL, "9")
@@ -814,9 +804,9 @@ record(mbbo, "$(P)$(R)GC_CxpTriMesFormat") {
   field(DISA, "0")
 }
 
-record(mbbi, "$(P)$(R)GC_CxpTriggerLevel_RBV") {
+record(mbbi, "$(P)$(R)DV_CxpTriggerLevel_RBV") {
   field(DTYP, "asynInt32")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_CxpTriggerLevel")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_CxpTriggerLevel")
   field(ZRST, "Low")
   field(ZRVL, "2")
   field(ONST, "High")
@@ -825,9 +815,9 @@ record(mbbi, "$(P)$(R)GC_CxpTriggerLevel_RBV") {
   field(DISA, "0")
 }
 
-record(mbbo, "$(P)$(R)GC_CxpTriggerLevel") {
+record(mbbo, "$(P)$(R)DV_CxpTriggerLevel") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_CxpTriggerLevel")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_CxpTriggerLevel")
   field(DOL,  "2")
   field(ZRST, "Low")
   field(ZRVL, "2")
@@ -836,56 +826,56 @@ record(mbbo, "$(P)$(R)GC_CxpTriggerLevel") {
   field(DISA, "0")
 }
 
-record(ai, "$(P)$(R)GC_CxpTriAckTimeout_RBV") {
+record(ai, "$(P)$(R)DV_CxpTriAckTimeout_RBV") {
   field(DTYP, "asynFloat64")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_D_CxpTriggerAckTimeout")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_D_CxpTriggerAckTimeout")
   field(PREC, "3")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
 }
 
-record(ao, "$(P)$(R)GC_CxpTriAckTimeout") {
+record(ao, "$(P)$(R)DV_CxpTriAckTimeout") {
   field(DTYP, "asynFloat64")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_D_CxpTriggerAckTimeout")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_D_CxpTriggerAckTimeout")
   field(PREC, "3")
   field(DISA, "0")
 }
 
-record(ai, "$(P)$(R)GC_CxpTriMaxResCount_RBV") {
+record(ai, "$(P)$(R)DV_CxpTriMaxResCount_RBV") {
   field(DTYP, "asynInt64")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_I_CxpTriggerMaxResendCount")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_I_CxpTriggerMaxResendCount")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
 }
 
-record(ao, "$(P)$(R)GC_CxpTriMaxResCount") {
+record(ao, "$(P)$(R)DV_CxpTriMaxResCount") {
   field(DTYP, "asynInt64")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_I_CxpTriggerMaxResendCount")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_I_CxpTriggerMaxResendCount")
   field(DISA, "0")
 }
 
-record(longout, "$(P)$(R)GC_CxpPacArbReset") {
+record(longout, "$(P)$(R)DV_CxpPacArbReset") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_C_CxpPacketArbiterReset")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_C_CxpPacketArbiterReset")
   field(DISA, "0")
 }
 
-record(ai, "$(P)$(R)GC_CxpPortAlignment_RBV") {
+record(ai, "$(P)$(R)DV_CxpPortAlignment_RBV") {
   field(DTYP, "asynInt64")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_I_CxpPortAlignment")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_I_CxpPortAlignment")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
 }
 
-record(ao, "$(P)$(R)GC_CxpPortAlignment") {
+record(ao, "$(P)$(R)DV_CxpPortAlignment") {
   field(DTYP, "asynInt64")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_I_CxpPortAlignment")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_I_CxpPortAlignment")
   field(DISA, "0")
 }
 
-record(mbbi, "$(P)$(R)GC_CxpTriMesSelector_RBV") {
+record(mbbi, "$(P)$(R)DV_CxpTriMesSelector_RBV") {
   field(DTYP, "asynInt32")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_CxpTriggerMessageSelector")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_CxpTriggerMessageSelector")
   field(ZRST, "LinkTrigger0")
   field(ZRVL, "0")
   field(ONST, "LinkTrigger1")
@@ -894,9 +884,9 @@ record(mbbi, "$(P)$(R)GC_CxpTriMesSelector_RBV") {
   field(DISA, "0")
 }
 
-record(mbbo, "$(P)$(R)GC_CxpTriMesSelector") {
+record(mbbo, "$(P)$(R)DV_CxpTriMesSelector") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_CxpTriggerMessageSelector")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_CxpTriggerMessageSelector")
   field(DOL,  "0")
   field(ZRST, "LinkTrigger0")
   field(ZRVL, "0")
@@ -905,9 +895,9 @@ record(mbbo, "$(P)$(R)GC_CxpTriMesSelector") {
   field(DISA, "0")
 }
 
-record(mbbi, "$(P)$(R)GC_CxpTriMesSource_RBV") {
+record(mbbi, "$(P)$(R)DV_CxpTriMesSource_RBV") {
   field(DTYP, "asynInt32")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_CxpTriggerMessageSource")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_CxpTriggerMessageSource")
   field(ZRST, "NONE")
   field(ZRVL, "0")
   field(ONST, "LIN1")
@@ -944,9 +934,9 @@ record(mbbi, "$(P)$(R)GC_CxpTriMesSource_RBV") {
   field(DISA, "0")
 }
 
-record(mbbo, "$(P)$(R)GC_CxpTriMesSource") {
+record(mbbo, "$(P)$(R)DV_CxpTriMesSource") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_CxpTriggerMessageSource")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_CxpTriggerMessageSource")
   field(DOL,  "0")
   field(ZRST, "NONE")
   field(ZRVL, "0")
@@ -983,9 +973,9 @@ record(mbbo, "$(P)$(R)GC_CxpTriMesSource") {
   field(DISA, "0")
 }
 
-record(mbbi, "$(P)$(R)GC_RemDevEveSelector_RBV") {
+record(mbbi, "$(P)$(R)DV_RemDevEveSelector_RBV") {
   field(DTYP, "asynInt32")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_RemoteDeviceEventSelector")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_RemoteDeviceEventSelector")
   field(ZRST, "GenICam")
   field(ZRVL, "0")
   field(ONST, "CoaXPress")
@@ -996,9 +986,9 @@ record(mbbi, "$(P)$(R)GC_RemDevEveSelector_RBV") {
   field(DISA, "0")
 }
 
-record(mbbo, "$(P)$(R)GC_RemDevEveSelector") {
+record(mbbo, "$(P)$(R)DV_RemDevEveSelector") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_RemoteDeviceEventSelector")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_RemoteDeviceEventSelector")
   field(DOL,  "0")
   field(ZRST, "GenICam")
   field(ZRVL, "0")
@@ -1009,32 +999,39 @@ record(mbbo, "$(P)$(R)GC_RemDevEveSelector") {
   field(DISA, "0")
 }
 
-record(bi, "$(P)$(R)GC_RemDevEventEnable_RBV") {
+record(bi, "$(P)$(R)DV_RemDevEventEnable_RBV") {
   field(DTYP, "asynInt32")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_B_RemoteDeviceEventEnable")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_B_RemoteDeviceEventEnable")
   field(SCAN, "I/O Intr")
   field(ZNAM, "No")
   field(ONAM, "Yes")
   field(DISA, "0")
 }
 
-record(bo, "$(P)$(R)GC_RemDevEventEnable") {
+record(bo, "$(P)$(R)DV_RemDevEventEnable") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_B_RemoteDeviceEventEnable")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_B_RemoteDeviceEventEnable")
   field(ZNAM, "No")
   field(ONAM, "Yes")
   field(DISA, "0")
 }
 
-record(longout, "$(P)$(R)GC_RemDevEveCouReset") {
-  field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_C_RemoteDeviceEventCountReset")
+record(ai, "$(P)$(R)DV_RemDevEventCount_RBV") {
+  field(DTYP, "asynInt64")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_I_RemoteDeviceEventCount")
+  field(SCAN, "I/O Intr")
   field(DISA, "0")
 }
 
-record(mbbi, "$(P)$(R)GC_EventSelector_RBV") {
+record(longout, "$(P)$(R)DV_RemDevEveCouReset") {
   field(DTYP, "asynInt32")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_EventSelector")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_C_RemoteDeviceEventCountReset")
+  field(DISA, "0")
+}
+
+record(mbbi, "$(P)$(R)DV_EventSelector_RBV") {
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_EventSelector")
   field(ZRST, "CameraTriggerRis")
   field(ZRVL, "32833")
   field(ONST, "CameraTriggerFal")
@@ -1071,9 +1068,9 @@ record(mbbi, "$(P)$(R)GC_EventSelector_RBV") {
   field(DISA, "0")
 }
 
-record(mbbo, "$(P)$(R)GC_EventSelector") {
+record(mbbo, "$(P)$(R)DV_EventSelector") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_EventSelector")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_EventSelector")
   field(DOL,  "32833")
   field(ZRST, "CameraTriggerRis")
   field(ZRVL, "32833")
@@ -1110,26 +1107,26 @@ record(mbbo, "$(P)$(R)GC_EventSelector") {
   field(DISA, "0")
 }
 
-record(bi, "$(P)$(R)GC_EventNotification_RBV") {
+record(bi, "$(P)$(R)DV_EventNotification_RBV") {
   field(DTYP, "asynInt32")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_B_EventNotification")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_B_EventNotification")
   field(SCAN, "I/O Intr")
   field(ZNAM, "No")
   field(ONAM, "Yes")
   field(DISA, "0")
 }
 
-record(bo, "$(P)$(R)GC_EventNotification") {
+record(bo, "$(P)$(R)DV_EventNotification") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_B_EventNotification")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_B_EventNotification")
   field(ZNAM, "No")
   field(ONAM, "Yes")
   field(DISA, "0")
 }
 
-record(mbbi, "$(P)$(R)GC_EveNotContext1_RBV") {
+record(mbbi, "$(P)$(R)DV_EveNotContext1_RBV") {
   field(DTYP, "asynInt32")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_EventNotificationContext1")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_EventNotificationContext1")
   field(ZRST, "EventSpecific")
   field(ZRVL, "0")
   field(ONST, "LineStatusAll")
@@ -1166,9 +1163,9 @@ record(mbbi, "$(P)$(R)GC_EveNotContext1_RBV") {
   field(DISA, "0")
 }
 
-record(mbbo, "$(P)$(R)GC_EveNotContext1") {
+record(mbbo, "$(P)$(R)DV_EveNotContext1") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_EventNotificationContext1")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_EventNotificationContext1")
   field(DOL,  "0")
   field(ZRST, "EventSpecific")
   field(ZRVL, "0")
@@ -1205,9 +1202,9 @@ record(mbbo, "$(P)$(R)GC_EveNotContext1") {
   field(DISA, "0")
 }
 
-record(mbbi, "$(P)$(R)GC_EveNotContext2_RBV") {
+record(mbbi, "$(P)$(R)DV_EveNotContext2_RBV") {
   field(DTYP, "asynInt32")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_EventNotificationContext2")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_EventNotificationContext2")
   field(ZRST, "EventSpecific")
   field(ZRVL, "0")
   field(ONST, "LineStatusAll")
@@ -1244,9 +1241,9 @@ record(mbbi, "$(P)$(R)GC_EveNotContext2_RBV") {
   field(DISA, "0")
 }
 
-record(mbbo, "$(P)$(R)GC_EveNotContext2") {
+record(mbbo, "$(P)$(R)DV_EveNotContext2") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_EventNotificationContext2")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_EventNotificationContext2")
   field(DOL,  "0")
   field(ZRST, "EventSpecific")
   field(ZRVL, "0")
@@ -1283,9 +1280,9 @@ record(mbbo, "$(P)$(R)GC_EveNotContext2") {
   field(DISA, "0")
 }
 
-record(mbbi, "$(P)$(R)GC_EveNotContext3_RBV") {
+record(mbbi, "$(P)$(R)DV_EveNotContext3_RBV") {
   field(DTYP, "asynInt32")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_EventNotificationContext3")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_EventNotificationContext3")
   field(ZRST, "EventSpecific")
   field(ZRVL, "0")
   field(ONST, "LineStatusAll")
@@ -1322,9 +1319,9 @@ record(mbbi, "$(P)$(R)GC_EveNotContext3_RBV") {
   field(DISA, "0")
 }
 
-record(mbbo, "$(P)$(R)GC_EveNotContext3") {
+record(mbbo, "$(P)$(R)DV_EveNotContext3") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_EventNotificationContext3")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_EventNotificationContext3")
   field(DOL,  "0")
   field(ZRST, "EventSpecific")
   field(ZRVL, "0")
@@ -1361,38 +1358,45 @@ record(mbbo, "$(P)$(R)GC_EveNotContext3") {
   field(DISA, "0")
 }
 
-record(longout, "$(P)$(R)GC_EventCountReset") {
-  field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_C_EventCountReset")
+record(ai, "$(P)$(R)DV_EventCount_RBV") {
+  field(DTYP, "asynInt64")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_I_EventCount")
+  field(SCAN, "I/O Intr")
   field(DISA, "0")
 }
 
-record(bi, "$(P)$(R)GC_EveNotAll_RBV") {
+record(longout, "$(P)$(R)DV_EventCountReset") {
   field(DTYP, "asynInt32")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_B_EventNotificationAll")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_C_EventCountReset")
+  field(DISA, "0")
+}
+
+record(bi, "$(P)$(R)DV_EveNotAll_RBV") {
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_B_EventNotificationAll")
   field(SCAN, "I/O Intr")
   field(ZNAM, "No")
   field(ONAM, "Yes")
   field(DISA, "0")
 }
 
-record(bo, "$(P)$(R)GC_EveNotAll") {
+record(bo, "$(P)$(R)DV_EveNotAll") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_B_EventNotificationAll")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_B_EventNotificationAll")
   field(ZNAM, "No")
   field(ONAM, "Yes")
   field(DISA, "0")
 }
 
-record(longout, "$(P)$(R)GC_EveCountResetAll") {
+record(longout, "$(P)$(R)DV_EveCountResetAll") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_C_EventCountResetAll")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_C_EventCountResetAll")
   field(DISA, "0")
 }
 
-record(mbbi, "$(P)$(R)GC_ErrorSelector_RBV") {
+record(mbbi, "$(P)$(R)DV_ErrorSelector_RBV") {
   field(DTYP, "asynInt32")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_ErrorSelector")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_ErrorSelector")
   field(ZRST, "All")
   field(ZRVL, "255")
   field(ONST, "CameraTriggerOve")
@@ -1429,9 +1433,9 @@ record(mbbi, "$(P)$(R)GC_ErrorSelector_RBV") {
   field(DISA, "0")
 }
 
-record(mbbo, "$(P)$(R)GC_ErrorSelector") {
+record(mbbo, "$(P)$(R)DV_ErrorSelector") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_ErrorSelector")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_E_ErrorSelector")
   field(DOL,  "255")
   field(ZRST, "All")
   field(ZRVL, "255")
@@ -1468,9 +1472,16 @@ record(mbbo, "$(P)$(R)GC_ErrorSelector") {
   field(DISA, "0")
 }
 
-record(longout, "$(P)$(R)GC_ErrorCountReset") {
+record(ai, "$(P)$(R)DV_ErrorCount_RBV") {
+  field(DTYP, "asynInt64")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_I_ErrorCount")
+  field(SCAN, "I/O Intr")
+  field(DISA, "0")
+}
+
+record(longout, "$(P)$(R)DV_ErrorCountReset") {
   field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_C_ErrorCountReset")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))DV_C_ErrorCountReset")
   field(DISA, "0")
 }
 
