@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1572
-y 1126
+x 1308
+y 775
 w 400
 h 340
 font "helvetica-medium-r-12.0"
@@ -221,7 +221,7 @@ buttonLabel "Euresys System"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "ADEuresysScreens/Euresys_Coaxlink_TLSystem_25_02_0.-features_1.edl"
+  0 "ADEuresysScreens/Euresys_Coaxlink_TLSystem_25_02_0-features_1.edl"
 }
 setPosition {
   0 "button"
@@ -257,7 +257,7 @@ buttonLabel "Euresys DataStream 1"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "ADEuresysScreens/Euresys_Coaxlink_TLDataStream_25_02_0.-features_1.edl"
+  0 "ADEuresysScreens/Euresys_Coaxlink_TLDataStream_25_02_0-features_1.edl"
 }
 setPosition {
   0 "button"
@@ -293,7 +293,7 @@ buttonLabel "Euresys DataStream 2"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "ADEuresysScreens/Euresys_Coaxlink_TLDataStream_25_02_0.-features_2.edl"
+  0 "ADEuresysScreens/Euresys_Coaxlink_TLDataStream_25_02_0-features_2.edl"
 }
 setPosition {
   0 "button"
@@ -329,7 +329,7 @@ buttonLabel "Euresys TLInterface 1"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "ADEuresysScreens/Euresys_Coaxlink_TLInterface_25_02_0.-features_1.edl"
+  0 "ADEuresysScreens/Euresys_Coaxlink_TLInterface_25_02_0-features_1.edl"
 }
 setPosition {
   0 "button"
@@ -365,7 +365,7 @@ buttonLabel "Euresys TLInterface 2"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "ADEuresysScreens/Euresys_Coaxlink_TLInterface_25_02_0.-features_2.edl"
+  0 "ADEuresysScreens/Euresys_Coaxlink_TLInterface_25_02_0-features_2.edl"
 }
 setPosition {
   0 "button"
@@ -401,7 +401,7 @@ buttonLabel "Euresys TLInterface 4"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "ADEuresysScreens/Euresys_Coaxlink_TLInterface_25_02_0.-features_4.edl"
+  0 "ADEuresysScreens/Euresys_Coaxlink_TLInterface_25_02_0-features_4.edl"
 }
 setPosition {
   0 "button"
@@ -437,7 +437,7 @@ buttonLabel "Euresys TLInterface 3"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "ADEuresysScreens/Euresys_Coaxlink_TLInterface_25_02_0.-features_3.edl"
+  0 "ADEuresysScreens/Euresys_Coaxlink_TLInterface_25_02_0-features_3.edl"
 }
 setPosition {
   0 "button"

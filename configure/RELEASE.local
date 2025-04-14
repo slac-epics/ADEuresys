@@ -39,7 +39,7 @@ EPICS_BASE      = $(EPICS_SITE_TOP)/base/$(BASE_MODULE_VERSION)
 
 #MY_MODULES = /cds/group/pcds/epics-dev/bhill/modules/
 #MY_MODULES = /cds/home/k/ktkim/sandbox/areaDetector
-MY_MODULES = /cds/group/pcds/epics-dev/ktkim/sandbox/areaDetector/test
+#MY_MODULES = /cds/group/pcds/epics-dev/ktkim/sandbox/areaDetector/test
 
 #ADGENICAM    = $(MY_MODULES)/ADGenICam-git
 
