@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1308
-y 775
+x 1313
+y 804
 w 400
 h 340
 font "helvetica-medium-r-12.0"
@@ -156,49 +156,6 @@ fgColor index 14
 bgColor index 3
 value {
   "Camera Type"
-}
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 152
-y 88
-w 20
-h 20
-lineColor index 14
-fill
-fillColor index 77
-visPv "$(P)$(R)GC_SensorTemperature_RBV"
-visInvert
-visMin "-30"
-visMax "70"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 0
-y 88
-w 140
-h 20
-font "helvetica-bold-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 3
-useDisplayBg
-visPv "$(P)$(R)GC_SensorTemperature_RBV"
-visInvert
-visMin "-30"
-visMax "70"
-value {
-  "Check SensorTemp!"
 }
 endObjectProperties
 
@@ -516,7 +473,7 @@ major 4
 minor 7
 release 0
 x 124
-y 136
+y 120
 w 84
 h 20
 controlPv "$(P)$(R)OutputQueue"
@@ -539,7 +496,7 @@ major 4
 minor 7
 release 0
 x 124
-y 112
+y 96
 w 84
 h 20
 controlPv "$(P)$(R)ESBufferSize"
@@ -562,7 +519,7 @@ major 4
 minor 7
 release 0
 x 124
-y 280
+y 264
 w 84
 h 20
 controlPv "$(P)$(R)TemperatureActual"
@@ -585,7 +542,7 @@ major 4
 minor 1
 release 0
 x 124
-y 256
+y 240
 w 84
 h 20
 fgColor index 14
@@ -609,7 +566,7 @@ major 4
 minor 0
 release 0
 x 124
-y 304
+y 288
 w 84
 h 20
 fgColor index 14
@@ -629,7 +586,7 @@ major 4
 minor 7
 release 0
 x 124
-y 160
+y 144
 w 84
 h 20
 controlPv "$(P)$(R)ProcessTotalTime"
@@ -652,7 +609,7 @@ major 4
 minor 7
 release 0
 x 124
-y 184
+y 168
 w 84
 h 20
 controlPv "$(P)$(R)ProcessCopyTime"
@@ -675,7 +632,7 @@ major 4
 minor 7
 release 0
 x 124
-y 208
+y 192
 w 84
 h 20
 controlPv "$(P)$(R)RejectedFrames"
@@ -698,7 +655,7 @@ major 4
 minor 7
 release 0
 x 124
-y 232
+y 216
 w 84
 h 20
 controlPv "$(P)$(R)CRCErrors"
@@ -721,7 +678,7 @@ major 4
 minor 1
 release 1
 x 0
-y 136
+y 120
 w 120
 h 20
 font "helvetica-medium-r-14.0"
@@ -741,7 +698,7 @@ major 4
 minor 1
 release 1
 x 0
-y 112
+y 96
 w 120
 h 20
 font "helvetica-medium-r-14.0"
@@ -761,7 +718,7 @@ major 4
 minor 1
 release 1
 x 0
-y 280
+y 264
 w 120
 h 20
 font "helvetica-medium-r-14.0"
@@ -781,7 +738,7 @@ major 4
 minor 1
 release 1
 x 0
-y 256
+y 240
 w 120
 h 20
 font "helvetica-medium-r-14.0"
@@ -801,7 +758,7 @@ major 4
 minor 1
 release 1
 x 0
-y 304
+y 288
 w 120
 h 20
 font "helvetica-medium-r-14.0"
@@ -821,7 +778,7 @@ major 4
 minor 1
 release 1
 x 0
-y 160
+y 144
 w 120
 h 20
 font "helvetica-medium-r-14.0"
@@ -841,7 +798,7 @@ major 4
 minor 1
 release 1
 x 0
-y 184
+y 168
 w 120
 h 20
 font "helvetica-medium-r-14.0"
@@ -861,7 +818,7 @@ major 4
 minor 1
 release 1
 x 0
-y 208
+y 192
 w 120
 h 20
 font "helvetica-medium-r-14.0"
@@ -881,7 +838,7 @@ major 4
 minor 1
 release 1
 x 0
-y 232
+y 216
 w 120
 h 20
 font "helvetica-medium-r-14.0"
