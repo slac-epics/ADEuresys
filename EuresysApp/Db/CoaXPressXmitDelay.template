@@ -2,13 +2,14 @@
 #
 # Macros
 #	P and R			- Standard AreaDetector P and R macros.  Set unique to each camera via dbLoadRecords
-#	CXL_DATARATE	- CoaXPress data rate.  CXP-12 is 12.5Gbps and is the default.
-#	CXL_NCHAN		- Number of CoaXPress channels in the framegrabber.  Defaults to 4.
+#	CXL_DATARATE	- CoaXPress data rate.  The AXIS Camera with Optical Fiber uses CXP-6
+#	                  and it's trafer rate is 6.25Gbps and is the default.
+#	CXL_NCHAN	- Number of CoaXPress channels in the framegrabber.  Defaults to 4.
 #
 
 record( ao, "$(P)$(R)CoaXPressDataRate" )
 {
-	field( DOL,  "$(CXL_DATARATE=12.5e9)" )
+	field( DOL,  "$(CXL_DATARATE=6.25e9)" )
 	field( EGU,  "bits/sec" )
 	field( PREC, "5" )
 	field( PINI, "YES" )
@@ -36,7 +37,9 @@ record( calc, "$(P)$(R)XmitDelay" )
 	field( INPD, "$(P)$(R)CoaXPressDataRate CP MS" )
 	field( INPE, "$(P)$(R)CoaXPressNumChannels CP MS" )
 	field( INPF, "$(P)$(R)DriverProcDelay CPP MS" )
-	field( CALC, "A*C+(A*B/D/E)+F")
+        field( INPG, "$(P)$(R)AcquirePeriod_RBV CP MS" )
+#	field( CALC, "A*C+(A*B/D/E)+F")
+	field( CALC, "A*C+G+F")
 	field( EGU,  "Sec" )
 	field( PREC, "5" )
 }
@@ -46,7 +49,7 @@ record( calc, "$(P)$(R)XmitDelay" )
 # to determine optimum value
 record( ao, "$(P)$(R)ProcDelayPerPixel" )
 {
-	field( DOL,  "2.25e-09" )
+	field( DOL,  "2.27e-09" )
 	field( EGU,  "Sec/px" )
 	field( PREC, "5" )
 	field( PINI, "YES" )
@@ -55,7 +58,7 @@ record( ao, "$(P)$(R)ProcDelayPerPixel" )
 
 record( ao, "$(P)$(R)DriverProcDelay" )
 {
-	field( DOL,  "2.0e-5" )
+	field( DOL,  "1.7e-4" )
 	field( EGU,  "Sec" )
 	field( PREC, "3" )
 	field( PINI, "YES" )
