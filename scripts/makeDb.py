@@ -145,6 +145,13 @@ def is_node_readonly(node):
             ro = True
     return ro
 
+# Which fields to autosave for different record types
+a_autosaveFields        = 'DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE PREC'
+b_autosaveFields        = 'DESC ZSV OSV TSE'
+long_autosaveFields     = 'DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE'
+mbb_autosaveFields      = 'DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE'
+string_autosaveFields   = 'DESC TSE'
+
 # Spit out a database file
 db_file = open(db_filename, "w")
 stdout = sys.stdout
@@ -169,6 +176,7 @@ for node in doneNodes:
         print('  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))%s_I_%s")' % (prefix, nodeName))
         print('  field(SCAN, "I/O Intr")')
         print('  field(DISA, "0")')
+        print('  info(autosaveFields, "%s")' % a_autosaveFields )
         print('}')
         print()
         if ro:
@@ -177,6 +185,7 @@ for node in doneNodes:
         print('  field(DTYP, "asynInt64")')
         print('  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))%s_I_%s")' % (prefix, nodeName))
         print('  field(DISA, "0")')
+        print('  info(autosaveFields, "%s PINI VAL")' % a_autosaveFields )
         print('}')
         print()
     elif node.nodeName in ["Boolean"]:
@@ -187,6 +196,7 @@ for node in doneNodes:
         print('  field(ZNAM, "No")')
         print('  field(ONAM, "Yes")'                        )
         print('  field(DISA, "0")')
+        print('  info(autosaveFields, "%s")' % b_autosaveFields )
         print('}')
         print()
         if ro:
@@ -197,6 +207,7 @@ for node in doneNodes:
         print('  field(ZNAM, "No")')
         print('  field(ONAM, "Yes")'                                )
         print('  field(DISA, "0")')
+        print('  info(autosaveFields, "%s PINI VAL")' % b_autosaveFields )
         print('}')
         print()
     elif node.nodeName in ["Float", "Converter", "SwissKnife"]:
@@ -206,6 +217,7 @@ for node in doneNodes:
         print('  field(PREC, "3")'        )
         print('  field(SCAN, "I/O Intr")')
         print('  field(DISA, "0")')
+        print('  info(autosaveFields, "%s")' % a_autosaveFields )
         print('}')
         print()
         if ro:
@@ -215,6 +227,7 @@ for node in doneNodes:
         print('  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))%s_D_%s")' % (prefix, nodeName))
         print('  field(PREC, "3")')
         print('  field(DISA, "0")')
+        print('  info(autosaveFields, "%s PINI VAL")' % a_autosaveFields )
         print('}')
         print()
     elif node.nodeName in ["StringReg", "String"]:
@@ -223,6 +236,7 @@ for node in doneNodes:
         print('  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))%s_S_%s")' % (prefix, nodeName))
         print('  field(SCAN, "I/O Intr")')
         print('  field(DISA, "0")')
+        print('  info(autosaveFields, "%s")' % string_autosaveFields )
         print('}')
         print()
         if ro:
@@ -231,6 +245,7 @@ for node in doneNodes:
         print('  field(DTYP, "asynOctetWrite")')
         print('  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))%s_S_%s")' % (prefix, nodeName))
         print('  field(DISA, "0")')
+        print('  info(autosaveFields, "%s PINI VAL")' % string_autosaveFields )
         print('}')
         print()
     elif node.nodeName in ["Command"]:
@@ -265,6 +280,7 @@ for node in doneNodes:
         print(enumerations, end="")
         print('  field(SCAN, "I/O Intr")')
         print('  field(DISA, "0")')
+        print('  info(autosaveFields, "%s")' % mbb_autosaveFields )
         print('}')
         print()
         if ro:
@@ -275,6 +291,7 @@ for node in doneNodes:
         print('  field(DOL,  "%s")' % defaultVal)
         print(enumerations, end="")
         print('  field(DISA, "0")')
+        print('  info(autosaveFields, "%s PINI VAL")' % mbb_autosaveFields )
         print('}')
         print()
     else:
