@@ -10,6 +10,7 @@ record(stringin, "$(P)$(R)SY_TLVendorName_RBV") {
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))SY_S_TLVendorName")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
+  info(autosaveFields, "DESC TSE")
 }
 
 record(stringin, "$(P)$(R)SY_TLModelName_RBV") {
@@ -17,6 +18,7 @@ record(stringin, "$(P)$(R)SY_TLModelName_RBV") {
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))SY_S_TLModelName")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
+  info(autosaveFields, "DESC TSE")
 }
 
 record(stringin, "$(P)$(R)SY_TLID_RBV") {
@@ -24,6 +26,7 @@ record(stringin, "$(P)$(R)SY_TLID_RBV") {
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))SY_S_TLID")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
+  info(autosaveFields, "DESC TSE")
 }
 
 record(stringin, "$(P)$(R)SY_TLVersion_RBV") {
@@ -31,6 +34,7 @@ record(stringin, "$(P)$(R)SY_TLVersion_RBV") {
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))SY_S_TLVersion")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
+  info(autosaveFields, "DESC TSE")
 }
 
 record(stringin, "$(P)$(R)SY_TLPath_RBV") {
@@ -38,6 +42,7 @@ record(stringin, "$(P)$(R)SY_TLPath_RBV") {
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))SY_S_TLPath")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
+  info(autosaveFields, "DESC TSE")
 }
 
 record(mbbi, "$(P)$(R)SY_TLType_RBV") {
@@ -47,6 +52,7 @@ record(mbbi, "$(P)$(R)SY_TLType_RBV") {
   field(ZRVL, "0")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
+  info(autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE")
 }
 
 record(ai, "$(P)$(R)SY_GenTLVersionMajor_RBV") {
@@ -54,6 +60,7 @@ record(ai, "$(P)$(R)SY_GenTLVersionMajor_RBV") {
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))SY_I_GenTLVersionMajor")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
+  info(autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE PREC")
 }
 
 record(ai, "$(P)$(R)SY_GenTLVersionMinor_RBV") {
@@ -61,6 +68,7 @@ record(ai, "$(P)$(R)SY_GenTLVersionMinor_RBV") {
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))SY_I_GenTLVersionMinor")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
+  info(autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE PREC")
 }
 
 record(mbbi, "$(P)$(R)SY_LicenseStatus_RBV") {
@@ -74,6 +82,7 @@ record(mbbi, "$(P)$(R)SY_LicenseStatus_RBV") {
   field(TWVL, "2")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
+  info(autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE")
 }
 
 record(longout, "$(P)$(R)SY_IntUpdateList") {
@@ -87,12 +96,14 @@ record(ai, "$(P)$(R)SY_InterfaceSelector_RBV") {
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))SY_I_InterfaceSelector")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
+  info(autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE PREC")
 }
 
 record(ao, "$(P)$(R)SY_InterfaceSelector") {
   field(DTYP, "asynInt64")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))SY_I_InterfaceSelector")
   field(DISA, "0")
+  info(autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE PREC PINI VAL")
 }
 
 record(stringin, "$(P)$(R)SY_InterfaceID_RBV") {
@@ -100,5 +111,6 @@ record(stringin, "$(P)$(R)SY_InterfaceID_RBV") {
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))SY_S_InterfaceID")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
+  info(autosaveFields, "DESC TSE")
 }
 
