@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 50
-y 50
+x 990
+y 1371
 w 1460
 h 810
 font "helvetica-medium-r-18.0"
@@ -144,7 +144,6 @@ h 18
 controlPv "$(P)$(R)DS_StreamID_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -188,7 +187,6 @@ h 18
 controlPv "$(P)$(R)DS_StreamType_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -232,7 +230,6 @@ h 18
 controlPv "$(P)$(R)DS_StreamDescription_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -276,7 +273,6 @@ h 18
 controlPv "$(P)$(R)DS_StrConStatus_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -371,7 +367,6 @@ h 18
 controlPv "$(P)$(R)DS_ImaFormatSelector_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -415,7 +410,6 @@ h 18
 controlPv "$(P)$(R)DS_PixelFormat_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -459,7 +453,6 @@ h 18
 controlPv "$(P)$(R)DS_PixForNamespace_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -503,7 +496,6 @@ h 18
 controlPv "$(P)$(R)DS_PixelSize_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -547,7 +539,6 @@ h 18
 controlPv "$(P)$(R)DS_PixComponentCount_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -591,7 +582,6 @@ h 18
 controlPv "$(P)$(R)DS_Width_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -635,7 +625,6 @@ h 18
 controlPv "$(P)$(R)DS_Height_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -679,7 +668,6 @@ h 20
 controlPv "$(P)$(R)DS_Pitch"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -705,7 +693,6 @@ h 18
 controlPv "$(P)$(R)DS_Pitch_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -749,7 +736,6 @@ h 18
 controlPv "$(P)$(R)DS_ImageFormatSource_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -793,7 +779,6 @@ h 18
 controlPv "$(P)$(R)DS_RemotePixelFormat_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -837,7 +822,6 @@ h 20
 controlPv "$(P)$(R)DS_RemoteWidth"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -863,7 +847,6 @@ h 18
 controlPv "$(P)$(R)DS_RemoteWidth_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -907,7 +890,6 @@ h 20
 controlPv "$(P)$(R)DS_RemoteHeight"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -933,7 +915,6 @@ h 18
 controlPv "$(P)$(R)DS_RemoteHeight_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -977,7 +958,6 @@ h 18
 controlPv "$(P)$(R)DS_ReverseX_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1021,7 +1001,6 @@ h 18
 controlPv "$(P)$(R)DS_PlanarRGB_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1116,7 +1095,6 @@ h 18
 controlPv "$(P)$(R)DS_PayloadSize_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1211,7 +1189,6 @@ h 18
 controlPv "$(P)$(R)DS_StrAnnBufferCount_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1255,7 +1232,6 @@ h 18
 controlPv "$(P)$(R)DS_StrBufHanMode_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1299,7 +1275,6 @@ h 18
 controlPv "$(P)$(R)DS_StrAnnBufMinimum_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1343,7 +1318,6 @@ h 18
 controlPv "$(P)$(R)DS_StrAcqModSelector_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1387,7 +1361,6 @@ h 18
 controlPv "$(P)$(R)DS_BufAllAliControl_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1431,7 +1404,6 @@ h 20
 controlPv "$(P)$(R)DS_BufAllAlignment"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -1457,7 +1429,6 @@ h 18
 controlPv "$(P)$(R)DS_BufAllAlignment_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1501,7 +1472,6 @@ h 18
 controlPv "$(P)$(R)DS_MemoryType_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1545,7 +1515,6 @@ h 18
 controlPv "$(P)$(R)DS_MemTypeSupported_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1562,9 +1531,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 495
-y 270
-w 220
+x 496
+y 272
+w 112
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
@@ -1582,14 +1551,13 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 845
-y 270
-w 120
-h 18
+x 796
+y 272
+w 172
+h 20
 controlPv "$(P)$(R)DS_BufferFilledRule_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1606,9 +1574,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 495
-y 295
-w 220
+x 496
+y 296
+w 112
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
@@ -1626,14 +1594,13 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 845
-y 295
-w 120
-h 18
+x 796
+y 296
+w 172
+h 20
 controlPv "$(P)$(R)DS_BufferInfoSource_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1677,7 +1644,6 @@ h 20
 controlPv "$(P)$(R)DS_BufferInfoWidth"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -1703,7 +1669,6 @@ h 18
 controlPv "$(P)$(R)DS_BufferInfoWidth_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1747,7 +1712,6 @@ h 20
 controlPv "$(P)$(R)DS_BufferInfoHeight"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -1773,7 +1737,6 @@ h 18
 controlPv "$(P)$(R)DS_BufferInfoHeight_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1817,7 +1780,6 @@ h 18
 controlPv "$(P)$(R)DS_BufInfPixelFormat_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1912,7 +1874,6 @@ h 18
 controlPv "$(P)$(R)DS_UnpackingMode_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1956,7 +1917,6 @@ h 18
 controlPv "$(P)$(R)DS_RedBlueSwap_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2000,7 +1960,6 @@ h 18
 controlPv "$(P)$(R)DS_ImageScaling_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2044,7 +2003,6 @@ h 20
 controlPv "$(P)$(R)DS_JpegQuality"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -2070,7 +2028,6 @@ h 18
 controlPv "$(P)$(R)DS_JpegQuality_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2114,7 +2071,6 @@ h 18
 controlPv "$(P)$(R)DS_BinningMethod_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2209,7 +2165,6 @@ h 18
 controlPv "$(P)$(R)DS_StaOfScaTriSource_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2253,7 +2208,6 @@ h 18
 controlPv "$(P)$(R)DS_EndOfScaTriSource_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2297,7 +2251,6 @@ h 20
 controlPv "$(P)$(R)DS_ScanLength"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -2323,7 +2276,6 @@ h 18
 controlPv "$(P)$(R)DS_ScanLength_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2367,7 +2319,6 @@ h 20
 controlPv "$(P)$(R)DS_BufferHeight"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -2393,7 +2344,6 @@ h 18
 controlPv "$(P)$(R)DS_BufferHeight_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2477,7 +2427,6 @@ h 18
 controlPv "$(P)$(R)DS_TriToLinLatCom_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2592,7 +2541,6 @@ h 18
 controlPv "$(P)$(R)DS_DmaEngOpt_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2636,7 +2584,6 @@ h 20
 controlPv "$(P)$(R)DS_DmaEngMaxQueSize"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -2662,7 +2609,6 @@ h 18
 controlPv "$(P)$(R)DS_DmaEngMaxQueSize_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2706,7 +2652,6 @@ h 20
 controlPv "$(P)$(R)DS_TriToCamReaTim"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -2732,7 +2677,6 @@ h 18
 controlPv "$(P)$(R)DS_TriToCamReaTim_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2776,7 +2720,6 @@ h 20
 controlPv "$(P)$(R)DS_CamReadoutTimeout"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -2802,7 +2745,6 @@ h 18
 controlPv "$(P)$(R)DS_CamReadoutTimeout_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2846,7 +2788,6 @@ h 20
 controlPv "$(P)$(R)DS_StripeHeight"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -2872,7 +2813,6 @@ h 18
 controlPv "$(P)$(R)DS_StripeHeight_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2916,7 +2856,6 @@ h 20
 controlPv "$(P)$(R)DS_StripePitch"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -2942,7 +2881,6 @@ h 18
 controlPv "$(P)$(R)DS_StripePitch_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2986,7 +2924,6 @@ h 20
 controlPv "$(P)$(R)DS_BlockHeight"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -3012,7 +2949,6 @@ h 18
 controlPv "$(P)$(R)DS_BlockHeight_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -3056,7 +2992,6 @@ h 20
 controlPv "$(P)$(R)DS_StripeOffset"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -3082,7 +3017,6 @@ h 18
 controlPv "$(P)$(R)DS_StripeOffset_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -3126,7 +3060,6 @@ h 18
 controlPv "$(P)$(R)DS_StripeArrangement_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -3170,7 +3103,6 @@ h 20
 controlPv "$(P)$(R)DS_BufferPartCount"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -3196,7 +3128,6 @@ h 18
 controlPv "$(P)$(R)DS_BufferPartCount_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -3331,7 +3262,6 @@ h 20
 controlPv "$(P)$(R)DS_DmaSegmentSize"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -3357,7 +3287,6 @@ h 18
 controlPv "$(P)$(R)DS_DmaSegmentSize_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -3401,7 +3330,6 @@ h 20
 controlPv "$(P)$(R)DS_DmaSegmentOffset"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -3427,7 +3355,6 @@ h 18
 controlPv "$(P)$(R)DS_DmaSegmentOffset_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -3471,7 +3398,6 @@ h 20
 controlPv "$(P)$(R)DS_DmaSegOffInc"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -3497,7 +3423,6 @@ h 18
 controlPv "$(P)$(R)DS_DmaSegOffInc_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -3541,7 +3466,6 @@ h 20
 controlPv "$(P)$(R)DS_DmaSegActiveCount"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -3567,7 +3491,6 @@ h 18
 controlPv "$(P)$(R)DS_DmaSegActiveCount_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -3611,7 +3534,6 @@ h 20
 controlPv "$(P)$(R)DS_DmaSegCycleCount"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -3637,7 +3559,6 @@ h 18
 controlPv "$(P)$(R)DS_DmaSegCycleCount_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -3681,7 +3602,6 @@ h 20
 controlPv "$(P)$(R)DS_DmaSegRepeatCount"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -3707,7 +3627,6 @@ h 18
 controlPv "$(P)$(R)DS_DmaSegRepeatCount_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -3751,7 +3670,6 @@ h 18
 controlPv "$(P)$(R)DS_DmaProSelector_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -3875,7 +3793,6 @@ h 18
 controlPv "$(P)$(R)DS_DmaProPixelFormat_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -3919,7 +3836,6 @@ h 20
 controlPv "$(P)$(R)DS_DmaProgramWidth"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -3945,7 +3861,6 @@ h 18
 controlPv "$(P)$(R)DS_DmaProgramWidth_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -3989,7 +3904,6 @@ h 20
 controlPv "$(P)$(R)DS_DmaProgramHeight"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -4015,7 +3929,6 @@ h 18
 controlPv "$(P)$(R)DS_DmaProgramHeight_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -4059,7 +3972,6 @@ h 20
 controlPv "$(P)$(R)DS_DmaProgramPitch"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -4085,7 +3997,6 @@ h 18
 controlPv "$(P)$(R)DS_DmaProgramPitch_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -4282,9 +4193,9 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 720
-y 270
-w 120
+x 616
+y 272
+w 172
 h 20
 fgColor index 14
 bgColor index 51
@@ -4302,9 +4213,9 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 720
-y 295
-w 120
+x 616
+y 296
+w 172
 h 20
 fgColor index 14
 bgColor index 51
@@ -4460,7 +4371,7 @@ endObjectProperties
 object activeMessageButtonClass
 beginObjectProperties
 major 4
-minor 0
+minor 1
 release 0
 x 720
 y 690
@@ -4473,7 +4384,6 @@ topShadowColor index 0
 botShadowColor index 14
 controlPv "$(P)$(R)DS_StartScan.PROC"
 pressValue "1"
-releaseValue 
 onLabel "StartScan"
 offLabel "StartScan"
 3d
@@ -4485,7 +4395,7 @@ endObjectProperties
 object activeMessageButtonClass
 beginObjectProperties
 major 4
-minor 0
+minor 1
 release 0
 x 720
 y 715
@@ -4498,7 +4408,6 @@ topShadowColor index 0
 botShadowColor index 14
 controlPv "$(P)$(R)DS_StopScan.PROC"
 pressValue "1"
-releaseValue 
 onLabel "StopScan"
 offLabel "StopScan"
 3d
@@ -4530,7 +4439,7 @@ endObjectProperties
 object activeMessageButtonClass
 beginObjectProperties
 major 4
-minor 0
+minor 1
 release 0
 x 1205
 y 70
@@ -4543,7 +4452,6 @@ topShadowColor index 0
 botShadowColor index 14
 controlPv "$(P)$(R)DS_StreamReset.PROC"
 pressValue "1"
-releaseValue 
 onLabel "StreamReset"
 offLabel "StreamReset"
 3d
@@ -4595,7 +4503,7 @@ endObjectProperties
 object activeMessageButtonClass
 beginObjectProperties
 major 4
-minor 0
+minor 1
 release 0
 x 1205
 y 345
@@ -4608,7 +4516,6 @@ topShadowColor index 0
 botShadowColor index 14
 controlPv "$(P)$(R)DS_ActivateCic.PROC"
 pressValue "1"
-releaseValue 
 onLabel "ActivateCic"
 offLabel "ActivateCic"
 3d
@@ -4620,7 +4527,7 @@ endObjectProperties
 object activeMessageButtonClass
 beginObjectProperties
 major 4
-minor 0
+minor 1
 release 0
 x 1205
 y 370
@@ -4633,7 +4540,6 @@ topShadowColor index 0
 botShadowColor index 14
 controlPv "$(P)$(R)DS_DeactivateCic.PROC"
 pressValue "1"
-releaseValue 
 onLabel "DeactivateCic"
 offLabel "DeactivateCic"
 3d
@@ -4665,7 +4571,7 @@ endObjectProperties
 object activeMessageButtonClass
 beginObjectProperties
 major 4
-minor 0
+minor 1
 release 0
 x 1205
 y 605
@@ -4678,7 +4584,6 @@ topShadowColor index 0
 botShadowColor index 14
 controlPv "$(P)$(R)DS_DmaAddSegment.PROC"
 pressValue "1"
-releaseValue 
 onLabel "DmaAddSegment"
 offLabel "DmaAddSegment"
 3d
@@ -4690,7 +4595,7 @@ endObjectProperties
 object activeMessageButtonClass
 beginObjectProperties
 major 4
-minor 0
+minor 1
 release 0
 x 1205
 y 630
@@ -4703,7 +4608,6 @@ topShadowColor index 0
 botShadowColor index 14
 controlPv "$(P)$(R)DS_DmaAddSequence.PROC"
 pressValue "1"
-releaseValue 
 onLabel "DmaAddSequence"
 offLabel "DmaAddSequence"
 3d
@@ -4715,7 +4619,7 @@ endObjectProperties
 object activeMessageButtonClass
 beginObjectProperties
 major 4
-minor 0
+minor 1
 release 0
 x 1205
 y 655
@@ -4728,7 +4632,6 @@ topShadowColor index 0
 botShadowColor index 14
 controlPv "$(P)$(R)DS_DmaComProgram.PROC"
 pressValue "1"
-releaseValue 
 onLabel "DmaCompleteProgram"
 offLabel "DmaCompleteProgram"
 3d
@@ -4740,7 +4643,7 @@ endObjectProperties
 object activeMessageButtonClass
 beginObjectProperties
 major 4
-minor 0
+minor 1
 release 0
 x 1205
 y 680
@@ -4753,7 +4656,6 @@ topShadowColor index 0
 botShadowColor index 14
 controlPv "$(P)$(R)DS_DmaResetProgram.PROC"
 pressValue "1"
-releaseValue 
 onLabel "DmaResetProgram"
 offLabel "DmaResetProgram"
 3d

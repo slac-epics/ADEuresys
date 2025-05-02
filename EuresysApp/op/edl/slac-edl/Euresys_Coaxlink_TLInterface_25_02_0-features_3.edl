@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 50
-y 50
+x 990
+y 1348
 w 1460
 h 855
 font "helvetica-medium-r-18.0"
@@ -144,7 +144,6 @@ h 18
 controlPv "$(P)$(R)IF_EveInpTooSelector_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -188,7 +187,6 @@ h 18
 controlPv "$(P)$(R)IF_EveInpToolSource_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -232,7 +230,6 @@ h 18
 controlPv "$(P)$(R)IF_EveInpTooAct_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -327,7 +324,6 @@ h 18
 controlPv "$(P)$(R)IF_C2CLinSynTooSel_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -371,7 +367,6 @@ h 18
 controlPv "$(P)$(R)IF_C2CLinSynTooSou_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -415,7 +410,6 @@ h 18
 controlPv "$(P)$(R)IF_C2CLinSynTooClock_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -530,7 +524,6 @@ h 18
 controlPv "$(P)$(R)IF_DevLinTriTooSel_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -574,7 +567,6 @@ h 18
 controlPv "$(P)$(R)IF_DevLinTriTooDev_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -618,7 +610,6 @@ h 18
 controlPv "$(P)$(R)IF_DevLinTriTooLinTr_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -713,7 +704,6 @@ h 18
 controlPv "$(P)$(R)IF_PCIeMaxPaySizSup_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -757,7 +747,6 @@ h 18
 controlPv "$(P)$(R)IF_PCIeMaxPaySize_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -801,7 +790,6 @@ h 18
 controlPv "$(P)$(R)IF_PCIeMaxReaReqSize_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -845,7 +833,6 @@ h 18
 controlPv "$(P)$(R)IF_PCIeCapSloPowLimV_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -889,7 +876,6 @@ h 18
 controlPv "$(P)$(R)IF_PCIeCapSloPowLimS_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -933,7 +919,6 @@ h 18
 controlPv "$(P)$(R)IF_PCIeMaxLinkSpeed_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -977,7 +962,6 @@ h 18
 controlPv "$(P)$(R)IF_PCIeCurLinkSpeed_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1021,7 +1005,6 @@ h 18
 controlPv "$(P)$(R)IF_PCIeMaxLinkWidth_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1065,7 +1048,6 @@ h 18
 controlPv "$(P)$(R)IF_PCIeNegLinkWidth_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1109,7 +1091,6 @@ h 18
 controlPv "$(P)$(R)IF_PCIeLinSpeMTpsSu1_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1153,7 +1134,6 @@ h 18
 controlPv "$(P)$(R)IF_PCIeLinSpeMTpsSu0_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1197,7 +1177,6 @@ h 18
 controlPv "$(P)$(R)IF_PCIeLinSpeMTpsSup_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1241,7 +1220,6 @@ h 18
 controlPv "$(P)$(R)IF_PCIeSloPowerLimit_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1285,7 +1263,6 @@ h 18
 controlPv "$(P)$(R)IF_PCIBus_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1329,7 +1306,6 @@ h 18
 controlPv "$(P)$(R)IF_PCIDevice_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1373,7 +1349,6 @@ h 18
 controlPv "$(P)$(R)IF_PCIFunction_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1417,7 +1392,6 @@ h 18
 controlPv "$(P)$(R)IF_PCISlot_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1512,7 +1486,6 @@ h 18
 controlPv "$(P)$(R)IF_FanStatus_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1556,7 +1529,6 @@ h 18
 controlPv "$(P)$(R)IF_TemSensorSelector_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1600,7 +1572,6 @@ h 18
 controlPv "$(P)$(R)IF_Temperature_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1644,7 +1615,6 @@ h 18
 controlPv "$(P)$(R)IF_AuxPowerInput_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1688,7 +1658,6 @@ h 18
 controlPv "$(P)$(R)IF_AuxPower12VInput_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1732,7 +1701,6 @@ h 18
 controlPv "$(P)$(R)IF_LampMode_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1776,7 +1744,6 @@ h 20
 controlPv "$(P)$(R)IF_LampCustomValue"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -1802,7 +1769,6 @@ h 18
 controlPv "$(P)$(R)IF_LampCustomValue_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1846,7 +1812,6 @@ h 18
 controlPv "$(P)$(R)IF_LampCustomLedA_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1890,7 +1855,6 @@ h 18
 controlPv "$(P)$(R)IF_LampCustomLedB_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1934,7 +1898,6 @@ h 18
 controlPv "$(P)$(R)IF_LampCustomLedC_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -1978,7 +1941,6 @@ h 18
 controlPv "$(P)$(R)IF_LampCustomLedD_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2022,7 +1984,6 @@ h 18
 controlPv "$(P)$(R)IF_LampCustomLedE_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2066,7 +2027,6 @@ h 18
 controlPv "$(P)$(R)IF_LampCustomLedF_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2110,7 +2070,6 @@ h 18
 controlPv "$(P)$(R)IF_LampCustomLedG_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2154,7 +2113,6 @@ h 18
 controlPv "$(P)$(R)IF_LampCustomLedH_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2269,7 +2227,6 @@ h 18
 controlPv "$(P)$(R)IF_BoardCapabilities_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2313,7 +2270,6 @@ h 18
 controlPv "$(P)$(R)IF_FirmwareBoardID_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2357,7 +2313,6 @@ h 18
 controlPv "$(P)$(R)IF_CPLDRevision_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2401,7 +2356,6 @@ h 18
 controlPv "$(P)$(R)IF_PreviousBootBank_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2445,7 +2399,6 @@ h 18
 controlPv "$(P)$(R)IF_NextBootBank_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2489,7 +2442,6 @@ h 18
 controlPv "$(P)$(R)IF_CurrentBankSelect_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2533,7 +2485,6 @@ h 18
 controlPv "$(P)$(R)IF_CurBanSelReadback_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2577,7 +2528,6 @@ h 18
 controlPv "$(P)$(R)IF_NextBankSelect_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2621,7 +2571,6 @@ h 18
 controlPv "$(P)$(R)IF_SpiBankStatus_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2665,7 +2614,6 @@ h 18
 controlPv "$(P)$(R)IF_PotBankStatus_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2709,7 +2657,6 @@ h 18
 controlPv "$(P)$(R)IF_DriverVersion_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2804,7 +2751,6 @@ h 18
 controlPv "$(P)$(R)IF_EventSelector_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2848,7 +2794,6 @@ h 18
 controlPv "$(P)$(R)IF_EventNotification_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2892,7 +2837,6 @@ h 18
 controlPv "$(P)$(R)IF_EveNotContext1_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2936,7 +2880,6 @@ h 18
 controlPv "$(P)$(R)IF_EveNotContext2_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -2980,7 +2923,6 @@ h 18
 controlPv "$(P)$(R)IF_EveNotContext3_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -3024,7 +2966,6 @@ h 18
 controlPv "$(P)$(R)IF_EventCount_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -3088,7 +3029,6 @@ h 18
 controlPv "$(P)$(R)IF_EveNotAll_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -3177,14 +3117,13 @@ major 4
 minor 1
 release 1
 x 980
-y 330
-w 220
-h 16
-font "helvetica-medium-r-14.0"
+y 332
+w 128
+h 20
+font "helvetica-medium-r-10.0"
 fontAlign "right"
 fgColor index 14
-bgColor index 3
-useDisplayBg
+bgColor index 4
 value {
   "OemSafetyKeyVerification"
 }
@@ -3196,14 +3135,13 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 1330
-y 330
-w 120
-h 18
+x 1284
+y 332
+w 172
+h 20
 controlPv "$(P)$(R)IF_OemSafKeyVer_RBV"
 format "decimal"
-font "helvetica-medium-r-14.0"
-fontAlign "left"
+font "helvetica-medium-r-10.0"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -3247,7 +3185,6 @@ h 20
 controlPv "$(P)$(R)IF_CheckOemSafetyKey"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -3273,7 +3210,6 @@ h 18
 controlPv "$(P)$(R)IF_CheckOemSafetyKey_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -3317,7 +3253,6 @@ h 20
 controlPv "$(P)$(R)IF_ProOemSafetyKey"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -3343,7 +3278,6 @@ h 18
 controlPv "$(P)$(R)IF_ProOemSafetyKey_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -3387,7 +3321,6 @@ h 18
 controlPv "$(P)$(R)IF_EncOemSafetyKey_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -3431,7 +3364,6 @@ h 20
 controlPv "$(P)$(R)IF_MaxOemKeyLength"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -3457,7 +3389,6 @@ h 18
 controlPv "$(P)$(R)IF_MaxOemKeyLength_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -3552,7 +3483,6 @@ h 20
 controlPv "$(P)$(R)IF_CusLogConAddress"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -3578,7 +3508,6 @@ h 18
 controlPv "$(P)$(R)IF_CusLogConAddress_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -3622,7 +3551,6 @@ h 20
 controlPv "$(P)$(R)IF_CusLogControlData"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -3648,7 +3576,6 @@ h 18
 controlPv "$(P)$(R)IF_CusLogControlData_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -3743,7 +3670,6 @@ h 18
 controlPv "$(P)$(R)IF_OnboardMemoryBase_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -3787,7 +3713,6 @@ h 18
 controlPv "$(P)$(R)IF_OnboardMemorySize_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -3882,7 +3807,6 @@ h 18
 controlPv "$(P)$(R)IF_QsfpModulePresent_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -3926,7 +3850,6 @@ h 18
 controlPv "$(P)$(R)IF_QsfpModuleFault_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -3970,7 +3893,6 @@ h 20
 controlPv "$(P)$(R)IF_QsfModRegAddress"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -3996,7 +3918,6 @@ h 18
 controlPv "$(P)$(R)IF_QsfModRegAddress_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -4040,7 +3961,6 @@ h 20
 controlPv "$(P)$(R)IF_QsfModRegData"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -4066,7 +3986,6 @@ h 18
 controlPv "$(P)$(R)IF_QsfModRegData_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -4201,7 +4120,7 @@ endObjectProperties
 object activeMessageButtonClass
 beginObjectProperties
 major 4
-minor 0
+minor 1
 release 0
 x 235
 y 255
@@ -4214,7 +4133,6 @@ topShadowColor index 0
 botShadowColor index 14
 controlPv "$(P)$(R)IF_C2CLinSynTooDisPe.PROC"
 pressValue "1"
-releaseValue 
 onLabel "C2CLinkSynchronizationToolDiscardPendingEvent"
 offLabel "C2CLinkSynchronizationToolDiscardPendingEvent"
 3d
@@ -4486,7 +4404,7 @@ endObjectProperties
 object activeMessageButtonClass
 beginObjectProperties
 major 4
-minor 0
+minor 1
 release 0
 x 720
 y 445
@@ -4499,7 +4417,6 @@ topShadowColor index 0
 botShadowColor index 14
 controlPv "$(P)$(R)IF_InterfaceReset.PROC"
 pressValue "1"
-releaseValue 
 onLabel "InterfaceReset"
 offLabel "InterfaceReset"
 3d
@@ -4611,7 +4528,7 @@ endObjectProperties
 object activeMessageButtonClass
 beginObjectProperties
 major 4
-minor 0
+minor 1
 release 0
 x 1205
 y 220
@@ -4624,7 +4541,6 @@ topShadowColor index 0
 botShadowColor index 14
 controlPv "$(P)$(R)IF_EventCountReset.PROC"
 pressValue "1"
-releaseValue 
 onLabel "EventCountReset"
 offLabel "EventCountReset"
 3d
@@ -4656,7 +4572,7 @@ endObjectProperties
 object activeMessageButtonClass
 beginObjectProperties
 major 4
-minor 0
+minor 1
 release 0
 x 1205
 y 270
@@ -4669,7 +4585,6 @@ topShadowColor index 0
 botShadowColor index 14
 controlPv "$(P)$(R)IF_EveCountResetAll.PROC"
 pressValue "1"
-releaseValue 
 onLabel "EventCountResetAll"
 offLabel "EventCountResetAll"
 3d
@@ -4683,9 +4598,9 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1205
-y 330
-w 120
+x 1112
+y 332
+w 172
 h 20
 fgColor index 14
 bgColor index 51
@@ -4694,6 +4609,6 @@ topShadowColor index 2
 botShadowColor index 12
 controlPv "$(P)$(R)IF_OemSafKeyVer"
 indicatorPv "$(P)$(R)IF_OemSafKeyVer"
-font "helvetica-medium-r-12.0"
+font "helvetica-medium-r-10.0"
 endObjectProperties
 

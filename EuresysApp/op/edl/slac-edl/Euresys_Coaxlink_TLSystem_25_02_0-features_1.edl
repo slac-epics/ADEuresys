@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 50
-y 50
+x 1323
+y 639
 w 490
 h 410
 font "helvetica-medium-r-18.0"
@@ -46,15 +46,14 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x -47
-y 5
-w 585
+x 0
+y 4
+w 488
 h 24
-font "helvetica-medium-r-18.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
-useDisplayBg
 value {
   "Euresys_Coaxlink_TLSystem_25_02_0 Features Screen #1 - $(P)$(R)"
 }
@@ -144,7 +143,6 @@ h 18
 controlPv "$(P)$(R)SY_TLVendorName_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -188,7 +186,6 @@ h 18
 controlPv "$(P)$(R)SY_TLModelName_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -232,7 +229,6 @@ h 18
 controlPv "$(P)$(R)SY_TLID_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -276,7 +272,6 @@ h 18
 controlPv "$(P)$(R)SY_TLVersion_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -293,9 +288,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 10
-y 170
-w 220
+x 12
+y 172
+w 48
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
@@ -313,14 +308,13 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 235
-y 170
-w 240
-h 18
+x 64
+y 172
+w 412
+h 20
 controlPv "$(P)$(R)SY_TLPath_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -364,7 +358,6 @@ h 18
 controlPv "$(P)$(R)SY_TLType_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -408,7 +401,6 @@ h 18
 controlPv "$(P)$(R)SY_GenTLVersionMajor_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -452,7 +444,6 @@ h 18
 controlPv "$(P)$(R)SY_GenTLVersionMinor_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -496,7 +487,6 @@ h 18
 controlPv "$(P)$(R)SY_LicenseStatus_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -564,9 +554,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 10
-y 330
-w 220
+x 12
+y 332
+w 200
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
@@ -584,9 +574,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 10
-y 355
-w 220
+x 12
+y 356
+w 200
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
@@ -604,14 +594,13 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 235
-y 355
-w 60
+x 216
+y 356
+w 68
 h 20
 controlPv "$(P)$(R)SY_InterfaceSelector"
 format "decimal"
 font "helvetica-medium-r-12.0"
-fontAlign "left"
 fgColor index 25
 bgColor index 5
 editable
@@ -630,14 +619,13 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 300
-y 355
-w 120
-h 18
+x 288
+y 356
+w 132
+h 20
 controlPv "$(P)$(R)SY_InterfaceSelector_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fontAlign "left"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -654,9 +642,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 10
+x 12
 y 380
-w 220
+w 108
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
@@ -674,14 +662,13 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 235
+x 128
 y 380
-w 240
-h 18
+w 348
+h 20
 controlPv "$(P)$(R)SY_InterfaceID_RBV"
 format "decimal"
-font "helvetica-medium-r-14.0"
-fontAlign "left"
+font "helvetica-medium-r-12.0"
 fgColor index 15
 bgColor index 12
 limitsFromDb
@@ -696,11 +683,11 @@ endObjectProperties
 object activeMessageButtonClass
 beginObjectProperties
 major 4
-minor 0
+minor 1
 release 0
-x 235
-y 330
-w 200
+x 216
+y 332
+w 208
 h 20
 fgColor index 14
 onColor index 51
@@ -709,7 +696,6 @@ topShadowColor index 0
 botShadowColor index 14
 controlPv "$(P)$(R)SY_IntUpdateList.PROC"
 pressValue "1"
-releaseValue 
 onLabel "InterfaceUpdateList"
 offLabel "InterfaceUpdateList"
 3d
