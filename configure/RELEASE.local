@@ -21,7 +21,7 @@
 # ==========================================================
 ADCORE_MODULE_VERSION        = R3.10-1.2.0
 ASYN_MODULE_VERSION          = R4.42-1.0.0
-ADGENICAM_MODULE_VERSION     = R1.10-2.1.0
+ADGENICAM_MODULE_VERSION     = R1.10-2.2.0
 
 # Define module paths using pattern
 # FOO = $(EPICS_MODULES)/foo/$(FOO_MODULE_VERSION)
