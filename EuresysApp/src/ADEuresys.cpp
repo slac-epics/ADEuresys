@@ -226,8 +226,8 @@ void ADEuresys::processFrame(ScopedBuffer &buf)
     timeStamp = buf.getInfo<uint64_t>(gc::BUFFER_INFO_TIMESTAMP);
     frameId = buf.getInfo<uint64_t>(gc::BUFFER_INFO_FRAMEID);
     asynPrint(pasynUserSelf, ASYN_TRACE_WARNING, 
-              "%s::%s nCols=%d, nRows=%d, pixelSize=%d, frameSize=%d, pixelFormat=%s, frameId=%llu, timeStamp=%llu\n",
-              driverName, functionName, (int)nCols, (int)nRows, pixelSize, (int)frameSize, bufferInfo.pixelFormat.c_str(), frameId, timeStamp);
+              "%s::%s nCols=%d, nRows=%d, bitsPerPixel=%d, pixelSize=%d, frameSize=%d, pixelFormat=%s, frameId=%llu, timeStamp=%llu\n",
+              driverName, functionName, (int)nCols, (int)nRows, bufferInfo.bitsPerPixel, pixelSize, (int)frameSize, bufferInfo.pixelFormat.c_str(), frameId, timeStamp);
     switch (pixelSize) {
         case 1:
             dataType = NDUInt8;
