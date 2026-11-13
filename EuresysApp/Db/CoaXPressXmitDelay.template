@@ -39,7 +39,7 @@ record( calc, "$(P)$(R)XmitDelay" )
 	field( INPF, "$(P)$(R)DriverProcDelay CPP MS" )
         field( INPG, "$(P)$(R)AcquirePeriod_RBV CP MS" )
 #	field( CALC, "A*C+(A*B/D/E)+F")
-	field( CALC, "A*C+G")
+	field( CALC, "A*C+G+F")
 	field( EGU,  "Sec" )
 	field( PREC, "5" )
 }
@@ -58,7 +58,7 @@ record( ao, "$(P)$(R)ProcDelayPerPixel" )
 
 record( ao, "$(P)$(R)DriverProcDelay" )
 {
-	field( DOL,  "1.7e-4" )
+	field( DOL,  "5.5e-4" )
 	field( EGU,  "Sec" )
 	field( PREC, "3" )
 	field( PINI, "YES" )
