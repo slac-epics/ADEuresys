@@ -265,7 +265,6 @@ record(mbbi, "$(P)$(R)DS_RemotePixelFormat_RBV") {
   field(FFVL, "36175949")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
-  info(autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE")
 }
 
 record(mbbo, "$(P)$(R)DS_RemotePixelFormat") {
@@ -305,7 +304,6 @@ record(mbbo, "$(P)$(R)DS_RemotePixelFormat") {
   field(FFST, "BGRa10p")
   field(FFVL, "36175949")
   field(DISA, "0")
-  info(autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE PINI VAL")
 }
 
 record(ai, "$(P)$(R)DS_RemoteWidth_RBV") {
@@ -1429,7 +1427,6 @@ record(mbbi, "$(P)$(R)DS_DmaProPixelFormat_RBV") {
   field(FFVL, "2184183816")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
-  info(autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE")
 }
 
 record(mbbo, "$(P)$(R)DS_DmaProPixelFormat") {
@@ -1469,7 +1466,6 @@ record(mbbo, "$(P)$(R)DS_DmaProPixelFormat") {
   field(FFST, "BGR16_Horizontal")
   field(FFVL, "2184183816")
   field(DISA, "0")
-  info(autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE PINI VAL")
 }
 
 record(ai, "$(P)$(R)DS_DmaProgramWidth_RBV") {

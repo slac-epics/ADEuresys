@@ -729,7 +729,6 @@ record(mbbi, "$(P)$(R)DV_CxpLinCon_RBV") {
   field(FFVL, "196656")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
-  info(autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE")
 }
 
 record(mbbo, "$(P)$(R)DV_CxpLinCon") {
@@ -769,7 +768,6 @@ record(mbbo, "$(P)$(R)DV_CxpLinCon") {
   field(FFST, "CXP2_X3")
   field(FFVL, "196656")
   field(DISA, "0")
-  info(autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE PINI VAL")
 }
 
 record(mbbi, "$(P)$(R)DV_CxpLinConOption_RBV") {
